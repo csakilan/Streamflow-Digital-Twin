@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import {TilesRenderer,GoogleCloudAuthPlugin,CesiumIonAuthPlugin,GLTFExtensionsPlugin,DRACOLoader} from './vendor/dependencies.js';
+import {TilesRenderer,GoogleCloudAuthPlugin,CesiumIonAuthPlugin,GLTFExtensionsPlugin,TileCompressionPlugin,DRACOLoader} from './vendor/dependencies.js';
 import {localFrame} from './geodesy.mjs';
 import {createLifetime} from './lifetime.mjs';
 
@@ -19,6 +19,9 @@ export function createImagery(type,credential,{ready,error},geoRoot,station,asse
     if(type==='google')tiles.registerPlugin(new GoogleCloudAuthPlugin({apiToken:credential,autoRefreshToken:true,useRecommendedSettings:false}));
     if(type==='ion')tiles.registerPlugin(new CesiumIonAuthPlugin({apiToken:credential,assetId,autoRefreshToken:true,useRecommendedSettings:false}));
     tiles.registerPlugin(new GLTFExtensionsPlugin({dracoLoader:draco}));
+    // Match the reference Google viewer's memory optimization. Preserve positions,
+    // UVs and normals exactly; only pack indices and omit extra texture mip levels.
+    tiles.registerPlugin(new TileCompressionPlugin({disableMipmaps:true,compressIndex:true,compressPosition:false,compressUvs:false,compressNormals:false}));
     tiles.group.matrix.set(...localFrame(station.latitude,station.longitude).matrixRows);
     tiles.group.matrixAutoUpdate=false;geoRoot.add(tiles.group);
     tiles.errorTarget=16;
@@ -37,7 +40,7 @@ export function createImagery(type,credential,{ready,error},geoRoot,station,asse
       }
     }
     setBudget('desktop');
-    let seen=false,disposed=false,models=0,cameras=[],creditsDirty=true,creditsText='';
+    let seen=false,disposed=false,models=0,cameras=[],creditsDirty=true,creditsText='';const resolution=new THREE.Vector2();
     tiles.addEventListener('load-model',()=>{models++;if(!seen&&!disposed){seen=true;ready();}});
     tiles.addEventListener('load-error',event=>{if(!disposed)error(event.error);});
     tiles.addEventListener('tile-visibility-change',()=>{creditsDirty=true;});
@@ -49,8 +52,9 @@ export function createImagery(type,credential,{ready,error},geoRoot,station,asse
         // Reuse the same authenticated tileset while switching session budgets.
         setBudget(camera.isArrayCamera?'xr':'desktop');
         if(cameras[0]!==camera){for(const previous of cameras)tiles.deleteCamera(previous);tiles.setCamera(camera);cameras=[camera];}
-        if(camera.isArrayCamera&&camera.cameras[0]){const v=camera.cameras[0].viewport;tiles.setResolution(camera,v.z,v.w);}
-        else tiles.setResolutionFromRenderer(camera,renderer);
+        if(camera.isArrayCamera&&camera.cameras[0]){const v=camera.cameras[0].viewport;resolution.set(v.z,v.w);}
+        else renderer.getDrawingBufferSize(resolution);
+        tiles.setResolution(camera,resolution);
         tiles.update();
       },
       credits(){
@@ -59,7 +63,7 @@ export function createImagery(type,credential,{ready,error},geoRoot,station,asse
         const values=tiles.getAttributions().filter(item=>item.type!=='image').map(item=>cleanText(item.value)).filter(Boolean);
         creditsText=['Basemap: Google Maps',...[...new Set(values)].sort(),...(type==='ion'?['3D tiles access: Cesium ion']:[]),'Hydrology: USGS / supplied HydroTwin forecasts'].join(' · ');return creditsText;
       },
-      snapshot(){return {loadedModels:models,visible:tiles.visibleTiles.size,estimatedMB:Math.round(tiles.lruCache.cachedBytes/MIB),budgetMode,budgetMB:BUDGETS[budgetMode].maxMB,refused:tiles.stats.refused,queued:tiles.stats.queued,downloading:tiles.stats.downloading,parsing:tiles.stats.parsing,cameraCount:tiles.cameras.length,stereo:cameras[0]?.isArrayCamera===true};},
+      snapshot(){return {loadedModels:models,visible:tiles.visibleTiles.size,estimatedMB:Math.round(tiles.lruCache.cachedBytes/MIB),budgetMode,budgetMB:BUDGETS[budgetMode].maxMB,refused:tiles.stats.refused,queued:tiles.stats.queued,downloading:tiles.stats.downloading,parsing:tiles.stats.parsing,resolution:resolution.toArray(),cameraCount:tiles.cameras.length,stereo:cameras[0]?.isArrayCamera===true};},
       dispose(){if(disposed)return;disposed=true;lifetime.dispose();geoRoot.remove(tiles.group);tiles.dispose();tiles.rootURL=null;draco.dispose();}
     };
   }catch(failure){lifetime.dispose();geoRoot.remove(tiles.group);tiles.dispose();draco.dispose();throw failure;}

@@ -20,7 +20,7 @@ try{
    if(m.method==='Fetch.requestPaused')call('Fetch.fulfillRequest',{requestId:m.params.requestId,responseCode:403,responseHeaders:[{name:'Content-Type',value:'application/json'},{name:'Access-Control-Allow-Origin',value:'*'}],body:Buffer.from('{"error":{"code":403,"message":"Test denied"}}').toString('base64')}).catch(()=>{});
    const p=pending.get(m.id);if(p){pending.delete(m.id);m.error?p.reject(Error(m.error.message)):p.resolve(m.result);}
  };
- await call('Page.enable');await call('Runtime.enable');await call('Network.enable');await call('Emulation.setDeviceMetricsOverride',{width:1500,height:1000,deviceScaleFactor:1,mobile:false});
+ await call('Page.enable');await call('Runtime.enable');await call('Network.enable');await call('Emulation.setDeviceMetricsOverride',{width:1500,height:1000,deviceScaleFactor:2,mobile:false});
  await call('Page.navigate',{url:'http://127.0.0.1:8783/photorealistic-vr/'});
  await until('!!window.__riverTrial','viewer starts');assert.equal(await js('__riverTrial.snapshot().connection.starts'),0);
  await shot('01-token-entry.png');report.default=await js('__riverTrial.snapshot()');
@@ -36,6 +36,8 @@ try{
  await until("window.__riverTrial?.snapshot().connection.status==='ready'",'local tiles load');
  assert.equal(await js('__riverTrial.snapshot().tiles.loadedModels'),1);
  assert.equal(await js('__riverTrial.snapshot().tiles.budgetMB'),512);assert.equal(await js('__riverTrial.snapshot().tiles.budgetMode'),'desktop');
+ assert.deepEqual(await js('__riverTrial.snapshot().tiles.resolution'),[2250,1500],'high-DPI detail matches the actual 1.5x drawing buffer');
+ assert.deepEqual(await js('__riverTrial.snapshot().tiles.resolution'),await js('__riverTrial.snapshot().renderSize'));
  const before=await js('__riverTrial.snapshot()');await clickPanel('lead');assert.equal(await js('__riverTrial.snapshot().selection.lead'),2);
  await clickPanel('next');assert.equal(await js('__riverTrial.snapshot().selection.issueIndex'),before.selection.issueIndex+1);
  await clickPanel('model');assert.equal(await js('__riverTrial.snapshot().selection.modelIndex'),1);
@@ -48,7 +50,10 @@ try{
  await call('Input.dispatchMouseEvent',{type:'mouseReleased',x:header[0]-110,y:header[1]+70,button:'left',clickCount:1});
  assert.notDeepEqual(await js('__riverTrial.snapshot().panel.position'),position,'mouse drags actual world panel');
  await js("document.querySelector('#reset-panel').click()");
- for(const mode of ['close','tabletop','aerial']){await js(`document.querySelector('[data-view="${mode}"]').click()`);await pause(250);assert.equal(await js('__riverTrial.snapshot().view'),mode);}
+ report.viewRanges={};for(const mode of ['close','tabletop','aerial']){
+  await js(`document.querySelector('[data-view="${mode}"]').click()`);await pause(250);assert.equal(await js('__riverTrial.snapshot().view'),mode);
+  const range=await js('__riverTrial.snapshot().range');assert.ok(range.far>=range.focusDistance+4000*range.scale);assert.ok(range.far<=range.focusDistance+4250*range.scale);assert.ok(range.fogNear<range.far);assert.ok(range.far<(mode==='tabletop'?20:20000));report.viewRanges[mode]=range;
+ }
  assert.equal(await js('__riverTrial.snapshot().connection.starts'),1,'all actions reuse one tileset');await shot('02-engine-test-panel.png');report.desktop=await js('__riverTrial.snapshot()');
  fixtureRootRequests=0;await call('Page.navigate',{url:'http://127.0.0.1:8783/photorealistic-vr/?engineTest=1&emulateXR=1'});
  await until("window.__riverTrial?.snapshot().connection.status==='ready'&&document.querySelector('#VRButton')?.textContent.includes('ENTER')",'XR emulator and button ready');
@@ -58,6 +63,7 @@ try{
  await until('__budgetProbe.primed&&__riverTrial.snapshot().tiles.estimatedMB===300','desktop cache contains a loaded/used oversized model');
  await js("document.querySelector('#VRButton').click()");await until('__riverTrial.snapshot().xr','immersive XR starts');await pause(600);
  const xr=await js('__riverTrial.snapshot()');assert.equal(xr.tiles.stereo,true);assert.equal(xr.tiles.cameraCount,1);assert.equal(xr.creditsVisible,true);assert.equal(xr.tiles.budgetMB,160);assert.equal(xr.tiles.budgetMode,'xr');
+ assert.ok(xr.range.far<20&&xr.range.far>=xr.range.focusDistance+4000*xr.range.scale,'XR clipping uses miniature meters and current head position');
  await until('__riverTrial.snapshot().tiles.loadedModels>=2','XR reloads released glTF under its budget');assert.ok(await js('__riverTrial.snapshot().tiles.estimatedMB<=160'),'oversized desktop content is actually released');assert.equal(await js('__budgetProbe.rootPreserved'),true);assert.equal(fixtureRootRequests,1,'cache cleanup does not refetch the root tileset');
  // Aim a real emulated controller ray at the world-space lead control.
  await js(`(async()=>{const T=await import('three'),target=__riverTrial.targets().find(x=>x.id==='lead').world;const controller=__xrEmulator.controllers.right;controller.position.set(.25,1.4,-.3);const direction=new T.Vector3(...target).sub(new T.Vector3(.25,1.4,-.3)).normalize();const q=new T.Quaternion().setFromUnitVectors(new T.Vector3(0,0,-1),direction);controller.quaternion.set(q.x,q.y,q.z,q.w);})()`);

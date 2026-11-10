@@ -4,6 +4,7 @@ import {createSelection} from './state.mjs';
 import {createConnection} from './connection.mjs';
 import {createImagery} from './world.mjs';
 import {createPanel,createCredits} from './panel.mjs';
+import {studyRange} from './view-quality.mjs';
 
 const $=selector=>document.querySelector(selector);
 const dataset=await fetch('../chart3d/01646500.json').then(response=>{if(!response.ok)throw Error('Station data missing');return response.json();});
@@ -11,11 +12,11 @@ const selection=createSelection(dataset),canvas=$('#world');
 const renderer=new THREE.WebGLRenderer({canvas,antialias:true,powerPreference:'high-performance'});
 renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));renderer.setSize(innerWidth,innerHeight);
 renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.xr.enabled=true;renderer.xr.setReferenceSpaceType('local-floor');
-const scene=new THREE.Scene();scene.background=new THREE.Color('#19313d');
+const scene=new THREE.Scene();scene.background=new THREE.Color('#19313d');scene.fog=new THREE.Fog(scene.background,3000,4000);
 scene.add(new THREE.HemisphereLight(0xd6f4ff,0x617078,2.2));
 const sun=new THREE.DirectionalLight(0xffffff,2);sun.position.set(100,800,200);scene.add(sun);
 const rig=new THREE.Group();scene.add(rig);
-const camera=new THREE.PerspectiveCamera(55,innerWidth/innerHeight,0.1,150000);rig.add(camera);
+const camera=new THREE.PerspectiveCamera(55,innerWidth/innerHeight,0.1,6000);rig.add(camera);
 const controls=new OrbitControls(camera,canvas);controls.enableDamping=true;controls.dampingFactor=.08;
 controls.maxPolarAngle=Math.PI*.48;
 const geoRoot=new THREE.Group();scene.add(geoRoot);
@@ -62,10 +63,10 @@ function setView(next){
   view=next;lastDesktopView=next;rig.position.set(0,0,0);rig.rotation.set(0,0,0);geoRoot.rotation.set(0,0,0);
   if(next==='tabletop'){
     geoRoot.scale.setScalar(.001);geoRoot.position.set(0,.8,-.5);
-    camera.position.set(1.7,2.4,2.6);controls.target.set(0,.85,-.5);camera.near=.02;camera.far=10000;controls.minDistance=.6;controls.maxDistance=10;
+    camera.position.set(1.7,2.4,2.6);controls.target.set(0,.85,-.5);camera.near=.02;controls.minDistance=.6;controls.maxDistance=10;
   }else{
     geoRoot.scale.setScalar(1);geoRoot.position.set(0,0,0);
-    camera.position.set(...(next==='close'?[170,150,260]:[850,680,1100]));controls.target.set(0,40,0);camera.near=.5;camera.far=150000;controls.minDistance=35;controls.maxDistance=12000;
+    camera.position.set(...(next==='close'?[170,150,260]:[850,680,1100]));controls.target.set(0,40,0);camera.near=.5;controls.minDistance=35;controls.maxDistance=12000;
   }
   camera.updateProjectionMatrix();controls.enabled=true;controls.update();resetPanel();
   for(const button of document.querySelectorAll('[data-view]'))button.setAttribute('aria-pressed',String(button.dataset.view===next));
@@ -118,7 +119,7 @@ for(let i=0;i<2;i++){
 }
 renderer.xr.addEventListener('sessionstart',()=>{
   document.body.dataset.xr='true';controls.enabled=false;drag=null;
-  rig.position.set(0,0,0);rig.rotation.set(0,0,0);camera.position.set(0,0,0);camera.rotation.set(0,0,0);camera.near=.03;camera.far=10000;camera.updateProjectionMatrix();
+  rig.position.set(0,0,0);rig.rotation.set(0,0,0);camera.position.set(0,0,0);camera.rotation.set(0,0,0);camera.near=.03;camera.far=10;camera.updateProjectionMatrix();
   geoRoot.scale.setScalar(.001);geoRoot.position.set(0,.8,-1.6);view='tabletop';resetPanel();
   credits.mesh.visible=true;credits.mesh.position.set(0,.4,-1.9);credits.mesh.rotation.set(-.2,0,0);
   Scheduler.setXRSession(renderer.xr.getSession());
@@ -127,7 +128,7 @@ renderer.xr.addEventListener('sessionend',()=>{
   document.body.dataset.xr='false';scene.attach(panel.group);drag=null;credits.mesh.visible=false;Scheduler.setXRSession(null);setView(lastDesktopView);
 });
 addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);});
-let lastTime=0;
+let lastTime=0,focusDistance=0;const cameraWorld=new THREE.Vector3(),clipFocus=new THREE.Vector3();
 renderer.setAnimationLoop((time)=>{
   frames++;const dt=Math.min(.05,(time-lastTime)/1000||0);lastTime=time;
   if(!renderer.xr.isPresenting)controls.update();
@@ -141,6 +142,11 @@ renderer.setAnimationLoop((time)=>{
   // the stereo union frustum now so tile visibility uses this frame's head pose.
   if(renderer.xr.isPresenting)renderer.xr.updateCamera(camera);
   const activeCamera=renderer.xr.isPresenting?renderer.xr.getCamera():camera;
+  activeCamera.getWorldPosition(cameraWorld);
+  if(renderer.xr.isPresenting)geoRoot.getWorldPosition(clipFocus);else clipFocus.copy(controls.target);
+  focusDistance=cameraWorld.distanceTo(clipFocus);const range=studyRange(focusDistance,geoRoot.scale.x);
+  if(camera.far!==range.far){camera.far=range.far;camera.updateProjectionMatrix();if(renderer.xr.isPresenting)renderer.xr.updateCamera(camera);}
+  scene.fog.near=range.fogNear;scene.fog.far=range.far;
   const resource=connection.resource;if(resource)resource.update(activeCamera,renderer);
   const text=resource?.credits()??'Landscape not connected · Hydrology: USGS / supplied HydroTwin forecasts';
   if($('#attribution').textContent!==text){
@@ -158,4 +164,4 @@ document.body.dataset.status='idle';$('#status').textContent='Landscape not conn
 const engineTest=new URLSearchParams(location.search).get('engineTest')==='1'&&['localhost','127.0.0.1','[::1]'].includes(location.hostname);
 if(engineTest){$('#engine-tag').hidden=false;$('#setup').hidden=true;$('#setup-toggle').setAttribute('aria-expanded','false');connection.connect('sample','');}
 // Safe observation-only diagnostics; no credential, provider object or raw request URL.
-window.__riverTrial={snapshot:()=>({frames,view,selection:selection.get(),comparison:selection.comparison(),connection:connection.snapshot(),tiles:connection.resource?.snapshot()??null,xr:renderer.xr.isPresenting,panel:{minimized:panel.minimized,position:panel.group.getWorldPosition(new THREE.Vector3()).toArray(),dragging:!!drag},creditsVisible:credits.mesh.visible,credits:$('#attribution').textContent}),targets:()=>panel.targets(camera)};
+window.__riverTrial={snapshot:()=>({frames,view,selection:selection.get(),comparison:selection.comparison(),connection:connection.snapshot(),tiles:connection.resource?.snapshot()??null,xr:renderer.xr.isPresenting,range:{far:camera.far,fogNear:scene.fog.near,focusDistance,scale:geoRoot.scale.x},renderSize:[canvas.width,canvas.height],panel:{minimized:panel.minimized,position:panel.group.getWorldPosition(new THREE.Vector3()).toArray(),dragging:!!drag},creditsVisible:credits.mesh.visible,credits:$('#attribution').textContent}),targets:()=>panel.targets(camera)};
