@@ -1,0 +1,27 @@
+{
+  "source": "Public NASA-AMMOS renderer demonstration, used through its hosted UI. No credential was extracted or reused.",
+  "date": "2026-11-10",
+  "potomac": {
+    "title": "Google 3D Tiles Example",
+    "canvas": true,
+    "text": "Tokyo Tower example using Googles Photorealistic 3D Tiles & Cesium Ion\nGoogle Cloud or Cesium Ion API token required\n38\u00b0 57' 18\" N 77\u00b0 7' 55\" W\nGoogle; Vexcel Imaging US, Inc.\n ",
+    "hash": "#38.94977778,-77.12763889",
+    "failed": [],
+    "providerResponseCount": 951,
+    "providerHosts": [
+      "api.cesium.com",
+      "tile.googleapis.com"
+    ]
+  },
+  "columbia": {
+    "title": "Google 3D Tiles Example",
+    "canvas": true,
+    "text": "Tokyo Tower example using Googles Photorealistic 3D Tiles & Cesium Ion\nGoogle Cloud or Cesium Ion API token required\n45\u00b0 36' 52\" N 121\u00b0 11' 29\" W\nGoogle; Airbus\n ",
+    "hash": "#45.60827778,-121.1899167",
+    "failed": [],
+    "providerResponseCount": 381,
+    "providerHosts": [
+      "tile.googleapis.com"
+    ]
+  }
+}

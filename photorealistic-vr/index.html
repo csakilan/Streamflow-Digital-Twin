@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Potomac · Photorealistic VR trial</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.min.js"}}</script>
+</head>
+<body>
+  <canvas id="world" aria-label="Interactive 3D river viewer"></canvas>
+  <header class="topbar"><a href="../stations/USGS-01646500-3d.html">← River lab</a><span class="pill">EXPERIMENT / WEBXR</span><h1>Potomac <span>Little Falls, Maryland</span></h1><button id="setup-toggle" aria-expanded="true">Imagery setup</button></header>
+  <aside id="setup" class="card">
+    <p class="eyebrow">A REAL LANDSCAPE, STREAMED IN 3D</p>
+    <h2>Connect your imagery</h2>
+    <p>The VR viewer is ready. Google’s textured terrain and buildings need your own service access. Until connected, the grid is an empty workspace.</p>
+    <form id="connect-form">
+      <label for="provider">Access service</label><select id="provider"><option value="ion">Cesium ion · Google Photorealistic 3D Tiles</option><option value="google">Google Maps Platform · Map Tiles API</option></select>
+      <label for="credential">Access token / API key</label><input id="credential" type="password" autocomplete="off" spellcheck="false" placeholder="Enter only here, not in chat" required minlength="10">
+      <label for="asset" id="asset-label">Cesium ion asset ID</label><input id="asset" value="2275207" inputmode="numeric" pattern="[0-9]+" aria-describedby="asset-hint"><small id="asset-hint">Default Google Photorealistic 3D Tiles asset; use the ID shown in your ion account.</small>
+      <div class="row"><button class="primary" id="connect" type="submit">Connect imagery</button><button id="disconnect" type="button" disabled>Disconnect</button></div>
+    </form>
+    <p class="privacy">Your credential stays in this tab’s memory. It is sent to the chosen imagery service. It is never saved by this app.</p>
+    <details><summary>No account yet? Setup steps</summary><ol><li>Create a <a href="https://ion.cesium.com/" target="_blank" rel="noopener noreferrer">Cesium ion account</a>. Check that the Community plan suits your individual noncommercial research.</li><li>Enable Google Photorealistic 3D Tiles in your assets.</li><li>Create a token with read access to that asset; restrict website origins to your local demo when supported.</li><li>Enter the token above, confirm the asset ID, and connect.</li></ol><p>Alternative: enable the Map Tiles API in Google Cloud with billing, then use a restricted Maps API key.</p><p><a href="./README.md" target="_blank">Full setup, sources and limitations ↗</a></p></details>
+  </aside>
+  <section id="status-box" class="card" aria-live="polite"><span class="status-dot"></span><strong id="status">Starting viewer…</strong><p id="status-detail">No imagery requests until you connect.</p><span id="engine-tag" hidden>ENGINE TEST · NOT RIVER IMAGERY</span></section>
+  <nav class="viewbar" aria-label="Scene views"><button data-view="aerial" aria-pressed="true">Aerial</button><button data-view="close" aria-pressed="false">Close view</button><button data-view="tabletop" aria-pressed="false">Tabletop</button><button id="reset-panel">Reset panel</button><span id="vr-slot"></span></nav>
+  <div id="hint">Drag to orbit · Scroll to zoom · Right-drag to pan · Drag the panel title to move it</div>
+  <footer><span id="basemap-credit"><img id="google-logo" src="./vendor/google-maps-white.png" alt="Google Maps" hidden><span id="attribution">Landscape not connected · Hydrology: USGS / supplied HydroTwin forecasts</span></span><span id="stream-stats"></span></footer>
+  <script type="module">
+    if(new URLSearchParams(location.search).get('emulateXR')==='1' && ['localhost','127.0.0.1','[::1]'].includes(location.hostname)){
+      const {XRDevice,metaQuest3}=await import('./vendor/iwer.js');
+      const device=new XRDevice(metaQuest3); device.installRuntime(); window.__xrEmulator=device;
+      document.body.classList.add('emulated');
+    }
+    import('./app.mjs').catch(()=>{document.querySelector('#status').textContent='Viewer could not start';document.querySelector('#status-detail').textContent='Reload this page through the local HTTP server. Check that all runtime files are present.';});
+  </script>
+</body></html>
