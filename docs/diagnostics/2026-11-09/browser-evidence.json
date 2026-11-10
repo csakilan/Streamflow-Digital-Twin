@@ -1,0 +1,297 @@
+{
+  "14105700": {
+    "site": "14105700",
+    "name": "columbia",
+    "sourceFile": "stations/USGS-14105700-3d.html",
+    "sourceSha256": "59826c7ef8629cb66696481481b561fb9f9ca7d22c55b2ed7aea46b8fa97822b",
+    "latitude": 45.60827778,
+    "longitude": -121.1899167,
+    "buildingCount": 2192,
+    "heightTaggedCount": 0,
+    "levelsTaggedCount": 0,
+    "innerBlockWidthM": 3422.2269389741923,
+    "desktopTerrainCellM": 8.912049320245293,
+    "desktopImageryPixelM": 0.8355046237729962,
+    "headsetTerrainCellM": 11.882732426993723,
+    "headsetImageryPixelM": 1.6710092475459923,
+    "outerTerrainCellM": 133.6807398036794,
+    "rating": {
+      "e": 74.3,
+      "lnC": 11.6594,
+      "b": 0.6178,
+      "n": 33,
+      "rmse_ft": 0.82,
+      "qmin": 73100,
+      "qmax": 440000,
+      "hmin": 73.8,
+      "hmax": 83.18,
+      "from": "20191212"
+    },
+    "url": "http://127.0.0.1:8783/stations/USGS-14105700-3d.html?day=2025-05-10&akSnow=off",
+    "loading": [
+      {
+        "seconds": 3.229,
+        "ready": true,
+        "site": "14105700",
+        "status": "elevation: 0/25 · rivers: loading",
+        "buildings": 0,
+        "waterReady": false,
+        "wetCells": 0
+      },
+      {
+        "seconds": 14.487,
+        "ready": true,
+        "site": "14105700",
+        "status": "detail imagery: 214/256",
+        "buildings": 0,
+        "waterReady": true,
+        "wetCells": 18793
+      }
+    ],
+    "state": {
+      "renderedBuildings": 2144,
+      "buildingMeshes": 1,
+      "waterMeshes": 3,
+      "camera": [
+        935.8578129977265,
+        380.00000000000006,
+        -369.68926661604877
+      ],
+      "target": [
+        -186.1373718033138,
+        0,
+        -166.8918177088227
+      ],
+      "terrainReference": 24.256734626824624,
+      "terrainRange": [
+        24.21875,
+        890.22265625,
+        2
+      ],
+      "flowCfs": 232000,
+      "date": "2025-05-10",
+      "relativeWaterLevelM": 0.6246130647352863,
+      "wetCells": 18793,
+      "waterGrid": 385,
+      "rootMeshes": [
+        {
+          "vertices": 66049,
+          "hasImage": true,
+          "imageSize": [
+            2560,
+            2560
+          ],
+          "hasNormals": false,
+          "vertexColors": false
+        },
+        {
+          "vertices": 148225,
+          "hasImage": true,
+          "imageSize": [
+            4096,
+            4096
+          ],
+          "hasNormals": false,
+          "vertexColors": false
+        },
+        {
+          "vertices": 148225,
+          "hasImage": false,
+          "imageSize": null,
+          "hasNormals": true,
+          "vertexColors": false
+        },
+        {
+          "vertices": 646,
+          "hasImage": false,
+          "imageSize": null,
+          "hasNormals": true,
+          "vertexColors": false
+        },
+        {
+          "vertices": 3080,
+          "hasImage": false,
+          "imageSize": null,
+          "hasNormals": false,
+          "vertexColors": false
+        },
+        {
+          "vertices": 85965,
+          "hasImage": false,
+          "imageSize": null,
+          "hasNormals": false,
+          "vertexColors": true
+        }
+      ]
+    },
+    "httpFailures": [
+      {
+        "url": "http://127.0.0.1:8783/data/pulls/manifest.json?htpf=1794274290434&htv=40020991319-8fc49f32fd300de4bab354ddf7d3641012bc893d",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:8783/favicon.ico",
+        "status": 404
+      }
+    ],
+    "requestFailures": [],
+    "exceptions": [],
+    "capture": {
+      "viewport": [
+        1600,
+        1000
+      ],
+      "renderer": "Chrome headless / SwiftShader; image diagnosis only; no movement-performance claims",
+      "date": "2025-05-10",
+      "layerComparison": "Diagnostic visibility toggles only; same camera between paired captures; imagery geometry unchanged",
+      "focusWorldXZ": [
+        212.749719,
+        -226.368948
+      ]
+    }
+  },
+  "01646500": {
+    "site": "01646500",
+    "name": "potomac",
+    "sourceFile": "stations/USGS-01646500-3d.html",
+    "sourceSha256": "4a05df4e5700edfe59854c115ee8792718fa7507bdb005d6d549b07c89d54030",
+    "latitude": 38.94977778,
+    "longitude": -77.12763889,
+    "buildingCount": 2300,
+    "heightTaggedCount": 0,
+    "levelsTaggedCount": 0,
+    "innerBlockWidthM": 3804.4716604731275,
+    "desktopTerrainCellM": 9.907478282482103,
+    "desktopImageryPixelM": 0.9288260889826971,
+    "headsetTerrainCellM": 13.209971043309471,
+    "headsetImageryPixelM": 1.8576521779653943,
+    "outerTerrainCellM": 148.61217423723156,
+    "rating": {
+      "e": 2.063,
+      "lnC": 8.0667,
+      "b": 1.7425,
+      "n": 33,
+      "rmse_ft": 0.08,
+      "qmin": 617,
+      "qmax": 150000,
+      "hmin": 2.46,
+      "hmax": 10.93,
+      "from": "20191121"
+    },
+    "url": "http://127.0.0.1:8783/stations/USGS-01646500-3d.html?day=2025-05-10&akSnow=off",
+    "loading": [
+      {
+        "seconds": 3.227,
+        "ready": false,
+        "site": "01646500",
+        "status": "loading…"
+      },
+      {
+        "seconds": 26.191,
+        "ready": true,
+        "site": "01646500",
+        "status": "detail imagery: 205/256",
+        "buildings": 0,
+        "waterReady": true,
+        "wetCells": 12457
+      }
+    ],
+    "state": {
+      "renderedBuildings": 2300,
+      "buildingMeshes": 1,
+      "waterMeshes": 3,
+      "camera": [
+        1000.284681326169,
+        380.00000000000006,
+        109.22708594576733
+      ],
+      "target": [
+        -86.87005660384833,
+        0,
+        -234.42182762201173
+      ],
+      "terrainReference": 12.652798982506956,
+      "terrainRange": [
+        0.0078125,
+        145.80078125,
+        8
+      ],
+      "flowCfs": 12100,
+      "date": "2025-05-10",
+      "relativeWaterLevelM": 0.36049284540025134,
+      "wetCells": 12457,
+      "waterGrid": 385,
+      "rootMeshes": [
+        {
+          "vertices": 66049,
+          "hasImage": true,
+          "imageSize": [
+            2560,
+            2560
+          ],
+          "hasNormals": false,
+          "vertexColors": false
+        },
+        {
+          "vertices": 148225,
+          "hasImage": true,
+          "imageSize": [
+            4096,
+            4096
+          ],
+          "hasNormals": false,
+          "vertexColors": false
+        },
+        {
+          "vertices": 148225,
+          "hasImage": false,
+          "imageSize": null,
+          "hasNormals": true,
+          "vertexColors": false
+        },
+        {
+          "vertices": 912,
+          "hasImage": false,
+          "imageSize": null,
+          "hasNormals": true,
+          "vertexColors": false
+        },
+        {
+          "vertices": 3080,
+          "hasImage": false,
+          "imageSize": null,
+          "hasNormals": false,
+          "vertexColors": false
+        },
+        {
+          "vertices": 90861,
+          "hasImage": false,
+          "imageSize": null,
+          "hasNormals": false,
+          "vertexColors": true
+        }
+      ]
+    },
+    "httpFailures": [
+      {
+        "url": "http://127.0.0.1:8783/data/pulls/manifest.json?htpf=1794274453265&htv=40020991319-8fc49f32fd300de4bab354ddf7d3641012bc893d",
+        "status": 404
+      }
+    ],
+    "requestFailures": [],
+    "exceptions": [],
+    "capture": {
+      "viewport": [
+        1600,
+        1000
+      ],
+      "renderer": "Chrome headless / SwiftShader; image diagnosis only; no movement-performance claims",
+      "date": "2025-05-10",
+      "layerComparison": "Diagnostic visibility toggles only; same camera between paired captures; imagery geometry unchanged",
+      "focusWorldXZ": [
+        106.799751,
+        247.963609
+      ]
+    }
+  }
+}

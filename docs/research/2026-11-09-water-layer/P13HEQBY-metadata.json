@@ -1,0 +1,1505 @@
+{
+  "link": {
+    "rel": "self",
+    "url": "https://www.sciencebase.gov/catalog/item/6aa036571ba49bc751150b15"
+  },
+  "relatedItems": {
+    "link": {
+      "url": "https://www.sciencebase.gov/catalog/itemLinks?itemId=6aa036571ba49bc751150b15",
+      "rel": "related"
+    }
+  },
+  "id": "6aa036571ba49bc751150b15",
+  "identifiers": [
+    {
+      "type": "DOI",
+      "scheme": "https://www.sciencebase.gov/vocab/category/item/identifier",
+      "key": "doi:10.5066/P13HEQBY"
+    },
+    {
+      "type": "USGS_keywords",
+      "scheme": "https://www.sciencebase.gov/vocab/category/item/identifier",
+      "key": "Aquatic Biology, Ecology, Geography, Hydrology, Remote Sensing, Sedimentology, Water Quality, Water Resources"
+    }
+  ],
+  "title": "Topobathymetric Digital Elevation Model (TBDEM) for Coastal Oregon and Washington including Columbia River Corridor, 1851 - 2025",
+  "summary": "To support U.S. Geological Survey (USGS) Pacific Coastal and Marine Science Center (PCMSC) flood inundation and hydrodynamic modeling, the USGS Coastal National Elevation Database (CoNED) Applications Project has created an integrated 1-meter topobathymetric digital elevation model (TBDEM) for coastal Oregon and Washington, including the tidal portions of the Columbia River. Coastal topobathymetry data are required to characterize flooding, storms, and sea-level-rise inundation hazard zones, as well as other earth science applications, such as the development of storm-surge and sediment-transport models. This TBDEM consists of the best available multi-source topographic and bathymetric elevation data for coastal Oregon and Washington, [...]",
+  "body": "To support U.S. Geological Survey (USGS) Pacific Coastal and Marine Science Center (PCMSC) flood inundation and hydrodynamic modeling, the USGS Coastal National Elevation Database (CoNED) Applications Project has created an integrated 1-meter topobathymetric digital elevation model (TBDEM) for coastal Oregon and Washington, including the tidal portions of the Columbia River. Coastal topobathymetry data are required to characterize flooding, storms, and sea-level-rise inundation hazard zones, as well as other earth science applications, such as the development of storm-surge and sediment-transport models. This TBDEM consists of the best available multi-source topographic and bathymetric elevation data for coastal Oregon and Washington, including neighboring bays, estuaries, inlets, islands, and the Columbia River. The coastal Oregon and Washington TBDEM integrates 132 different data sources, including topographic and bathymetric data, such as lidar point clouds and multi-beam acoustic surveys obtained from USGS, the National Oceanic and Atmospheric Administration (NOAA), the U.S. Army Corps of Engineers, Oregon Department of Geology and Mineral Industries (DOGAMI), United States Forest Service (USFS), and Puget Sound LiDAR Consortium (PSLC)[JD1.1]. The topographic and bathymetric surveys were sorted and prioritized by survey date, accuracy, spatial distribution, and point density to develop a model using the best available elevation and bathymetric data. Disparate geospatial sources were spatially integrated using enhanced blending techniques to ensure continuous, seamless transitions between high- and coarse-resolution data sources and across the littoral zone/riverine interfaces. Because bathymetric data are referenced to tidal datums, such as Mean High Water or Mean Lower Low Water, all tidally referenced heights were transformed into orthometric heights using the GEOID18 geoid, which is typically used for mapping elevation on land with the North American Vertical Datum of 1988 (NAVD88). The spatial horizontal resolution is 1-meter referenced to UTM Zone 10N, NAD83 (2011), with the general location ranging from the California/Oregon border in the south to past Grays Harbor on the Washington Coast, extending inland to include the tidal reach of the Columbia River along with offshore depths. Vertically, the TBDEM is referenced to NAVD88/GEOID18. The overall temporal range of the input topography and bathymetry is from 1851 to 2025, with depths reaching approximately 1,300 meters. The topography surveys are from 2007 to 2022. Bathymetry surveys were acquired between 1851 and 2025 [JD2.1]. This data release was funded by the USGS Coastal and Marine Hazards and Resources Program (CMHRP). This TBDEM is a publicly available USGS product and is distributed as 17 100-kilometer by 100-kilometer tiles in cloud-optimized GeoTIFF (COG) format. A continuous mosaic is provided as a virtual raster (VRT) that references and streams the individual COG-formatted GeoTIFFs.",
+  "citation": "Cushing, W.M., Danielson, J., Hansen, T.M., Platson, M.L., and Megard, L.J., 2026, Topobathymetric Digital Elevation Model (TBDEM) for Coastal Oregon and Washington including Columbia River Corridor, 1851 - 2025: U.S. Geological Survey data release, https://doi.org/10.5066/P13HEQBY.",
+  "purpose": "As a collaboration between the U.S. Geological Survey (USGS) Coastal and Marine Hazards and Resources Program, the USGS National Geospatial Program, and the National Oceanic and Atmospheric Administration (NOAA) National Centers for Environmental Information, the USGS Coastal National Elevation Database (CoNED) Applications Project integrates disparate light detection and ranging (lidar) and bathymetric data sources into a common three-dimensional (3D) database aligned both vertically and horizontally to a common reference system. The CoNED Project\u2019s topobathymetric digital elevation model (TBDEM) development focuses on select regions around the United States Coast, such as the Northern Gulf of America, Coastal Carolinas, Northeast, California Coast, Pacific Northwest, the North Slope of Alaska, and Florida. CoNED Project TBDEMs provides a required, foundational, seamless elevation product for several science application studies, such as shoreline delineation, coastal inundation mapping, sediment transport, sea-level rise, storm-surge modeling, tsunami impact assessment, and analysis of the impact of various climate change scenarios on coastal regions. The raster TBDEM product is in the Cloud Optimized GeoTIFF (COG) format. The Federal Geographic Data Committee (FGDC) formatted XML metadata, spatially referenced metadata, and the spatial metadata data dictionary are contained in the downloadable bundle. Spatially referenced metadata are contained within a GeoPackage that includes footprints for each input source area. References: Danielson, J.J., Poppenga, S.K., Brock, J.C., Evans, G.A., Tyler, D.J., Gesch, D.B., Thatcher, C.A., and Barras, J.A., 2016, Topobathymetric elevation model development using a new methodology-Coastal National Elevation Database: Journal of Coastal Research, SI no. 76, p. 75-89, at http://dx.doi.org/10.2112/SI76-008 Thatcher, C.A., Brock, J.C., Danielson, J.J., Poppenga, S.K., Gesch, D.B., Palaseanu-Lovejoy, M.E., Barras, J.A., Evans, G.A., and Gibbs, A.E., 2016, Creating a Coastal National Elevation Database (CoNED) for science and conservation applications: Journal of Coastal Research, SI no. 76, p. 64-74, at http://dx.doi.org/10.2112/SI76-007. Cushing, W.M.; Tyler, D.J. Mitigating Disparate Elevation Differences between Adjacent Topobathymetric Data Models Using Binary Code. Remote Sens. 2024, 16, 3418. https://doi.org/10.3390/rs16183418. Sugarbaker, L.J., Constance, E.W., Heidemann, H.K., Jason, A.L., Lukas, Vicki, Saghy, D.L., and Stoker, J.M., 2014, The 3D Elevation Program initiative\u2014A call for action: U.S. Geological Survey Circular 1399, 35 p Carswell, W.J., Jr., 2013, The 3D Elevation Program\u2014Summary for California: U.S. Geological Survey Fact Sheet 2013\u20133056, 2 p., http://pubs.usgs.gov/fs/2013/3056/",
+  "rights": "This work is marked with the Creative Commons Zero v1.0 Universal (CC0-1.0) public domain dedication; https://creativecommons.org/publicdomain/zero/1.0/. ",
+  "provenance": {
+    "dateCreated": "2026-09-08T16:22:47Z",
+    "lastUpdated": "2026-10-05T17:41:25Z"
+  },
+  "maintenanceUpdateFrequency": "As needed",
+  "hasChildren": false,
+  "parentId": "5f10965282ce21d4c40796be",
+  "contacts": [
+    {
+      "name": "Wm M Cushing",
+      "type": "Point of Contact",
+      "contactType": "person",
+      "email": "mcushing@usgs.gov",
+      "jobTitle": "Geographer",
+      "organization": {
+        "displayText": "U.S. Geological Survey"
+      },
+      "primaryLocation": {
+        "officePhone": "605-594-2766",
+        "faxPhone": "605-594-6589",
+        "streetAddress": {},
+        "mailAddress": {
+          "line1": "USGS Earth Resources Observation and Science (EROS) Center, Integrated Science and Applications Branch",
+          "city": "Sioux Falls",
+          "state": "SD",
+          "zip": "57198-0001",
+          "country": "US"
+        }
+      }
+    },
+    {
+      "name": "U.S. Geological Survey",
+      "type": "Process Contact",
+      "contactType": "organization",
+      "organizationsPerson": "Wm Matthew Cushing",
+      "email": "mcushing@usgs.gov",
+      "jobTitle": "Geographer",
+      "organization": {},
+      "primaryLocation": {
+        "officePhone": "605-594-2766",
+        "faxPhone": "605-594-6589",
+        "streetAddress": {},
+        "mailAddress": {
+          "line1": "Integrated Science and Applications Branch",
+          "city": "Sioux Falls",
+          "state": "SD",
+          "zip": "57198-0001",
+          "country": "US"
+        }
+      }
+    },
+    {
+      "name": "William Matthew Cushing",
+      "oldPartyId": 2252,
+      "type": "Process Contact",
+      "contactType": "person",
+      "onlineResource": "https://usgs.gov/staff-profiles/william-matthew-cushing",
+      "email": "mcushing@usgs.gov",
+      "active": true,
+      "jobTitle": "GEOGRAPHER",
+      "personalTitle": "Mr.",
+      "firstName": "William",
+      "middleName": "M",
+      "lastName": "Cushing",
+      "organization": {},
+      "primaryLocation": {
+        "officePhone": "6055942766",
+        "streetAddress": {
+          "line1": "47914 252Nd Street",
+          "city": "Sioux Falls",
+          "state": "SD",
+          "zip": "57198",
+          "country": "US"
+        },
+        "mailAddress": {
+          "line1": "47914 252nd Street",
+          "city": "Sioux Falls",
+          "state": "SD",
+          "zip": "57198-9801",
+          "country": "US"
+        }
+      },
+      "orcId": "0000-0001-5209-6006"
+    },
+    {
+      "name": "William Matthew Cushing",
+      "oldPartyId": 2252,
+      "type": "Originator",
+      "contactType": "person",
+      "onlineResource": "https://usgs.gov/staff-profiles/william-matthew-cushing",
+      "email": "mcushing@usgs.gov",
+      "active": true,
+      "jobTitle": "GEOGRAPHER",
+      "personalTitle": "Mr.",
+      "firstName": "William",
+      "middleName": "M",
+      "lastName": "Cushing",
+      "organization": {},
+      "primaryLocation": {
+        "officePhone": "6055942766",
+        "streetAddress": {
+          "line1": "47914 252Nd Street",
+          "city": "Sioux Falls",
+          "state": "SD",
+          "zip": "57198",
+          "country": "US"
+        },
+        "mailAddress": {
+          "line1": "47914 252nd Street",
+          "city": "Sioux Falls",
+          "state": "SD",
+          "zip": "57198-9801",
+          "country": "US"
+        }
+      },
+      "orcId": "0000-0001-5209-6006"
+    },
+    {
+      "name": "Jeff Danielson",
+      "type": "Originator",
+      "contactType": "person",
+      "organization": {},
+      "primaryLocation": {
+        "streetAddress": {},
+        "mailAddress": {}
+      }
+    },
+    {
+      "name": "Taylor M Hansen",
+      "type": "Originator",
+      "contactType": "person",
+      "email": "thansen@contractor.usgs.gov",
+      "active": true,
+      "firstName": "Taylor (Contractor)",
+      "middleName": "M",
+      "lastName": "Hansen",
+      "organization": {},
+      "primaryLocation": {
+        "streetAddress": {
+          "line1": "47914 252Nd Street",
+          "city": "Sioux Falls",
+          "state": "SD",
+          "zip": "57198",
+          "country": "US"
+        },
+        "mailAddress": {
+          "line1": "47914 252nd Street",
+          "city": "Sioux Falls",
+          "state": "SD",
+          "zip": "57198-9801",
+          "country": "US"
+        }
+      }
+    },
+    {
+      "name": "Melisa L Platson",
+      "type": "Originator",
+      "contactType": "person",
+      "email": "mplatson@contractor.usgs.gov",
+      "active": true,
+      "firstName": "Melisa (Contractor)",
+      "middleName": "L",
+      "lastName": "Platson",
+      "organization": {},
+      "primaryLocation": {
+        "streetAddress": {
+          "line1": "47914 252Nd Street",
+          "city": "Sioux Falls",
+          "state": "SD",
+          "zip": "57198",
+          "country": "US"
+        },
+        "mailAddress": {}
+      }
+    },
+    {
+      "name": "Logan J Megard",
+      "type": "Originator",
+      "contactType": "person",
+      "email": "lmegard@contractor.usgs.gov",
+      "active": true,
+      "firstName": "Logan (Contractor)",
+      "middleName": "J",
+      "lastName": "Megard",
+      "organization": {},
+      "primaryLocation": {
+        "streetAddress": {
+          "line1": "47914 252Nd Street",
+          "city": "Sioux Falls",
+          "state": "SD",
+          "zip": "57198",
+          "country": "US"
+        },
+        "mailAddress": {
+          "line1": "- 47914 252nd Street",
+          "city": "Sioux Falls",
+          "state": "SD",
+          "zip": "57198-9801",
+          "country": "US"
+        }
+      },
+      "orcId": "0000-0002-0150-4521"
+    },
+    {
+      "name": "William Matthew Cushing",
+      "type": "Metadata Contact",
+      "contactType": "person",
+      "email": "mcushing@usgs.gov",
+      "jobTitle": "GEOGRAPHER",
+      "organization": {
+        "displayText": "USGS Earth Resources Observation and Science (EROS) Center"
+      },
+      "primaryLocation": {
+        "officePhone": "605-594-2766",
+        "streetAddress": {},
+        "mailAddress": {
+          "line1": "Integrated Science and Applications Branch (ISAB)",
+          "line2": "Earth Resources Observation and Science Ctr, EROS - Mundt Federal Building",
+          "city": "Sioux Falls",
+          "state": "SD",
+          "zip": "57198"
+        }
+      }
+    },
+    {
+      "name": "U.S. Geological Survey",
+      "type": "Publisher",
+      "contactType": "organization",
+      "organizationsPerson": "GS ScienceBase",
+      "email": "sciencebase@usgs.gov",
+      "jobTitle": "none",
+      "organization": {},
+      "primaryLocation": {
+        "officePhone": "1-888-275-8747",
+        "faxPhone": "none",
+        "streetAddress": {},
+        "mailAddress": {
+          "line1": "Denver Federal Center, Building 810, Mail Stop 302\nnone\nnone",
+          "city": "Denver",
+          "state": "CO",
+          "zip": "80225",
+          "country": "United States"
+        }
+      }
+    },
+    {
+      "name": "U.S. Geological Survey - ScienceBase",
+      "oldPartyId": 70157,
+      "type": "Distributor",
+      "contactType": "organization",
+      "onlineResource": "https://www.sciencebase.gov",
+      "email": "sciencebase@usgs.gov",
+      "organization": {},
+      "primaryLocation": {
+        "name": "U.S. Geological Survey - ScienceBase - Location",
+        "officePhone": "18882758747",
+        "streetAddress": {},
+        "mailAddress": {
+          "line1": "Denver Federal Center",
+          "line2": "Building 810",
+          "mailStopCode": "302",
+          "city": "Denver",
+          "state": "CO",
+          "zip": "80225",
+          "country": "United States"
+        }
+      }
+    },
+    {
+      "name": "Earth Resources Observation and Science (EROS) Center",
+      "oldPartyId": 17122,
+      "type": "SDC Data Owner",
+      "contactType": "organization",
+      "onlineResource": "https://www.usgs.gov/centers/eros",
+      "active": true,
+      "aliases": [
+        "{\"name\":\"EARTH RESOURCE OBSERV & SCI\"}",
+        "{\"name\":\"EROS DATA CTR OFFC OF THE DIR\"}",
+        "{\"name\":\"EROS\"}"
+      ],
+      "fbmsCodes": [
+        "GGHCED0000"
+      ],
+      "logoUrl": "http://my.usgs.gov/static-cache/images/dataOwner/v1/logosMed/USGSLogo.gif",
+      "smallLogoUrl": "http://my.usgs.gov/static-cache/images/dataOwner/v1/logosSmall/USGSLogo.gif",
+      "organization": {},
+      "primaryLocation": {
+        "streetAddress": {
+          "line1": "47914 252nd Street",
+          "city": "Sioux Falls",
+          "state": "SD",
+          "zip": "57198-9801",
+          "country": "USA"
+        },
+        "mailAddress": {
+          "line1": "47914 252nd Street",
+          "city": "Sioux Falls",
+          "state": "SD",
+          "zip": "57198-9801",
+          "country": "USA"
+        }
+      }
+    }
+  ],
+  "webLinks": [
+    {
+      "type": "Related_Primary_Publication",
+      "typeLabel": "Related Primary Publication",
+      "uri": "https://doi.org/10.2112/SI76-008",
+      "title": "Danielson, J.J., Poppenga, S.K., Brock, J.C., Evans, G.A., Tyler, D.J., Gesch, D.B., Thatcher, C.A., and Barras, J.A., 2016, Topobathymetric Elevation Model Development using a New Methodology: Coastal National Elevation Database: Journal of Coastal Research, v. 76, p. 75\u201389, at https://doi.org/10.2112/si76-008.",
+      "hidden": false
+    },
+    {
+      "type": "webLink",
+      "uri": "https://www.usgs.gov/coastal-changes-and-impacts/coned",
+      "rel": "related",
+      "title": "Digital Data",
+      "hidden": false
+    }
+  ],
+  "systemTypes": [
+    "Data Release"
+  ],
+  "tags": [
+    {
+      "type": "Harvest Set",
+      "name": "USGS Science Data Catalog (SDC)"
+    },
+    {
+      "type": "Theme",
+      "scheme": "None",
+      "name": "USGS"
+    },
+    {
+      "type": "Theme",
+      "scheme": "None",
+      "name": "U.S. Geological Survey"
+    },
+    {
+      "type": "Theme",
+      "scheme": "None",
+      "name": "Coastal and Marine Hazards and Resources Program"
+    },
+    {
+      "type": "Theme",
+      "scheme": "None",
+      "name": "Coastal National Elevation Database"
+    },
+    {
+      "type": "Theme",
+      "scheme": "None",
+      "name": "CoNED"
+    },
+    {
+      "type": "Theme",
+      "scheme": "None",
+      "name": "3D Elevation Program"
+    },
+    {
+      "type": "Theme",
+      "scheme": "None",
+      "name": "3DEP"
+    },
+    {
+      "type": "Theme",
+      "scheme": "None",
+      "name": "Topobathymetric"
+    },
+    {
+      "type": "Theme",
+      "scheme": "None",
+      "name": "Digital Elevation Model"
+    },
+    {
+      "type": "Theme",
+      "scheme": "None",
+      "name": "Light Detection and Ranging"
+    },
+    {
+      "type": "Theme",
+      "scheme": "None",
+      "name": "lidar"
+    },
+    {
+      "type": "Theme",
+      "scheme": "None",
+      "name": "Bathymetry"
+    },
+    {
+      "type": "Theme",
+      "scheme": "None",
+      "name": "Sonar"
+    },
+    {
+      "type": "Theme",
+      "scheme": "None",
+      "name": "Bathymetric"
+    },
+    {
+      "type": "Theme",
+      "scheme": "None",
+      "name": "Coastal Zone"
+    },
+    {
+      "type": "Theme",
+      "scheme": "None",
+      "name": "Hydrologic Modeling"
+    },
+    {
+      "type": "Theme",
+      "scheme": "None",
+      "name": "Flood Inundation Modeling"
+    },
+    {
+      "type": "Theme",
+      "scheme": "None",
+      "name": "National Standards for Spatial Digital Accuracy"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "U.S."
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "US"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "USA"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "United States"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1987, Codes for the identification of the States, the District of Columbia and the outlying areas of the United States, and associated areas (Federal Information Processing Standard 5-2): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Washington"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1987, Codes for the identification of the States, the District of Columbia and the outlying areas of the United States, and associated areas (Federal Information Processing Standard 5-2): Washington, D.C., National Institute of Standards and Technology",
+      "name": "WA"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1987, Codes for the identification of the States, the District of Columbia and the outlying areas of the United States, and associated areas (Federal Information Processing Standard 5-2): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Oregon"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1987, Codes for the identification of the States, the District of Columbia and the outlying areas of the United States, and associated areas (Federal Information Processing Standard 5-2): Washington, D.C., National Institute of Standards and Technology",
+      "name": "OR"
+    },
+    {
+      "type": "Place",
+      "scheme": "Geographic Names Information System",
+      "name": "Benton"
+    },
+    {
+      "type": "Place",
+      "scheme": "Geographic Names Information System",
+      "name": "Clackamas"
+    },
+    {
+      "type": "Place",
+      "scheme": "Geographic Names Information System",
+      "name": "Clallam"
+    },
+    {
+      "type": "Place",
+      "scheme": "Geographic Names Information System",
+      "name": "Clark"
+    },
+    {
+      "type": "Place",
+      "scheme": "Geographic Names Information System",
+      "name": "Clatsop"
+    },
+    {
+      "type": "Place",
+      "scheme": "Geographic Names Information System",
+      "name": "Columbia"
+    },
+    {
+      "type": "Place",
+      "scheme": "Geographic Names Information System",
+      "name": "Coos"
+    },
+    {
+      "type": "Place",
+      "scheme": "Geographic Names Information System",
+      "name": "Cowlitz"
+    },
+    {
+      "type": "Place",
+      "scheme": "Geographic Names Information System",
+      "name": "Curry"
+    },
+    {
+      "type": "Place",
+      "scheme": "Geographic Names Information System",
+      "name": "Del Norte"
+    },
+    {
+      "type": "Place",
+      "scheme": "Geographic Names Information System",
+      "name": "Douglas"
+    },
+    {
+      "type": "Place",
+      "scheme": "Geographic Names Information System",
+      "name": "Grays Harbor"
+    },
+    {
+      "type": "Place",
+      "scheme": "Geographic Names Information System",
+      "name": "Hood River"
+    },
+    {
+      "type": "Place",
+      "scheme": "Geographic Names Information System",
+      "name": "Jefferson"
+    },
+    {
+      "type": "Place",
+      "scheme": "Geographic Names Information System",
+      "name": "Lane"
+    },
+    {
+      "type": "Place",
+      "scheme": "Geographic Names Information System",
+      "name": "Lewis"
+    },
+    {
+      "type": "Place",
+      "scheme": "Geographic Names Information System",
+      "name": "Lincoln"
+    },
+    {
+      "type": "Place",
+      "scheme": "Geographic Names Information System",
+      "name": "Marion"
+    },
+    {
+      "type": "Place",
+      "scheme": "Geographic Names Information System",
+      "name": "Mason"
+    },
+    {
+      "type": "Place",
+      "scheme": "Geographic Names Information System",
+      "name": "Multnomah"
+    },
+    {
+      "type": "Place",
+      "scheme": "Geographic Names Information System",
+      "name": "Pacific"
+    },
+    {
+      "type": "Place",
+      "scheme": "Geographic Names Information System",
+      "name": "Skamania"
+    },
+    {
+      "type": "Place",
+      "scheme": "Geographic Names Information System",
+      "name": "Thurston"
+    },
+    {
+      "type": "Place",
+      "scheme": "Geographic Names Information System",
+      "name": "Tillamook"
+    },
+    {
+      "type": "Place",
+      "scheme": "Geographic Names Information System",
+      "name": "Wahkiakum"
+    },
+    {
+      "type": "Place",
+      "scheme": "Geographic Names Information System",
+      "name": "Washington"
+    },
+    {
+      "type": "Place",
+      "scheme": "Geographic Names Information System",
+      "name": "Yamhill"
+    },
+    {
+      "type": "Place",
+      "scheme": "Geographic Names Information System",
+      "name": "California"
+    },
+    {
+      "type": "Place",
+      "scheme": "Geographic Names Information System",
+      "name": "Oregon"
+    },
+    {
+      "type": "Place",
+      "scheme": "Geographic Names Information System",
+      "name": "United States"
+    },
+    {
+      "type": "USGS Scientific Topic Keyword",
+      "name": "Aquatic Biology"
+    },
+    {
+      "type": "USGS Scientific Topic Keyword",
+      "name": "Ecology"
+    },
+    {
+      "type": "USGS Scientific Topic Keyword",
+      "name": "Geography"
+    },
+    {
+      "type": "USGS Scientific Topic Keyword",
+      "name": "Hydrology"
+    },
+    {
+      "type": "USGS Scientific Topic Keyword",
+      "name": "Remote Sensing"
+    },
+    {
+      "type": "USGS Scientific Topic Keyword",
+      "name": "Sedimentology"
+    },
+    {
+      "type": "USGS Scientific Topic Keyword",
+      "name": "Water Quality"
+    },
+    {
+      "type": "USGS Scientific Topic Keyword",
+      "name": "Water Resources"
+    }
+  ],
+  "dates": [
+    {
+      "type": "Publication",
+      "dateString": "2026-10-05",
+      "label": "Publication Date"
+    },
+    {
+      "type": "Start",
+      "dateString": "1851",
+      "label": ""
+    },
+    {
+      "type": "End",
+      "dateString": "2025",
+      "label": ""
+    }
+  ],
+  "spatial": {
+    "boundingBox": {
+      "minX": -125.1495,
+      "maxX": -121.7459,
+      "minY": 41.8251,
+      "maxY": 48.1555
+    }
+  },
+  "files": [
+    {
+      "cuid": "cmtu9dxte004a0upea5jlfonk",
+      "key": "6aa036571ba49bc751150b15/OR_WA_USGS_TBDEM_Spatial_Metadata_Data_Dictionary.docx",
+      "bucket": "prod-is-usgs-sb-prod-publish",
+      "published": true,
+      "node": {
+        "managerUrl": "https://sciencebase.usgs.gov/manager"
+      },
+      "name": "OR_WA_USGS_TBDEM_Spatial_Metadata_Data_Dictionary.docx",
+      "title": null,
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "contentEncoding": null,
+      "pathOnDisk": "__s3__",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 37282,
+      "dateUploaded": "2026-09-09T15:40:27Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "movedToS3": false,
+      "s3Object": null,
+      "checksum": null,
+      "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmtu9dxte004a0upea5jlfonk",
+      "downloadUri": "https://sciencebase.usgs.gov/manager/download/cmtu9dxte004a0upea5jlfonk",
+      "viewUri": "https://www.sciencebase.gov/catalog/file/get/6aa036571ba49bc751150b15?f=__s3__&allowOpen=true",
+      "publishedS3Uri": "https://prod-is-usgs-sb-prod-publish.s3.amazonaws.com/6aa036571ba49bc751150b15/OR_WA_USGS_TBDEM_Spatial_Metadata_Data_Dictionary.docx"
+    },
+    {
+      "cuid": "cmtu9dy7o004b0upe4rbkg7kf",
+      "key": "6aa036571ba49bc751150b15/OR_WA_USGS_TBDEM_Data_Management_Plan.docx",
+      "bucket": "prod-is-usgs-sb-prod-publish",
+      "published": true,
+      "node": {
+        "managerUrl": "https://sciencebase.usgs.gov/manager"
+      },
+      "name": "OR_WA_USGS_TBDEM_Data_Management_Plan.docx",
+      "title": null,
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "contentEncoding": null,
+      "pathOnDisk": "__s3__",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 19713,
+      "dateUploaded": "2026-09-09T15:34:10Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "movedToS3": false,
+      "s3Object": null,
+      "checksum": null,
+      "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmtu9dy7o004b0upe4rbkg7kf",
+      "downloadUri": "https://sciencebase.usgs.gov/manager/download/cmtu9dy7o004b0upe4rbkg7kf",
+      "viewUri": "https://www.sciencebase.gov/catalog/file/get/6aa036571ba49bc751150b15?f=__s3__&allowOpen=true",
+      "publishedS3Uri": "https://prod-is-usgs-sb-prod-publish.s3.amazonaws.com/6aa036571ba49bc751150b15/OR_WA_USGS_TBDEM_Data_Management_Plan.docx"
+    },
+    {
+      "cuid": "cmtu9dyif004c0upe88vx5v32",
+      "key": "6aa036571ba49bc751150b15/or_wa_usgs_tbdem_spatial_metadata.zip",
+      "bucket": "prod-is-usgs-sb-prod-publish",
+      "published": true,
+      "node": {
+        "managerUrl": "https://sciencebase.usgs.gov/manager"
+      },
+      "name": "or_wa_usgs_tbdem_spatial_metadata.zip",
+      "title": null,
+      "contentType": "application/zip",
+      "contentEncoding": null,
+      "pathOnDisk": "__s3__",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 138416534,
+      "dateUploaded": "2026-09-09T15:38:56Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "movedToS3": false,
+      "s3Object": null,
+      "checksum": null,
+      "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmtu9dyif004c0upe88vx5v32",
+      "downloadUri": "https://sciencebase.usgs.gov/manager/download/cmtu9dyif004c0upe88vx5v32",
+      "publishedS3Uri": "https://prod-is-usgs-sb-prod-publish.s3.amazonaws.com/6aa036571ba49bc751150b15/or_wa_usgs_tbdem_spatial_metadata.zip"
+    },
+    {
+      "cuid": "cmubd3dio000u0vpi1s7nejyr",
+      "key": "6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w003n050.tif",
+      "bucket": "prod-is-usgs-sb-prod-publish",
+      "published": true,
+      "node": {
+        "managerUrl": "https://sciencebase.usgs.gov/manager"
+      },
+      "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w003n050.tif",
+      "title": null,
+      "contentType": "image/geotiff",
+      "contentEncoding": null,
+      "pathOnDisk": "__s3__",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 1696945146,
+      "dateUploaded": "2026-09-21T14:50:00Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "movedToS3": false,
+      "s3Object": null,
+      "checksum": null,
+      "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmubd3dio000u0vpi1s7nejyr",
+      "downloadUri": "https://sciencebase.usgs.gov/manager/download/cmubd3dio000u0vpi1s7nejyr",
+      "s3DownloadRequestPageUri": "https://www.sciencebase.gov/catalog/item/requestDownload/6aa036571ba49bc751150b15?filePath=__s3__",
+      "publishedS3Uri": "https://prod-is-usgs-sb-prod-publish.s3.amazonaws.com/6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w003n050.tif"
+    },
+    {
+      "cuid": "cmubdaig0003b0upj39ip5nfx",
+      "key": "6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w004n046.tif",
+      "bucket": "prod-is-usgs-sb-prod-publish",
+      "published": true,
+      "node": {
+        "managerUrl": "https://sciencebase.usgs.gov/manager"
+      },
+      "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w004n046.tif",
+      "title": null,
+      "contentType": "image/tiff",
+      "contentEncoding": null,
+      "pathOnDisk": "__s3__",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 2544035651,
+      "dateUploaded": "2026-09-21T14:55:33Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "movedToS3": false,
+      "s3Object": null,
+      "checksum": null,
+      "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmubdaig0003b0upj39ip5nfx",
+      "downloadUri": "https://sciencebase.usgs.gov/manager/download/cmubdaig0003b0upj39ip5nfx",
+      "s3DownloadRequestPageUri": "https://www.sciencebase.gov/catalog/item/requestDownload/6aa036571ba49bc751150b15?filePath=__s3__",
+      "publishedS3Uri": "https://prod-is-usgs-sb-prod-publish.s3.amazonaws.com/6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w004n046.tif"
+    },
+    {
+      "cuid": "cmubdaovh003c0upj24fy8305",
+      "key": "6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w005n051.tif",
+      "bucket": "prod-is-usgs-sb-prod-publish",
+      "published": true,
+      "node": {
+        "managerUrl": "https://sciencebase.usgs.gov/manager"
+      },
+      "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w005n051.tif",
+      "title": null,
+      "contentType": "image/geotiff",
+      "contentEncoding": null,
+      "pathOnDisk": "__s3__",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 1921512930,
+      "dateUploaded": "2026-09-21T14:55:42Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "movedToS3": false,
+      "s3Object": null,
+      "checksum": null,
+      "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmubdaovh003c0upj24fy8305",
+      "downloadUri": "https://sciencebase.usgs.gov/manager/download/cmubdaovh003c0upj24fy8305",
+      "s3DownloadRequestPageUri": "https://www.sciencebase.gov/catalog/item/requestDownload/6aa036571ba49bc751150b15?filePath=__s3__",
+      "publishedS3Uri": "https://prod-is-usgs-sb-prod-publish.s3.amazonaws.com/6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w005n051.tif"
+    },
+    {
+      "cuid": "cmubdg3p8000v0vpi2srh4s1e",
+      "key": "6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w003n051.tif",
+      "bucket": "prod-is-usgs-sb-prod-publish",
+      "published": true,
+      "node": {
+        "managerUrl": "https://sciencebase.usgs.gov/manager"
+      },
+      "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w003n051.tif",
+      "title": null,
+      "contentType": "image/tiff",
+      "contentEncoding": null,
+      "pathOnDisk": "__s3__",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 3231993093,
+      "dateUploaded": "2026-09-21T14:59:54Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "movedToS3": false,
+      "s3Object": null,
+      "checksum": null,
+      "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmubdg3p8000v0vpi2srh4s1e",
+      "downloadUri": "https://sciencebase.usgs.gov/manager/download/cmubdg3p8000v0vpi2srh4s1e",
+      "s3DownloadRequestPageUri": "https://www.sciencebase.gov/catalog/item/requestDownload/6aa036571ba49bc751150b15?filePath=__s3__",
+      "publishedS3Uri": "https://prod-is-usgs-sb-prod-publish.s3.amazonaws.com/6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w003n051.tif"
+    },
+    {
+      "cuid": "cmubieo5u003h0upj5rxbg7xq",
+      "key": "6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w004n047.tif",
+      "bucket": "prod-is-usgs-sb-prod-publish",
+      "published": true,
+      "node": {
+        "managerUrl": "https://sciencebase.usgs.gov/manager"
+      },
+      "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w004n047.tif",
+      "title": null,
+      "contentType": "image/tiff",
+      "contentEncoding": null,
+      "pathOnDisk": "__s3__",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 6127302539,
+      "dateUploaded": "2026-09-21T17:18:45Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "movedToS3": false,
+      "s3Object": null,
+      "checksum": null,
+      "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmubieo5u003h0upj5rxbg7xq",
+      "downloadUri": "https://sciencebase.usgs.gov/manager/download/cmubieo5u003h0upj5rxbg7xq",
+      "s3DownloadRequestPageUri": "https://www.sciencebase.gov/catalog/item/requestDownload/6aa036571ba49bc751150b15?filePath=__s3__",
+      "publishedS3Uri": "https://prod-is-usgs-sb-prod-publish.s3.amazonaws.com/6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w004n047.tif"
+    },
+    {
+      "cuid": "cmubijcdf003i0upjc2by5hkx",
+      "key": "6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w003n052.tif",
+      "bucket": "prod-is-usgs-sb-prod-publish",
+      "published": true,
+      "node": {
+        "managerUrl": "https://sciencebase.usgs.gov/manager"
+      },
+      "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w003n052.tif",
+      "title": null,
+      "contentType": "image/tiff",
+      "contentEncoding": null,
+      "pathOnDisk": "__s3__",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 6350950271,
+      "dateUploaded": "2026-09-21T17:22:23Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "movedToS3": false,
+      "s3Object": null,
+      "checksum": null,
+      "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmubijcdf003i0upjc2by5hkx",
+      "downloadUri": "https://sciencebase.usgs.gov/manager/download/cmubijcdf003i0upjc2by5hkx",
+      "s3DownloadRequestPageUri": "https://www.sciencebase.gov/catalog/item/requestDownload/6aa036571ba49bc751150b15?filePath=__s3__",
+      "publishedS3Uri": "https://prod-is-usgs-sb-prod-publish.s3.amazonaws.com/6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w003n052.tif"
+    },
+    {
+      "cuid": "cmubijw5s00160vpi4llk3e81",
+      "key": "6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w003n046.tif",
+      "bucket": "prod-is-usgs-sb-prod-publish",
+      "published": true,
+      "node": {
+        "managerUrl": "https://sciencebase.usgs.gov/manager"
+      },
+      "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w003n046.tif",
+      "title": null,
+      "contentType": "image/tiff",
+      "contentEncoding": null,
+      "pathOnDisk": "__s3__",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 6652205810,
+      "dateUploaded": "2026-09-21T17:22:49Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "movedToS3": false,
+      "s3Object": null,
+      "checksum": null,
+      "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmubijw5s00160vpi4llk3e81",
+      "downloadUri": "https://sciencebase.usgs.gov/manager/download/cmubijw5s00160vpi4llk3e81",
+      "s3DownloadRequestPageUri": "https://www.sciencebase.gov/catalog/item/requestDownload/6aa036571ba49bc751150b15?filePath=__s3__",
+      "publishedS3Uri": "https://prod-is-usgs-sb-prod-publish.s3.amazonaws.com/6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w003n046.tif"
+    },
+    {
+      "cuid": "cmubk5yn7001a0vpi3tzl1pkd",
+      "key": "6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w004n052.tif",
+      "bucket": "prod-is-usgs-sb-prod-publish",
+      "published": true,
+      "node": {
+        "managerUrl": "https://sciencebase.usgs.gov/manager"
+      },
+      "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w004n052.tif",
+      "title": null,
+      "contentType": "image/tiff",
+      "contentEncoding": null,
+      "pathOnDisk": "__s3__",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 9363823357,
+      "dateUploaded": "2026-09-21T18:07:58Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "movedToS3": false,
+      "s3Object": null,
+      "checksum": null,
+      "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmubk5yn7001a0vpi3tzl1pkd",
+      "downloadUri": "https://sciencebase.usgs.gov/manager/download/cmubk5yn7001a0vpi3tzl1pkd",
+      "s3DownloadRequestPageUri": "https://www.sciencebase.gov/catalog/item/requestDownload/6aa036571ba49bc751150b15?filePath=__s3__",
+      "publishedS3Uri": "https://prod-is-usgs-sb-prod-publish.s3.amazonaws.com/6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w004n052.tif"
+    },
+    {
+      "cuid": "cmubk9ht2003s0upj01psblp1",
+      "key": "6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w004n049.tif",
+      "bucket": "prod-is-usgs-sb-prod-publish",
+      "published": true,
+      "node": {
+        "managerUrl": "https://sciencebase.usgs.gov/manager"
+      },
+      "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w004n049.tif",
+      "title": null,
+      "contentType": "image/tiff",
+      "contentEncoding": null,
+      "pathOnDisk": "__s3__",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 10527975366,
+      "dateUploaded": "2026-09-21T18:10:43Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "movedToS3": false,
+      "s3Object": null,
+      "checksum": null,
+      "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmubk9ht2003s0upj01psblp1",
+      "downloadUri": "https://sciencebase.usgs.gov/manager/download/cmubk9ht2003s0upj01psblp1",
+      "s3DownloadRequestPageUri": "https://www.sciencebase.gov/catalog/item/requestDownload/6aa036571ba49bc751150b15?filePath=__s3__",
+      "publishedS3Uri": "https://prod-is-usgs-sb-prod-publish.s3.amazonaws.com/6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w004n049.tif"
+    },
+    {
+      "cuid": "cmubka3mq001b0vpibhxp7ukx",
+      "key": "6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w003n047.tif",
+      "bucket": "prod-is-usgs-sb-prod-publish",
+      "published": true,
+      "node": {
+        "managerUrl": "https://sciencebase.usgs.gov/manager"
+      },
+      "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w003n047.tif",
+      "title": null,
+      "contentType": "image/tiff",
+      "contentEncoding": null,
+      "pathOnDisk": "__s3__",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 10242835247,
+      "dateUploaded": "2026-09-21T18:11:11Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "movedToS3": false,
+      "s3Object": null,
+      "checksum": null,
+      "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmubka3mq001b0vpibhxp7ukx",
+      "downloadUri": "https://sciencebase.usgs.gov/manager/download/cmubka3mq001b0vpibhxp7ukx",
+      "s3DownloadRequestPageUri": "https://www.sciencebase.gov/catalog/item/requestDownload/6aa036571ba49bc751150b15?filePath=__s3__",
+      "publishedS3Uri": "https://prod-is-usgs-sb-prod-publish.s3.amazonaws.com/6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w003n047.tif"
+    },
+    {
+      "cuid": "cmucpeuzi00240vpi6c8j6cdb",
+      "key": "6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w003n053.tif",
+      "bucket": "prod-is-usgs-sb-prod-publish",
+      "published": true,
+      "node": {
+        "managerUrl": "https://sciencebase.usgs.gov/manager"
+      },
+      "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w003n053.tif",
+      "title": null,
+      "contentType": "image/tiff",
+      "contentEncoding": null,
+      "pathOnDisk": "__s3__",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 3440354985,
+      "dateUploaded": "2026-09-22T13:22:38Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "movedToS3": false,
+      "s3Object": null,
+      "checksum": null,
+      "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmucpeuzi00240vpi6c8j6cdb",
+      "downloadUri": "https://sciencebase.usgs.gov/manager/download/cmucpeuzi00240vpi6c8j6cdb",
+      "s3DownloadRequestPageUri": "https://www.sciencebase.gov/catalog/item/requestDownload/6aa036571ba49bc751150b15?filePath=__s3__",
+      "publishedS3Uri": "https://prod-is-usgs-sb-prod-publish.s3.amazonaws.com/6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w003n053.tif"
+    },
+    {
+      "cuid": "cmucplow600250vpi10zg3j5b",
+      "key": "6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w003n049.tif",
+      "bucket": "prod-is-usgs-sb-prod-publish",
+      "published": true,
+      "node": {
+        "managerUrl": "https://sciencebase.usgs.gov/manager"
+      },
+      "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w003n049.tif",
+      "title": null,
+      "contentType": "image/tiff",
+      "contentEncoding": null,
+      "pathOnDisk": "__s3__",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 5595388374,
+      "dateUploaded": "2026-09-22T13:27:56Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "movedToS3": false,
+      "s3Object": null,
+      "checksum": null,
+      "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmucplow600250vpi10zg3j5b",
+      "downloadUri": "https://sciencebase.usgs.gov/manager/download/cmucplow600250vpi10zg3j5b",
+      "s3DownloadRequestPageUri": "https://www.sciencebase.gov/catalog/item/requestDownload/6aa036571ba49bc751150b15?filePath=__s3__",
+      "publishedS3Uri": "https://prod-is-usgs-sb-prod-publish.s3.amazonaws.com/6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w003n049.tif"
+    },
+    {
+      "cuid": "cmucs3gj4005b0upj9d7vgkxx",
+      "key": "6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w003n048.tif",
+      "bucket": "prod-is-usgs-sb-prod-publish",
+      "published": true,
+      "node": {
+        "managerUrl": "https://sciencebase.usgs.gov/manager"
+      },
+      "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w003n048.tif",
+      "title": null,
+      "contentType": "image/tiff",
+      "contentEncoding": null,
+      "pathOnDisk": "__s3__",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 7618412513,
+      "dateUploaded": "2026-09-22T14:37:45Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "movedToS3": false,
+      "s3Object": null,
+      "checksum": null,
+      "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmucs3gj4005b0upj9d7vgkxx",
+      "downloadUri": "https://sciencebase.usgs.gov/manager/download/cmucs3gj4005b0upj9d7vgkxx",
+      "s3DownloadRequestPageUri": "https://www.sciencebase.gov/catalog/item/requestDownload/6aa036571ba49bc751150b15?filePath=__s3__",
+      "publishedS3Uri": "https://prod-is-usgs-sb-prod-publish.s3.amazonaws.com/6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w003n048.tif"
+    },
+    {
+      "cuid": "cmucszjok003f0vpib7mydedj",
+      "key": "6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w005n050.tif",
+      "bucket": "prod-is-usgs-sb-prod-publish",
+      "published": true,
+      "node": {
+        "managerUrl": "https://sciencebase.usgs.gov/manager"
+      },
+      "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w005n050.tif",
+      "title": null,
+      "contentType": "image/tiff",
+      "contentEncoding": null,
+      "pathOnDisk": "__s3__",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 17734932135,
+      "dateUploaded": "2026-09-22T15:02:42Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "movedToS3": false,
+      "s3Object": null,
+      "checksum": null,
+      "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmucszjok003f0vpib7mydedj",
+      "downloadUri": "https://sciencebase.usgs.gov/manager/download/cmucszjok003f0vpib7mydedj",
+      "s3DownloadRequestPageUri": "https://www.sciencebase.gov/catalog/item/requestDownload/6aa036571ba49bc751150b15?filePath=__s3__",
+      "publishedS3Uri": "https://prod-is-usgs-sb-prod-publish.s3.amazonaws.com/6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w005n050.tif"
+    },
+    {
+      "cuid": "cmuctbo9a005c0upj8m9p26kk",
+      "key": "6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w004n051.tif",
+      "bucket": "prod-is-usgs-sb-prod-publish",
+      "published": true,
+      "node": {
+        "managerUrl": "https://sciencebase.usgs.gov/manager"
+      },
+      "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w004n051.tif",
+      "title": null,
+      "contentType": "image/tiff",
+      "contentEncoding": null,
+      "pathOnDisk": "__s3__",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 24203229768,
+      "dateUploaded": "2026-09-22T15:12:08Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "movedToS3": false,
+      "s3Object": null,
+      "checksum": null,
+      "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmuctbo9a005c0upj8m9p26kk",
+      "downloadUri": "https://sciencebase.usgs.gov/manager/download/cmuctbo9a005c0upj8m9p26kk",
+      "s3DownloadRequestPageUri": "https://www.sciencebase.gov/catalog/item/requestDownload/6aa036571ba49bc751150b15?filePath=__s3__",
+      "publishedS3Uri": "https://prod-is-usgs-sb-prod-publish.s3.amazonaws.com/6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w004n051.tif"
+    },
+    {
+      "cuid": "cmucurhpn003g0vpib4tw89rb",
+      "key": "6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w004n048.tif",
+      "bucket": "prod-is-usgs-sb-prod-publish",
+      "published": true,
+      "node": {
+        "managerUrl": "https://sciencebase.usgs.gov/manager"
+      },
+      "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w004n048.tif",
+      "title": null,
+      "contentType": "image/tiff",
+      "contentEncoding": null,
+      "pathOnDisk": "__s3__",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 14423054773,
+      "dateUploaded": "2026-09-22T15:52:25Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "movedToS3": false,
+      "s3Object": null,
+      "checksum": null,
+      "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmucurhpn003g0vpib4tw89rb",
+      "downloadUri": "https://sciencebase.usgs.gov/manager/download/cmucurhpn003g0vpib4tw89rb",
+      "s3DownloadRequestPageUri": "https://www.sciencebase.gov/catalog/item/requestDownload/6aa036571ba49bc751150b15?filePath=__s3__",
+      "publishedS3Uri": "https://prod-is-usgs-sb-prod-publish.s3.amazonaws.com/6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w004n048.tif"
+    },
+    {
+      "cuid": "cmucwcqk2003h0vpi4iw2g263",
+      "key": "6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w004n050.tif",
+      "bucket": "prod-is-usgs-sb-prod-publish",
+      "published": true,
+      "node": {
+        "managerUrl": "https://sciencebase.usgs.gov/manager"
+      },
+      "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w004n050.tif",
+      "title": null,
+      "contentType": "image/tiff",
+      "contentEncoding": null,
+      "pathOnDisk": "__s3__",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 14717077733,
+      "dateUploaded": "2026-09-22T16:36:56Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "movedToS3": false,
+      "s3Object": null,
+      "checksum": null,
+      "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmucwcqk2003h0vpi4iw2g263",
+      "downloadUri": "https://sciencebase.usgs.gov/manager/download/cmucwcqk2003h0vpi4iw2g263",
+      "s3DownloadRequestPageUri": "https://www.sciencebase.gov/catalog/item/requestDownload/6aa036571ba49bc751150b15?filePath=__s3__",
+      "publishedS3Uri": "https://prod-is-usgs-sb-prod-publish.s3.amazonaws.com/6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88_w004n050.tif"
+    },
+    {
+      "cuid": "cmud2hycg003m0vpia3id79qd",
+      "key": "6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88.vrt",
+      "bucket": "prod-is-usgs-sb-prod-publish",
+      "published": true,
+      "node": {
+        "managerUrl": "https://sciencebase.usgs.gov/manager"
+      },
+      "name": "or_wa_usgs_tbdem_1m_utmz10_navd88.vrt",
+      "title": null,
+      "contentType": "application/octet-stream",
+      "contentEncoding": null,
+      "pathOnDisk": "__s3__",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 11048,
+      "dateUploaded": "2026-09-22T19:29:13Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "movedToS3": false,
+      "s3Object": null,
+      "checksum": null,
+      "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmud2hycg003m0vpia3id79qd",
+      "downloadUri": "https://sciencebase.usgs.gov/manager/download/cmud2hycg003m0vpia3id79qd",
+      "publishedS3Uri": "https://prod-is-usgs-sb-prod-publish.s3.amazonaws.com/6aa036571ba49bc751150b15/or_wa_usgs_tbdem_1m_utmz10_navd88.vrt"
+    },
+    {
+      "cuid": null,
+      "key": null,
+      "bucket": null,
+      "published": false,
+      "node": null,
+      "name": "or_wa_usgs_tbdem_fgdc_metadata.xml",
+      "title": null,
+      "contentType": "application/fgdc+xml",
+      "contentEncoding": null,
+      "pathOnDisk": "__disk__5d/f0/b7/5df0b7f85a92f7fc8b8de1658019f29eb913ff5f",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 146102,
+      "dateUploaded": "2026-10-05T17:38:59Z",
+      "originalMetadata": true,
+      "useForPreview": false,
+      "movedToS3": false,
+      "s3Object": null,
+      "checksum": {
+        "value": "0941447c7b071267f5bb27ecbd1add17",
+        "type": "MD5"
+      },
+      "url": "https://www.sciencebase.gov/catalog/file/get/6aa036571ba49bc751150b15?f=__disk__5d%2Ff0%2Fb7%2F5df0b7f85a92f7fc8b8de1658019f29eb913ff5f",
+      "downloadUri": "https://www.sciencebase.gov/catalog/file/get/6aa036571ba49bc751150b15?f=__disk__5d%2Ff0%2Fb7%2F5df0b7f85a92f7fc8b8de1658019f29eb913ff5f",
+      "viewUri": "https://www.sciencebase.gov/catalog/file/get/6aa036571ba49bc751150b15?f=__disk__5d%2Ff0%2Fb7%2F5df0b7f85a92f7fc8b8de1658019f29eb913ff5f&allowOpen=true",
+      "metadataHtmlViewUri": "https://www.sciencebase.gov/catalog/file/get/6aa036571ba49bc751150b15?f=__disk__5d%2Ff0%2Fb7%2F5df0b7f85a92f7fc8b8de1658019f29eb913ff5f&transform=1"
+    }
+  ],
+  "distributionLinks": [
+    {
+      "uri": "https://www.sciencebase.gov/catalog/file/get/6aa036571ba49bc751150b15",
+      "title": "Download Attached Files",
+      "type": "downloadLink",
+      "typeLabel": "Download Link",
+      "rel": "alternate",
+      "name": "Topobathymetric.zip",
+      "files": [
+        {
+          "name": "OR_WA_USGS_TBDEM_Spatial_Metadata_Data_Dictionary.docx",
+          "title": null,
+          "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "size": 37282,
+          "checksum": null
+        },
+        {
+          "name": "OR_WA_USGS_TBDEM_Data_Management_Plan.docx",
+          "title": null,
+          "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "size": 19713,
+          "checksum": null
+        },
+        {
+          "name": "or_wa_usgs_tbdem_spatial_metadata.zip",
+          "title": null,
+          "contentType": "application/zip",
+          "size": 138416534,
+          "checksum": null
+        },
+        {
+          "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w003n050.tif",
+          "title": null,
+          "contentType": "image/geotiff",
+          "size": 1696945146,
+          "checksum": null
+        },
+        {
+          "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w004n046.tif",
+          "title": null,
+          "contentType": "image/tiff",
+          "size": 2544035651,
+          "checksum": null
+        },
+        {
+          "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w005n051.tif",
+          "title": null,
+          "contentType": "image/geotiff",
+          "size": 1921512930,
+          "checksum": null
+        },
+        {
+          "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w003n051.tif",
+          "title": null,
+          "contentType": "image/tiff",
+          "size": 3231993093,
+          "checksum": null
+        },
+        {
+          "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w004n047.tif",
+          "title": null,
+          "contentType": "image/tiff",
+          "size": 6127302539,
+          "checksum": null
+        },
+        {
+          "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w003n052.tif",
+          "title": null,
+          "contentType": "image/tiff",
+          "size": 6350950271,
+          "checksum": null
+        },
+        {
+          "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w003n046.tif",
+          "title": null,
+          "contentType": "image/tiff",
+          "size": 6652205810,
+          "checksum": null
+        },
+        {
+          "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w004n052.tif",
+          "title": null,
+          "contentType": "image/tiff",
+          "size": 9363823357,
+          "checksum": null
+        },
+        {
+          "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w004n049.tif",
+          "title": null,
+          "contentType": "image/tiff",
+          "size": 10527975366,
+          "checksum": null
+        },
+        {
+          "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w003n047.tif",
+          "title": null,
+          "contentType": "image/tiff",
+          "size": 10242835247,
+          "checksum": null
+        },
+        {
+          "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w003n053.tif",
+          "title": null,
+          "contentType": "image/tiff",
+          "size": 3440354985,
+          "checksum": null
+        },
+        {
+          "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w003n049.tif",
+          "title": null,
+          "contentType": "image/tiff",
+          "size": 5595388374,
+          "checksum": null
+        },
+        {
+          "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w003n048.tif",
+          "title": null,
+          "contentType": "image/tiff",
+          "size": 7618412513,
+          "checksum": null
+        },
+        {
+          "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w005n050.tif",
+          "title": null,
+          "contentType": "image/tiff",
+          "size": 17734932135,
+          "checksum": null
+        },
+        {
+          "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w004n051.tif",
+          "title": null,
+          "contentType": "image/tiff",
+          "size": 24203229768,
+          "checksum": null
+        },
+        {
+          "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w004n048.tif",
+          "title": null,
+          "contentType": "image/tiff",
+          "size": 14423054773,
+          "checksum": null
+        },
+        {
+          "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w004n050.tif",
+          "title": null,
+          "contentType": "image/tiff",
+          "size": 14717077733,
+          "checksum": null
+        },
+        {
+          "name": "or_wa_usgs_tbdem_1m_utmz10_navd88.vrt",
+          "title": null,
+          "contentType": "application/octet-stream",
+          "size": 11048,
+          "checksum": null
+        },
+        {
+          "name": "or_wa_usgs_tbdem_fgdc_metadata.xml",
+          "title": null,
+          "contentType": "application/fgdc+xml",
+          "size": 146102,
+          "checksum": {
+            "value": "0941447c7b071267f5bb27ecbd1add17",
+            "type": "MD5"
+          }
+        }
+      ]
+    }
+  ]
+}

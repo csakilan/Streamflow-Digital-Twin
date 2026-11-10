@@ -1,0 +1,60 @@
+{
+  "14105700": {
+    "site": "14105700",
+    "name": "columbia",
+    "sourceFile": "stations/USGS-14105700-3d.html",
+    "sourceSha256": "59826c7ef8629cb66696481481b561fb9f9ca7d22c55b2ed7aea46b8fa97822b",
+    "latitude": 45.60827778,
+    "longitude": -121.1899167,
+    "buildingCount": 2192,
+    "heightTaggedCount": 0,
+    "levelsTaggedCount": 0,
+    "innerBlockWidthM": 3422.2269389741923,
+    "desktopTerrainCellM": 8.912049320245293,
+    "desktopImageryPixelM": 0.8355046237729962,
+    "headsetTerrainCellM": 11.882732426993723,
+    "headsetImageryPixelM": 1.6710092475459923,
+    "outerTerrainCellM": 133.6807398036794,
+    "rating": {
+      "e": 74.3,
+      "lnC": 11.6594,
+      "b": 0.6178,
+      "n": 33,
+      "rmse_ft": 0.82,
+      "qmin": 73100.0,
+      "qmax": 440000.0,
+      "hmin": 73.8,
+      "hmax": 83.18,
+      "from": "20191212"
+    }
+  },
+  "01646500": {
+    "site": "01646500",
+    "name": "potomac",
+    "sourceFile": "stations/USGS-01646500-3d.html",
+    "sourceSha256": "4a05df4e5700edfe59854c115ee8792718fa7507bdb005d6d549b07c89d54030",
+    "latitude": 38.94977778,
+    "longitude": -77.12763889,
+    "buildingCount": 2300,
+    "heightTaggedCount": 0,
+    "levelsTaggedCount": 0,
+    "innerBlockWidthM": 3804.4716604731275,
+    "desktopTerrainCellM": 9.907478282482103,
+    "desktopImageryPixelM": 0.9288260889826971,
+    "headsetTerrainCellM": 13.209971043309471,
+    "headsetImageryPixelM": 1.8576521779653943,
+    "outerTerrainCellM": 148.61217423723156,
+    "rating": {
+      "e": 2.063,
+      "lnC": 8.0667,
+      "b": 1.7425,
+      "n": 33,
+      "rmse_ft": 0.08,
+      "qmin": 617.0,
+      "qmax": 150000.0,
+      "hmin": 2.46,
+      "hmax": 10.93,
+      "from": "20191121"
+    }
+  }
+}

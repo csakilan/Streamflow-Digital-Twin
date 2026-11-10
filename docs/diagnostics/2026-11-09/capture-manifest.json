@@ -1,0 +1,118 @@
+{
+  "clientDate": "2026-11-09",
+  "sourceHtmlUnchanged": true,
+  "screenshots": [
+    {
+      "file": "columbia-01-original-drone.png",
+      "sha256": "6b990fa4b12b0ee2fa3725d81d59930258fc7376d09f3dd896c936338e968ee1",
+      "bytes": 2011438,
+      "width": 1600,
+      "height": 1000
+    },
+    {
+      "file": "columbia-02-clean-drone.png",
+      "sha256": "61147f59c7e77b4d1ae104adb00e250d789986750227faae2cadb0e234c96141",
+      "bytes": 2077485,
+      "width": 1600,
+      "height": 1000
+    },
+    {
+      "file": "columbia-03-drone-imagery-only.png",
+      "sha256": "524d7ff40c0be59daf184fd539f4845896ce24ebd79b85049c03aad9e9c38665",
+      "bytes": 2178201,
+      "width": 1600,
+      "height": 1000
+    },
+    {
+      "file": "columbia-04-overhead-current.png",
+      "sha256": "046f5b2c5bd8777732e1bbac94872829860ef41464f626b61551e551d8fde801",
+      "bytes": 1323939,
+      "width": 1600,
+      "height": 1000
+    },
+    {
+      "file": "columbia-05-overhead-imagery-only.png",
+      "sha256": "23aca6f8a18bd7ff5ab6ae44e416bd7d1b09f566501e266b497f393aabe7a7e2",
+      "bytes": 1309857,
+      "width": 1600,
+      "height": 1000
+    },
+    {
+      "file": "columbia-06-overhead-buildings-only.png",
+      "sha256": "fe95bc0f464489e39c6968d897859e44869ff4aed3b331bb5afe2a9720fc0904",
+      "bytes": 1268815,
+      "width": 1600,
+      "height": 1000
+    },
+    {
+      "file": "columbia-07-riverbank-current.png",
+      "sha256": "4629439d7d3213345382294bbea484819c861d12a258a88c1d04c607d13bbe7c",
+      "bytes": 319418,
+      "width": 1600,
+      "height": 1000
+    },
+    {
+      "file": "columbia-08-riverbank-imagery-only.png",
+      "sha256": "53735b816d1be20da01169c6bdf894ce356b4285ae2e67facfcbee3dc6c83b7e",
+      "bytes": 365588,
+      "width": 1600,
+      "height": 1000
+    },
+    {
+      "file": "potomac-01-original-drone.png",
+      "sha256": "b70a6fdea0333db27faaf5a3b90a444d57f11753b6f870dc2db9cd36bfcd0686",
+      "bytes": 2061083,
+      "width": 1600,
+      "height": 1000
+    },
+    {
+      "file": "potomac-02-clean-drone.png",
+      "sha256": "ebc0fab6ee6cbf26722e3060a8c05b410d754c17f910006579a10557eb3ac40f",
+      "bytes": 2137616,
+      "width": 1600,
+      "height": 1000
+    },
+    {
+      "file": "potomac-03-drone-imagery-only.png",
+      "sha256": "e459b4d20d5944222bb8360b25686041c270c0c5f707f849260acfd1815e0e0d",
+      "bytes": 2343049,
+      "width": 1600,
+      "height": 1000
+    },
+    {
+      "file": "potomac-04-overhead-current.png",
+      "sha256": "b2043615f2cbc540b184993d2fe5a09a09c1c1f37b9fb5f621c009357a4fb73f",
+      "bytes": 1991096,
+      "width": 1600,
+      "height": 1000
+    },
+    {
+      "file": "potomac-05-overhead-imagery-only.png",
+      "sha256": "d3ee0dcb6a3296dc8116a1ae097ad0f960a6457325678ce0d15de8864bd7d648",
+      "bytes": 2065865,
+      "width": 1600,
+      "height": 1000
+    },
+    {
+      "file": "potomac-06-overhead-buildings-only.png",
+      "sha256": "6896bd13ac966ee83d89dec7ed0b4fc5b86ef3f1fcce9f1e135de6f40a106097",
+      "bytes": 2055134,
+      "width": 1600,
+      "height": 1000
+    },
+    {
+      "file": "potomac-07-riverbank-current.png",
+      "sha256": "1c457e2bf26abe4b8e42cb04fbb5b99849fe063d4ad4513053610d2225e2b042",
+      "bytes": 336580,
+      "width": 1600,
+      "height": 1000
+    },
+    {
+      "file": "potomac-08-riverbank-imagery-only.png",
+      "sha256": "f75d70f379dc974ab944fcd72cc5a61cc8f35acb5d520f654b9b92c1de44cd4e",
+      "bytes": 355624,
+      "width": 1600,
+      "height": 1000
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+[
+  {
+    "doi": "10.5066/P13BBWDB",
+    "landingUrl": "https://www.sciencebase.gov/catalog/item/69fb57eab66b01ed9290822f",
+    "title": "Potomac River Pilot Topobathymetric Digital Elevation Model, 1979 to 2025",
+    "files": [
+      {
+        "name": "Potomac_River_Pilot_TBDEM_Data_Management_Plan_Final.docx",
+        "url": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__5c%2F60%2Fff%2F5c60ff27aba4635a94e013e6cc65e3b692a47877",
+        "size": 21320
+      },
+      {
+        "name": "Potomac_River_Pilot_TBDEM_Spatial_Metadata_Data_Dictionary_Final.docx",
+        "url": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__27%2Fa3%2Fdd%2F27a3dd9c78fc5498450c8e4ef01c7eef74feca91",
+        "size": 619625
+      },
+      {
+        "name": "Potomac_River_TBDEM_Spatial_Metadata_041326.gpkg.zip",
+        "url": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__21%2F20%2Fb7%2F2120b7014dbff7140d46b344a34b1afcf2dadd69",
+        "size": 5278087
+      },
+      {
+        "name": "Potomac_River_TBDEM_Spatial_Metadata_041326.gdb.zip",
+        "url": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__17%2F62%2F66%2F17626679e9c6ca8ba6dbf5891be6a0544abb1741",
+        "size": 908532
+      },
+      {
+        "name": "Potomac_River_TBDEM_Integration_051826_COG.tif.aux.xml",
+        "url": "https://sciencebase.usgs.gov/manager/item/69fb57eab66b01ed9290822f/file/cmpobcjeb00240yo08j25bz4b",
+        "size": 2943
+      },
+      {
+        "name": "Potomac_River_TBDEM_Integration_051826_COG.tif",
+        "url": "https://sciencebase.usgs.gov/manager/item/69fb57eab66b01ed9290822f/file/cmpoc6h5k00250yo0ej53cssq",
+        "size": 18699417699
+      },
+      {
+        "name": "Potomac_River_TBDEM_Overview_USTopo.jpg",
+        "url": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__3a%2Ff3%2Fc0%2F3af3c04226951c6795056346603dee189b4ba4d9",
+        "size": 1309678
+      },
+      {
+        "name": "6July26_Potomac_River_Pilot_TBDEM_FGDC_061226.xml",
+        "url": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__44%2F00%2F43%2F440043a953cfa9617e3d352a9d5c7e5e8c2f6ecf",
+        "size": 66292
+      }
+    ],
+    "links": [
+      {
+        "type": "Related_Primary_Publication",
+        "typeLabel": "Related Primary Publication",
+        "uri": "https://doi.org/10.2112/SI76-008",
+        "title": "Topobathymetric elevation model development using a new methodology: Coastal National Elevation Database",
+        "hidden": false
+      }
+    ],
+    "boundingBox": {
+      "minX": -78.4037,
+      "maxX": -76.8657,
+      "minY": 38.7102,
+      "maxY": 39.8901
+    }
+  },
+  {
+    "doi": "10.5066/P13HEQBY",
+    "landingUrl": "https://www.sciencebase.gov/catalog/item/6aa036571ba49bc751150b15",
+    "title": "Topobathymetric Digital Elevation Model (TBDEM) for Coastal Oregon and Washington including Columbia River Corridor, 1851 - 2025",
+    "files": [
+      {
+        "name": "OR_WA_USGS_TBDEM_Spatial_Metadata_Data_Dictionary.docx",
+        "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmtu9dxte004a0upea5jlfonk",
+        "size": 37282
+      },
+      {
+        "name": "OR_WA_USGS_TBDEM_Data_Management_Plan.docx",
+        "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmtu9dy7o004b0upe4rbkg7kf",
+        "size": 19713
+      },
+      {
+        "name": "or_wa_usgs_tbdem_spatial_metadata.zip",
+        "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmtu9dyif004c0upe88vx5v32",
+        "size": 138416534
+      },
+      {
+        "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w003n050.tif",
+        "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmubd3dio000u0vpi1s7nejyr",
+        "size": 1696945146
+      },
+      {
+        "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w004n046.tif",
+        "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmubdaig0003b0upj39ip5nfx",
+        "size": 2544035651
+      },
+      {
+        "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w005n051.tif",
+        "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmubdaovh003c0upj24fy8305",
+        "size": 1921512930
+      },
+      {
+        "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w003n051.tif",
+        "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmubdg3p8000v0vpi2srh4s1e",
+        "size": 3231993093
+      },
+      {
+        "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w004n047.tif",
+        "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmubieo5u003h0upj5rxbg7xq",
+        "size": 6127302539
+      },
+      {
+        "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w003n052.tif",
+        "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmubijcdf003i0upjc2by5hkx",
+        "size": 6350950271
+      },
+      {
+        "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w003n046.tif",
+        "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmubijw5s00160vpi4llk3e81",
+        "size": 6652205810
+      },
+      {
+        "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w004n052.tif",
+        "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmubk5yn7001a0vpi3tzl1pkd",
+        "size": 9363823357
+      },
+      {
+        "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w004n049.tif",
+        "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmubk9ht2003s0upj01psblp1",
+        "size": 10527975366
+      },
+      {
+        "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w003n047.tif",
+        "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmubka3mq001b0vpibhxp7ukx",
+        "size": 10242835247
+      },
+      {
+        "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w003n053.tif",
+        "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmucpeuzi00240vpi6c8j6cdb",
+        "size": 3440354985
+      },
+      {
+        "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w003n049.tif",
+        "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmucplow600250vpi10zg3j5b",
+        "size": 5595388374
+      },
+      {
+        "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w003n048.tif",
+        "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmucs3gj4005b0upj9d7vgkxx",
+        "size": 7618412513
+      },
+      {
+        "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w005n050.tif",
+        "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmucszjok003f0vpib7mydedj",
+        "size": 17734932135
+      },
+      {
+        "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w004n051.tif",
+        "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmuctbo9a005c0upj8m9p26kk",
+        "size": 24203229768
+      },
+      {
+        "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w004n048.tif",
+        "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmucurhpn003g0vpib4tw89rb",
+        "size": 14423054773
+      },
+      {
+        "name": "or_wa_usgs_tbdem_1m_utmz10_navd88_w004n050.tif",
+        "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmucwcqk2003h0vpi4iw2g263",
+        "size": 14717077733
+      },
+      {
+        "name": "or_wa_usgs_tbdem_1m_utmz10_navd88.vrt",
+        "url": "https://sciencebase.usgs.gov/manager/item/6aa036571ba49bc751150b15/file/cmud2hycg003m0vpia3id79qd",
+        "size": 11048
+      },
+      {
+        "name": "or_wa_usgs_tbdem_fgdc_metadata.xml",
+        "url": "https://www.sciencebase.gov/catalog/file/get/6aa036571ba49bc751150b15?f=__disk__5d%2Ff0%2Fb7%2F5df0b7f85a92f7fc8b8de1658019f29eb913ff5f",
+        "size": 146102
+      }
+    ],
+    "links": [
+      {
+        "type": "Related_Primary_Publication",
+        "typeLabel": "Related Primary Publication",
+        "uri": "https://doi.org/10.2112/SI76-008",
+        "title": "Danielson, J.J., Poppenga, S.K., Brock, J.C., Evans, G.A., Tyler, D.J., Gesch, D.B., Thatcher, C.A., and Barras, J.A., 2016, Topobathymetric Elevation Model Development using a New Methodology: Coastal National Elevation Database: Journal of Coastal Research, v. 76, p. 75\u201389, at https://doi.org/10.2112/si76-008.",
+        "hidden": false
+      },
+      {
+        "type": "webLink",
+        "uri": "https://www.usgs.gov/coastal-changes-and-impacts/coned",
+        "rel": "related",
+        "title": "Digital Data",
+        "hidden": false
+      }
+    ],
+    "boundingBox": {
+      "minX": -125.1495,
+      "maxX": -121.7459,
+      "minY": 41.8251,
+      "maxY": 48.1555
+    }
+  }
+]

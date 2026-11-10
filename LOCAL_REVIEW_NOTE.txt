@@ -1,0 +1,1 @@
+Local full-site review: supplied Oct15 ZIP refreshed with current public hydrotwin-site dev contents, then Potomac/Columbia snowfall update applied. Live deployments unchanged. Serve with a normal static HTTP server. No proxy required. External imagery/weather still use the original public services.

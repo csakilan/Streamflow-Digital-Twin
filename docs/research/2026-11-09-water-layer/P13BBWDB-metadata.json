@@ -1,0 +1,1113 @@
+{
+  "link": {
+    "rel": "self",
+    "url": "https://www.sciencebase.gov/catalog/item/69fb57eab66b01ed9290822f"
+  },
+  "relatedItems": {
+    "link": {
+      "url": "https://www.sciencebase.gov/catalog/itemLinks?itemId=69fb57eab66b01ed9290822f",
+      "rel": "related"
+    }
+  },
+  "id": "69fb57eab66b01ed9290822f",
+  "identifiers": [
+    {
+      "type": "IPDS",
+      "scheme": "https://www.sciencebase.gov/vocab/category/item/identifier",
+      "key": "IP-189508"
+    },
+    {
+      "type": "DOI",
+      "scheme": "https://www.sciencebase.gov/vocab/category/item/identifier",
+      "key": "doi:10.5066/P13BBWDB"
+    },
+    {
+      "type": "USGS_keywords",
+      "scheme": "https://www.sciencebase.gov/vocab/category/item/identifier",
+      "key": "Geography, Marine Geology, Remote Sensing, Water Resources"
+    }
+  ],
+  "title": "Potomac River Pilot Topobathymetric Digital Elevation Model, 1979 to 2025",
+  "summary": "The U.S. Geological Survey (USGS) 3D Elevation Program (3DEP) has developed an integrated 1-meter topobathymetric digital elevation model (TBDEM) for the Potomac River extending from tidal Washington, D.C. to upstream of Hancock, Maryland. This is the third 3DEP pilot inland TBDEM, developed to produce a 3-dimensional surface elevation model that integrates topographic bare-earth elevation surfaces with river channel bed topobathymetry and estuarine bathymetry. Integration of inland bathymetry and bare-earth elevation data into seamless topobathymetric models advances the USGS 3D National Topography Model (3DNTM) goal to integrate elevation and hydrography data from the next generation of the 3DEP and the 3D Hydrography Program. The [...]",
+  "body": "The U.S. Geological Survey (USGS) 3D Elevation Program (3DEP) has developed an integrated 1-meter topobathymetric digital elevation model (TBDEM) for the Potomac River extending from tidal Washington, D.C. to upstream of Hancock, Maryland. This is the third 3DEP pilot inland TBDEM, developed to produce a 3-dimensional surface elevation model that integrates topographic bare-earth elevation surfaces with river channel bed topobathymetry and estuarine bathymetry. Integration of inland bathymetry and bare-earth elevation data into seamless topobathymetric models advances the USGS 3D National Topography Model (3DNTM) goal to integrate elevation and hydrography data from the next generation of the 3DEP and the 3D Hydrography Program. The pilot project area of interest includes reaches of the Potomac River, Anacostia River, Shenandoah River, Tidal Basin, and Pentagon Lagoon hydrographic features. The integrated TBDEM will provide a fundamental geospatial baseline to support enhanced 2D/3D hydrologic modeling, fisheries habitat restoration, and hazardous spill / drinking water supply modeling, and other key science applications such as flood plain analyses and fluvial geomorphic feature mapping. This pilot inland topobathy product supports the Interstate Commission on the Potomac River Basin (ICPRB) work to improve flow modeling for resource management and hazardous spill modeling to help protect drinking water supplies and quality in the District of Columbia. The Potomac River TBDEM renders spatial integration of 19 different geospatial elevation data sources. Topographic lidar data are from USGS 3DEP, Maryland Geographic Information Office, Federal Emergency Management Agency (FEMA) VAWVMD- Region 3, and Washinton D.C. Office of the Chief Technology Officer (OCTO). Acoustic bathymetry data for the Potomac and Anacostia Rivers are from District of Columbia Department of Energy and Environment (DOEE) and the U.S. Army Corps of Engineers. Nearshore to offshore bathymetry data are from the National Oceanic and Atmospheric Administration (NOAA), National Centers for Environmental Information (NCEI) and USGS Coastal National Elevation Database (CoNED). Topobathymetric lidar for Potomac River is from USGS 3DEP and collaborative partners. The bank-to-bank bathymetry coverage from the 2019/2021 USGS topobathymetic lidar acquisitions yielded an 85.5% mapping of the submerged topography. Acoustic doppler current profiler bathymetry for reservoirs behind lowhead dams #4/#5 on the Potomac River was provided by the USGS Maryland/Delaware/DC and Virginia / West Virginia Water Science Centers. Geospatial data for the TBDEM were integrated where the best available topography, topobathymetry, and bathymetry elevation data are sorted and prioritized based on survey date, accuracy, spatial distribution, and point density. The output TBDEM is horizontally referenced to UTM Zone 18 N, NAD83 2011 and vertically referenced to the North American Vertical Datum of 1988 (NAVD88) Geoid18. The spatial resolution is 1 meter with general elevations ranging from 630 meters on land to -31.48 meters (submerged). The overall temporal range of the input topography, topobathymetry, and bathymetry is 1979 to 2025. The project is funded by the USGS National Geospatial Program.",
+  "citation": "Danielson, J.J., Miller-Corbett, C.D., Thatcher, C.A., and U.S. Geological Survey, 2026, Potomac River Pilot Topobathymetric Digital Elevation Model, 1979 to 2025: U.S. Geological Survey data release, https://doi.org/10.5066/P13BBWDB.",
+  "purpose": "Inland topobathy datasets are developed to provide seamless integrated elevation products for various science application studies such as flood risk management, 2D/3D hydrologic modeling, river geomorphology applications, sediment-transport, aquatic habitat restoration, and for analyses of the potential impacts to drinking water safety and supply. As part of the vision for a 3D Nation, the 3D Elevation Program (3DEP) is investigating the potential to use topobathymetric lidar for mapping the land-water interface and submerged topography, or bathymetry, in riverine landscapes. The Potomac River is one of several topobathymetric lidar pilot rivers, which are selected based on varying environmental conditions (water clarity, bottom type stratum, albedo, and depth) to understand lidar performance in mapping riverine topography and bathymetry. This research will help 3DEP operationalize topobathymetric, or topobathy, lidar acquisition by providing recommendations regarding topobathy lidar sensor performance and suitable site conditions for future river surveys. This research supports a goal of the next generation of 3DEP to advance efforts to provide a national elevation dataset that includes the submerged topography of inland rivers. For the Potomac River, inland to estuarine zone bathymetry, topography, and topobathymetry data are assimilated to create the pilot inland topobathymetric digital elevation model (TBDEM) through a sequence of processes to create a continuous, seamless three-dimensional elevation surface that is aligned both vertically and horizontally to a common reference system. All elevations are referenced to NAVD88/GEOID18. The raster TBDEM, the Federal Geographic Data Committee metadata, and the spatially referenced metadata files are contained in the downloadable bundle. Spatially referenced metadata are contained within a geodatabase/open-source GeoPackage that stores footprints for each of the input source areas along with source data characteristics. This collection of high-resolution elevation data is available in a user-friendly Cloud Optimized Georeferenced Tagged Image File Format (GeoTIFF) format. The elevation model has floating point numeric values. Areas where data is incomplete ( NoData values) are represented with the numeric value of 3.40282346639e+038.",
+  "rights": "This work is marked with the Creative Commons Zero v1.0 Universal (CC0-1.0) public domain dedication; https://creativecommons.org/publicdomain/zero/1.0/. ",
+  "provenance": {
+    "dateCreated": "2026-05-06T15:02:02Z",
+    "lastUpdated": "2026-07-13T18:36:42Z"
+  },
+  "maintenanceUpdateFrequency": "As needed",
+  "hasChildren": false,
+  "parentId": "5474ec49e4b04d7459a7eab2",
+  "contacts": [
+    {
+      "name": "Earth Resources Observation and Science (EROS) Center",
+      "oldPartyId": 17122,
+      "type": "SDC Data Owner",
+      "contactType": "organization",
+      "onlineResource": "https://www.usgs.gov/centers/eros",
+      "active": true,
+      "aliases": [
+        "EROS",
+        "EARTH RESOURCE OBSERV & SCI",
+        "EROS DATA CTR OFFC OF THE DIR"
+      ],
+      "organization": {},
+      "primaryLocation": {
+        "name": "Eros Data Center - Mundt Federal Building [KMN]",
+        "building": "Mundt Federal Building",
+        "buildingCode": "KMN",
+        "latitude": 43.732737,
+        "longitude": -96.62855,
+        "streetAddress": {
+          "line1": "47914 252nd Street",
+          "city": "Sioux Falls",
+          "state": "SD",
+          "zip": "57198-9801",
+          "country": "USA"
+        },
+        "mailAddress": {
+          "line1": "47914 252nd Street",
+          "city": "Sioux Falls",
+          "state": "SD",
+          "zip": "57198-9801",
+          "country": "USA"
+        }
+      }
+    },
+    {
+      "name": "Core Science Systems",
+      "type": "USGS Mission Area",
+      "contactType": "organization",
+      "organization": {
+        "directoryId": "64221",
+        "displayText": "Core Science Systems"
+      },
+      "primaryLocation": {
+        "streetAddress": {},
+        "mailAddress": {}
+      }
+    },
+    {
+      "name": "USGS EROS/USGS NGTOC",
+      "type": "Point of Contact",
+      "contactType": "organization",
+      "organizationsPerson": "Jeffrey Danielson/Cynthia Miller-Corbett",
+      "jobTitle": "Physical Geographer/Hydrologist",
+      "organization": {},
+      "primaryLocation": {
+        "officePhone": "605-594-6148 / 303-202-4407",
+        "faxPhone": "605-594-6589",
+        "streetAddress": {},
+        "mailAddress": {
+          "line1": "47914 252nd Street",
+          "city": "Sioux Falls",
+          "state": "South Dakota",
+          "zip": "57198-0001",
+          "country": "USA"
+        }
+      }
+    },
+    {
+      "name": "Jeffrey J Danielson",
+      "oldPartyId": 2309,
+      "type": "Point of Contact",
+      "contactType": "person",
+      "onlineResource": "https://usgs.gov/staff-profiles/jeffrey-j-danielson",
+      "email": "daniels@usgs.gov",
+      "active": true,
+      "jobTitle": "GEOGRAPHER",
+      "firstName": "Jeffrey",
+      "middleName": "J",
+      "lastName": "Danielson",
+      "organization": {},
+      "primaryLocation": {
+        "officePhone": "6055946148",
+        "streetAddress": {
+          "line1": "47914 252Nd Street",
+          "city": "Sioux Falls",
+          "state": "SD",
+          "zip": "57198",
+          "country": "US"
+        },
+        "mailAddress": {
+          "line1": "47914 252nd Street",
+          "city": "Sioux Falls",
+          "state": "SD",
+          "zip": "57198-9801",
+          "country": "US"
+        }
+      },
+      "orcId": "0000-0003-0907-034X"
+    },
+    {
+      "name": "Jeffrey J Danielson",
+      "oldPartyId": 2309,
+      "type": "Process Contact",
+      "contactType": "person",
+      "onlineResource": "https://usgs.gov/staff-profiles/jeffrey-j-danielson",
+      "email": "daniels@usgs.gov",
+      "active": true,
+      "jobTitle": "GEOGRAPHER",
+      "firstName": "Jeffrey",
+      "middleName": "J",
+      "lastName": "Danielson",
+      "organization": {},
+      "primaryLocation": {
+        "officePhone": "6055946148",
+        "streetAddress": {
+          "line1": "47914 252Nd Street",
+          "city": "Sioux Falls",
+          "state": "SD",
+          "zip": "57198",
+          "country": "US"
+        },
+        "mailAddress": {
+          "line1": "47914 252nd Street",
+          "city": "Sioux Falls",
+          "state": "SD",
+          "zip": "57198-9801",
+          "country": "US"
+        }
+      },
+      "orcId": "0000-0003-0907-034X"
+    },
+    {
+      "name": "USGS EROS / USGS NGTOC",
+      "type": "Process Contact",
+      "contactType": "organization",
+      "jobTitle": "Physical Geographer / Hydrologist",
+      "organization": {},
+      "primaryLocation": {
+        "officePhone": "605-594-6148 / 303-202-4407",
+        "faxPhone": "605-594-6589",
+        "streetAddress": {},
+        "mailAddress": {
+          "line1": "47914 252nd Street / P.O. Box 25046, MS 510",
+          "city": "Sioux Falls / Denver",
+          "state": "South Dakota / CO",
+          "zip": "57198-0001/80225",
+          "country": "USA"
+        }
+      }
+    },
+    {
+      "name": "Jeffrey J Danielson",
+      "oldPartyId": 2309,
+      "type": "Originator",
+      "contactType": "person",
+      "onlineResource": "https://usgs.gov/staff-profiles/jeffrey-j-danielson",
+      "email": "daniels@usgs.gov",
+      "active": true,
+      "jobTitle": "GEOGRAPHER",
+      "firstName": "Jeffrey",
+      "middleName": "J",
+      "lastName": "Danielson",
+      "organization": {},
+      "primaryLocation": {
+        "officePhone": "6055946148",
+        "streetAddress": {
+          "line1": "47914 252Nd Street",
+          "city": "Sioux Falls",
+          "state": "SD",
+          "zip": "57198",
+          "country": "US"
+        },
+        "mailAddress": {
+          "line1": "47914 252nd Street",
+          "city": "Sioux Falls",
+          "state": "SD",
+          "zip": "57198-9801",
+          "country": "US"
+        }
+      },
+      "orcId": "0000-0003-0907-034X"
+    },
+    {
+      "name": "Cynthia D Miller-Corbett",
+      "oldPartyId": 6993,
+      "type": "Originator",
+      "contactType": "person",
+      "onlineResource": "https://usgs.gov/staff-profiles/cynthia-miller-corbett",
+      "email": "cmcorbet@usgs.gov",
+      "active": true,
+      "jobTitle": "Hydrologist",
+      "firstName": "Cynthia",
+      "lastName": "Miller-Corbett",
+      "organization": {},
+      "primaryLocation": {
+        "officePhone": "3032024407",
+        "faxPhone": "3032024020",
+        "streetAddress": {
+          "line1": "W 6th Ave Kipling St",
+          "city": "Lakewood",
+          "state": "CO",
+          "zip": "80225",
+          "country": "US"
+        },
+        "mailAddress": {}
+      },
+      "orcId": "0000-0002-9740-2502"
+    },
+    {
+      "name": "Cindy A Thatcher",
+      "oldPartyId": 10305,
+      "type": "Originator",
+      "contactType": "person",
+      "onlineResource": "https://usgs.gov/staff-profiles/cindy-thatcher",
+      "email": "thatcherc@usgs.gov",
+      "active": true,
+      "jobTitle": "Geographer",
+      "firstName": "Cindy",
+      "lastName": "Thatcher",
+      "cellPhone": "5715740077",
+      "organization": {},
+      "primaryLocation": {
+        "officePhone": "7036485122",
+        "streetAddress": {
+          "line1": "12201 Sunrise Valley Dr",
+          "city": "Reston",
+          "state": "VA",
+          "zip": "20192",
+          "country": "US"
+        },
+        "mailAddress": {
+          "line1": "12201 Sunrise Valley Drive",
+          "mailStopCode": "511",
+          "city": "Reston",
+          "state": "VA",
+          "zip": "20192-0002",
+          "country": "US"
+        }
+      },
+      "orcId": "0000-0003-0331-071X"
+    },
+    {
+      "name": "U.S. Geological Survey",
+      "type": "Originator",
+      "organization": {},
+      "primaryLocation": {
+        "streetAddress": {},
+        "mailAddress": {}
+      }
+    },
+    {
+      "name": "USGS EROS/USGS NGTOC",
+      "type": "Metadata Contact",
+      "contactType": "organization",
+      "organizationsPerson": "Jeffrey Danielson/Cynthia Miller-Corbett",
+      "jobTitle": "Physical Geographer/Hydrologist",
+      "organization": {},
+      "primaryLocation": {
+        "officePhone": "605-594-6148 / 303-202-4407",
+        "faxPhone": "605-594-6589",
+        "streetAddress": {},
+        "mailAddress": {
+          "line1": "47914 252nd Street",
+          "city": "Sioux Falls",
+          "state": "South Dakota",
+          "zip": "57198-0001",
+          "country": "USA"
+        }
+      }
+    },
+    {
+      "name": "Jeffrey J Danielson",
+      "oldPartyId": 2309,
+      "type": "Metadata Contact",
+      "contactType": "person",
+      "onlineResource": "https://usgs.gov/staff-profiles/jeffrey-j-danielson",
+      "email": "daniels@usgs.gov",
+      "active": true,
+      "jobTitle": "GEOGRAPHER",
+      "firstName": "Jeffrey",
+      "middleName": "J",
+      "lastName": "Danielson",
+      "organization": {},
+      "primaryLocation": {
+        "officePhone": "6055946148",
+        "streetAddress": {
+          "line1": "47914 252Nd Street",
+          "city": "Sioux Falls",
+          "state": "SD",
+          "zip": "57198",
+          "country": "US"
+        },
+        "mailAddress": {
+          "line1": "47914 252nd Street",
+          "city": "Sioux Falls",
+          "state": "SD",
+          "zip": "57198-9801",
+          "country": "US"
+        }
+      },
+      "orcId": "0000-0003-0907-034X"
+    },
+    {
+      "name": "Cynthia D Miller-Corbett",
+      "oldPartyId": 6993,
+      "type": "Point of Contact",
+      "contactType": "person",
+      "onlineResource": "https://usgs.gov/staff-profiles/cynthia-miller-corbett",
+      "email": "cmcorbet@usgs.gov",
+      "active": true,
+      "jobTitle": "Hydrologist",
+      "firstName": "Cynthia",
+      "lastName": "Miller-Corbett",
+      "organization": {},
+      "primaryLocation": {
+        "officePhone": "3032024407",
+        "faxPhone": "3032024020",
+        "streetAddress": {
+          "line1": "W 6th Ave Kipling St",
+          "city": "Lakewood",
+          "state": "CO",
+          "zip": "80225",
+          "country": "US"
+        },
+        "mailAddress": {}
+      },
+      "orcId": "0000-0002-9740-2502"
+    },
+    {
+      "name": "Cynthia D Miller-Corbett",
+      "oldPartyId": 6993,
+      "type": "Process Contact",
+      "contactType": "person",
+      "onlineResource": "https://usgs.gov/staff-profiles/cynthia-miller-corbett",
+      "email": "cmcorbet@usgs.gov",
+      "active": true,
+      "jobTitle": "Hydrologist",
+      "firstName": "Cynthia",
+      "lastName": "Miller-Corbett",
+      "organization": {},
+      "primaryLocation": {
+        "officePhone": "3032024407",
+        "faxPhone": "3032024020",
+        "streetAddress": {
+          "line1": "W 6th Ave Kipling St",
+          "city": "Lakewood",
+          "state": "CO",
+          "zip": "80225",
+          "country": "US"
+        },
+        "mailAddress": {}
+      },
+      "orcId": "0000-0002-9740-2502"
+    },
+    {
+      "name": "Cynthia D Miller-Corbett",
+      "oldPartyId": 6993,
+      "type": "Metadata Contact",
+      "contactType": "person",
+      "onlineResource": "https://usgs.gov/staff-profiles/cynthia-miller-corbett",
+      "email": "cmcorbet@usgs.gov",
+      "active": true,
+      "jobTitle": "Hydrologist",
+      "firstName": "Cynthia",
+      "lastName": "Miller-Corbett",
+      "organization": {},
+      "primaryLocation": {
+        "officePhone": "3032024407",
+        "faxPhone": "3032024020",
+        "streetAddress": {
+          "line1": "W 6th Ave Kipling St",
+          "city": "Lakewood",
+          "state": "CO",
+          "zip": "80225",
+          "country": "US"
+        },
+        "mailAddress": {}
+      },
+      "orcId": "0000-0002-9740-2502"
+    },
+    {
+      "name": "U.S. Geological Survey - ScienceBase",
+      "oldPartyId": 70157,
+      "type": "Distributor",
+      "contactType": "organization",
+      "onlineResource": "https://www.sciencebase.gov",
+      "email": "sciencebase@usgs.gov",
+      "organization": {},
+      "primaryLocation": {
+        "name": "U.S. Geological Survey - ScienceBase - Location",
+        "officePhone": "18882758747",
+        "streetAddress": {},
+        "mailAddress": {
+          "line1": "Denver Federal Center",
+          "line2": "Building 810",
+          "mailStopCode": "302",
+          "city": "Denver",
+          "state": "CO",
+          "zip": "80225",
+          "country": "United States"
+        }
+      }
+    }
+  ],
+  "webLinks": [
+    {
+      "type": "Related_Primary_Publication",
+      "typeLabel": "Related Primary Publication",
+      "uri": "https://doi.org/10.2112/SI76-008",
+      "title": "Topobathymetric elevation model development using a new methodology: Coastal National Elevation Database",
+      "hidden": false
+    }
+  ],
+  "systemTypes": [
+    "Data Release"
+  ],
+  "tags": [
+    {
+      "type": "Harvest Set",
+      "name": "USGS Science Data Catalog (SDC)"
+    },
+    {
+      "type": "Theme",
+      "scheme": "ISO 19115 Topic Category",
+      "name": "elevation"
+    },
+    {
+      "type": "Theme",
+      "scheme": "ISO 19115 Topic Category",
+      "name": "geoscientificInformation"
+    },
+    {
+      "type": "Theme",
+      "scheme": "ISO 19115 Topic Category",
+      "name": "imageryBaseMapsEarthCover"
+    },
+    {
+      "type": "Theme",
+      "scheme": "ISO 19115 Topic Category",
+      "name": "boundaries"
+    },
+    {
+      "type": "Theme",
+      "scheme": "USGS Thesaurus",
+      "name": "Inland Bathymetry"
+    },
+    {
+      "type": "Theme",
+      "scheme": "USGS Thesaurus",
+      "name": "Topobathy"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "United States"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "U.S."
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "USA"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Maryland"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Virginia"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "West Virginia"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Alexandria County"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Allegany County"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Arlington County"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Bedford County"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Berkeley County"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Clarke County"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Fairfax County"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Fairfax City County"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Falls Church County"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Fauquier County"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Franklin County"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Frederick County"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Fulton County"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Jefferson County"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Loudoun County"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Montgomery County"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Morgan County"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Prince Georges County"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Prince William County"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Washington County, MD"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Washington, DC"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Potomac River"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Anacostia River"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Cacapon River"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Shenandoah River"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Tidal Basin"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Pentagon Lagoon"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Antietam Creek"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Back Creek"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Conococheague Creek"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Goose Creek"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Licking Creek"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Monocacy River"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Opequon Creek"
+    },
+    {
+      "type": "Place",
+      "scheme": "U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology",
+      "name": "Sleepy Creek"
+    },
+    {
+      "type": "USGS Scientific Topic Keyword",
+      "name": "Geography"
+    },
+    {
+      "type": "USGS Scientific Topic Keyword",
+      "name": "Marine Geology"
+    },
+    {
+      "type": "USGS Scientific Topic Keyword",
+      "name": "Remote Sensing"
+    },
+    {
+      "type": "USGS Scientific Topic Keyword",
+      "name": "Water Resources"
+    }
+  ],
+  "dates": [
+    {
+      "type": "Publication",
+      "dateString": "2026-07-13",
+      "label": "Publication Date"
+    },
+    {
+      "type": "Start",
+      "dateString": "1976",
+      "label": ""
+    },
+    {
+      "type": "End",
+      "dateString": "2025",
+      "label": ""
+    }
+  ],
+  "spatial": {
+    "boundingBox": {
+      "minX": -78.4037,
+      "maxX": -76.8657,
+      "minY": 38.7102,
+      "maxY": 39.8901
+    }
+  },
+  "files": [
+    {
+      "cuid": null,
+      "key": null,
+      "bucket": null,
+      "published": false,
+      "node": null,
+      "name": "Potomac_River_Pilot_TBDEM_Data_Management_Plan_Final.docx",
+      "title": null,
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "contentEncoding": null,
+      "pathOnDisk": "__disk__5c/60/ff/5c60ff27aba4635a94e013e6cc65e3b692a47877",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 21320,
+      "dateUploaded": "2026-05-06T16:17:55Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "movedToS3": false,
+      "s3Object": null,
+      "checksum": {
+        "value": "c69bb330ce8ca1d75704341bfc65f500",
+        "type": "MD5"
+      },
+      "url": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__5c%2F60%2Fff%2F5c60ff27aba4635a94e013e6cc65e3b692a47877",
+      "downloadUri": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__5c%2F60%2Fff%2F5c60ff27aba4635a94e013e6cc65e3b692a47877",
+      "viewUri": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__5c%2F60%2Fff%2F5c60ff27aba4635a94e013e6cc65e3b692a47877&allowOpen=true"
+    },
+    {
+      "cuid": null,
+      "key": null,
+      "bucket": null,
+      "published": false,
+      "node": null,
+      "name": "Potomac_River_Pilot_TBDEM_Spatial_Metadata_Data_Dictionary_Final.docx",
+      "title": null,
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "contentEncoding": null,
+      "pathOnDisk": "__disk__27/a3/dd/27a3dd9c78fc5498450c8e4ef01c7eef74feca91",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 619625,
+      "dateUploaded": "2026-05-06T16:23:27Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "movedToS3": false,
+      "s3Object": null,
+      "checksum": {
+        "value": "9d6861efee62e900de5419b9fb9b3401",
+        "type": "MD5"
+      },
+      "url": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__27%2Fa3%2Fdd%2F27a3dd9c78fc5498450c8e4ef01c7eef74feca91",
+      "downloadUri": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__27%2Fa3%2Fdd%2F27a3dd9c78fc5498450c8e4ef01c7eef74feca91",
+      "viewUri": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__27%2Fa3%2Fdd%2F27a3dd9c78fc5498450c8e4ef01c7eef74feca91&allowOpen=true"
+    },
+    {
+      "cuid": null,
+      "key": null,
+      "bucket": null,
+      "published": false,
+      "node": null,
+      "name": "Potomac_River_TBDEM_Spatial_Metadata_041326.gpkg.zip",
+      "title": null,
+      "contentType": "application/zip",
+      "contentEncoding": null,
+      "pathOnDisk": "__disk__21/20/b7/2120b7014dbff7140d46b344a34b1afcf2dadd69",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 5278087,
+      "dateUploaded": "2026-05-06T16:24:17Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "movedToS3": false,
+      "s3Object": null,
+      "checksum": {
+        "value": "2ce847f2da5cff6556661ca1c5016065",
+        "type": "MD5"
+      },
+      "url": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__21%2F20%2Fb7%2F2120b7014dbff7140d46b344a34b1afcf2dadd69",
+      "downloadUri": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__21%2F20%2Fb7%2F2120b7014dbff7140d46b344a34b1afcf2dadd69"
+    },
+    {
+      "cuid": null,
+      "key": null,
+      "bucket": null,
+      "published": false,
+      "node": null,
+      "name": "Potomac_River_TBDEM_Spatial_Metadata_041326.gdb.zip",
+      "title": null,
+      "contentType": "application/zip",
+      "contentEncoding": null,
+      "pathOnDisk": "__disk__17/62/66/17626679e9c6ca8ba6dbf5891be6a0544abb1741",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 908532,
+      "dateUploaded": "2026-05-06T16:24:12Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "movedToS3": false,
+      "s3Object": null,
+      "checksum": {
+        "value": "da240f22c7906c5c0481893fd458f822",
+        "type": "MD5"
+      },
+      "url": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__17%2F62%2F66%2F17626679e9c6ca8ba6dbf5891be6a0544abb1741",
+      "downloadUri": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__17%2F62%2F66%2F17626679e9c6ca8ba6dbf5891be6a0544abb1741"
+    },
+    {
+      "cuid": "cmpobcjeb00240yo08j25bz4b",
+      "key": "69fb57eab66b01ed9290822f/Potomac_River_TBDEM_Integration_051826_COG.tif.aux.xml",
+      "bucket": "prod-is-usgs-sb-prod-content",
+      "published": false,
+      "node": {
+        "managerUrl": "https://sciencebase.usgs.gov/manager"
+      },
+      "name": "Potomac_River_TBDEM_Integration_051826_COG.tif.aux.xml",
+      "title": null,
+      "contentType": "application/xml",
+      "contentEncoding": null,
+      "pathOnDisk": "__s3__",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 2943,
+      "dateUploaded": "2026-05-27T17:03:37Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "movedToS3": false,
+      "s3Object": null,
+      "checksum": null,
+      "url": "https://sciencebase.usgs.gov/manager/item/69fb57eab66b01ed9290822f/file/cmpobcjeb00240yo08j25bz4b",
+      "downloadUri": "https://sciencebase.usgs.gov/manager/download/cmpobcjeb00240yo08j25bz4b",
+      "viewUri": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__s3__&allowOpen=true"
+    },
+    {
+      "cuid": "cmpoc6h5k00250yo0ej53cssq",
+      "key": "69fb57eab66b01ed9290822f/Potomac_River_TBDEM_Integration_051826_COG.tif",
+      "bucket": "prod-is-usgs-sb-prod-content",
+      "published": false,
+      "node": {
+        "managerUrl": "https://sciencebase.usgs.gov/manager"
+      },
+      "name": "Potomac_River_TBDEM_Integration_051826_COG.tif",
+      "title": null,
+      "contentType": "image/tiff",
+      "contentEncoding": null,
+      "pathOnDisk": "__s3__",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 18699417699,
+      "dateUploaded": "2026-05-27T17:26:55Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "movedToS3": false,
+      "s3Object": null,
+      "checksum": null,
+      "url": "https://sciencebase.usgs.gov/manager/item/69fb57eab66b01ed9290822f/file/cmpoc6h5k00250yo0ej53cssq",
+      "downloadUri": "https://sciencebase.usgs.gov/manager/download/cmpoc6h5k00250yo0ej53cssq",
+      "s3DownloadRequestPageUri": "https://www.sciencebase.gov/catalog/item/requestDownload/69fb57eab66b01ed9290822f?filePath=__s3__"
+    },
+    {
+      "cuid": null,
+      "key": null,
+      "bucket": null,
+      "published": false,
+      "node": null,
+      "name": "Potomac_River_TBDEM_Overview_USTopo.jpg",
+      "title": null,
+      "contentType": "image/jpeg",
+      "contentEncoding": null,
+      "pathOnDisk": "__disk__3a/f3/c0/3af3c04226951c6795056346603dee189b4ba4d9",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": 2550,
+      "imageHeight": 3300,
+      "size": 1309678,
+      "dateUploaded": "2026-06-12T16:23:58Z",
+      "originalMetadata": false,
+      "useForPreview": false,
+      "movedToS3": false,
+      "s3Object": null,
+      "checksum": {
+        "value": "f08de2d530475fe443bcc6c8ea9fa90d",
+        "type": "MD5"
+      },
+      "url": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__3a%2Ff3%2Fc0%2F3af3c04226951c6795056346603dee189b4ba4d9",
+      "downloadUri": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__3a%2Ff3%2Fc0%2F3af3c04226951c6795056346603dee189b4ba4d9",
+      "viewUri": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__3a%2Ff3%2Fc0%2F3af3c04226951c6795056346603dee189b4ba4d9&width=2550&height=3300",
+      "previewImage": {
+        "thumbnail": {
+          "uri": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__3a%2Ff3%2Fc0%2F3af3c04226951c6795056346603dee189b4ba4d9&width=87&height=113",
+          "width": 87,
+          "height": 113
+        },
+        "small": {
+          "uri": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__3a%2Ff3%2Fc0%2F3af3c04226951c6795056346603dee189b4ba4d9&width=203&height=263",
+          "width": 203,
+          "height": 263
+        },
+        "medium": {
+          "uri": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__3a%2Ff3%2Fc0%2F3af3c04226951c6795056346603dee189b4ba4d9&width=336&height=435",
+          "width": 336,
+          "height": 435
+        },
+        "large": {
+          "uri": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__3a%2Ff3%2Fc0%2F3af3c04226951c6795056346603dee189b4ba4d9&width=580&height=750",
+          "width": 580,
+          "height": 750
+        }
+      }
+    },
+    {
+      "cuid": null,
+      "key": null,
+      "bucket": null,
+      "published": false,
+      "node": null,
+      "name": "6July26_Potomac_River_Pilot_TBDEM_FGDC_061226.xml",
+      "title": null,
+      "contentType": "application/fgdc+xml",
+      "contentEncoding": null,
+      "pathOnDisk": "__disk__44/00/43/440043a953cfa9617e3d352a9d5c7e5e8c2f6ecf",
+      "processed": false,
+      "processToken": null,
+      "imageWidth": null,
+      "imageHeight": null,
+      "size": 66292,
+      "dateUploaded": "2026-07-13T18:36:01Z",
+      "originalMetadata": true,
+      "useForPreview": false,
+      "movedToS3": false,
+      "s3Object": null,
+      "checksum": {
+        "value": "405663db1a5069b509e5244643680971",
+        "type": "MD5"
+      },
+      "url": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__44%2F00%2F43%2F440043a953cfa9617e3d352a9d5c7e5e8c2f6ecf",
+      "downloadUri": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__44%2F00%2F43%2F440043a953cfa9617e3d352a9d5c7e5e8c2f6ecf",
+      "viewUri": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__44%2F00%2F43%2F440043a953cfa9617e3d352a9d5c7e5e8c2f6ecf&allowOpen=true",
+      "metadataHtmlViewUri": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__44%2F00%2F43%2F440043a953cfa9617e3d352a9d5c7e5e8c2f6ecf&transform=1"
+    }
+  ],
+  "distributionLinks": [
+    {
+      "uri": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f",
+      "title": "Download Attached Files",
+      "type": "downloadLink",
+      "typeLabel": "Download Link",
+      "rel": "alternate",
+      "name": "PotomacRiverPil.zip",
+      "files": [
+        {
+          "name": "Potomac_River_Pilot_TBDEM_Data_Management_Plan_Final.docx",
+          "title": null,
+          "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "size": 21320,
+          "checksum": {
+            "value": "c69bb330ce8ca1d75704341bfc65f500",
+            "type": "MD5"
+          }
+        },
+        {
+          "name": "Potomac_River_Pilot_TBDEM_Spatial_Metadata_Data_Dictionary_Final.docx",
+          "title": null,
+          "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "size": 619625,
+          "checksum": {
+            "value": "9d6861efee62e900de5419b9fb9b3401",
+            "type": "MD5"
+          }
+        },
+        {
+          "name": "Potomac_River_TBDEM_Spatial_Metadata_041326.gpkg.zip",
+          "title": null,
+          "contentType": "application/zip",
+          "size": 5278087,
+          "checksum": {
+            "value": "2ce847f2da5cff6556661ca1c5016065",
+            "type": "MD5"
+          }
+        },
+        {
+          "name": "Potomac_River_TBDEM_Spatial_Metadata_041326.gdb.zip",
+          "title": null,
+          "contentType": "application/zip",
+          "size": 908532,
+          "checksum": {
+            "value": "da240f22c7906c5c0481893fd458f822",
+            "type": "MD5"
+          }
+        },
+        {
+          "name": "Potomac_River_TBDEM_Integration_051826_COG.tif.aux.xml",
+          "title": null,
+          "contentType": "application/xml",
+          "size": 2943,
+          "checksum": null
+        },
+        {
+          "name": "Potomac_River_TBDEM_Integration_051826_COG.tif",
+          "title": null,
+          "contentType": "image/tiff",
+          "size": 18699417699,
+          "checksum": null
+        },
+        {
+          "name": "Potomac_River_TBDEM_Overview_USTopo.jpg",
+          "title": null,
+          "contentType": "image/jpeg",
+          "size": 1309678,
+          "checksum": {
+            "value": "f08de2d530475fe443bcc6c8ea9fa90d",
+            "type": "MD5"
+          }
+        },
+        {
+          "name": "6July26_Potomac_River_Pilot_TBDEM_FGDC_061226.xml",
+          "title": null,
+          "contentType": "application/fgdc+xml",
+          "size": 66292,
+          "checksum": {
+            "value": "405663db1a5069b509e5244643680971",
+            "type": "MD5"
+          }
+        }
+      ]
+    }
+  ],
+  "previewImage": {
+    "from": "attachedFile",
+    "original": {
+      "uri": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__3a%2Ff3%2Fc0%2F3af3c04226951c6795056346603dee189b4ba4d9",
+      "viewUri": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__3a%2Ff3%2Fc0%2F3af3c04226951c6795056346603dee189b4ba4d9&width=2550&height=3300",
+      "viewUrl": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?deprecated=__use__viewUri__instead__&f=__disk__3a%2Ff3%2Fc0%2F3af3c04226951c6795056346603dee189b4ba4d9&width=2550&height=3300",
+      "width": 2550,
+      "height": 3300,
+      "size": 1309678
+    },
+    "thumbnail": {
+      "uri": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__3a%2Ff3%2Fc0%2F3af3c04226951c6795056346603dee189b4ba4d9&width=87&height=113",
+      "width": 87,
+      "height": 113
+    },
+    "small": {
+      "uri": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__3a%2Ff3%2Fc0%2F3af3c04226951c6795056346603dee189b4ba4d9&width=203&height=263",
+      "width": 203,
+      "height": 263
+    },
+    "medium": {
+      "uri": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__3a%2Ff3%2Fc0%2F3af3c04226951c6795056346603dee189b4ba4d9&width=336&height=435",
+      "width": 336,
+      "height": 435
+    },
+    "large": {
+      "uri": "https://www.sciencebase.gov/catalog/file/get/69fb57eab66b01ed9290822f?f=__disk__3a%2Ff3%2Fc0%2F3af3c04226951c6795056346603dee189b4ba4d9&width=580&height=750",
+      "width": 580,
+      "height": 750
+    }
+  }
+}

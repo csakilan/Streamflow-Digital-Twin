@@ -1,0 +1,14 @@
+{
+  "name": "Potomac_River_TBDEM_Integration_051826_COG.tif",
+  "catalogBytes": 18699417699,
+  "requestRange": "bytes=0-16383",
+  "retrievedAt": "2026-11-10T05:00:32.849466+00:00",
+  "httpStatus": 206,
+  "contentRange": "bytes 0-4254/4255",
+  "acceptRanges": null,
+  "receivedBytes": 4255,
+  "tiffSignatureHex": "3c21646f63747970",
+  "rasterAccessVerified": false,
+  "resultType": "HTML file-manager page, not a TIFF raster",
+  "note": "HTTP 206 alone did not establish COG range access."
+}

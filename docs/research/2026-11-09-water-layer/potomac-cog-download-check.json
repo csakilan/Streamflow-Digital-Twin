@@ -1,0 +1,12 @@
+{
+  "endpoint": "catalog downloadUri",
+  "sourceName": "Potomac_River_TBDEM_Integration_051826_COG.tif",
+  "requestedBytes": 16384,
+  "rasterAccessVerified": false,
+  "status": 206,
+  "contentType": "text/html; charset=UTF-8",
+  "contentRange": "bytes 0-4254/4255",
+  "receivedBytes": 4255,
+  "signature": "3c21646f63747970",
+  "host": "sciencebase.usgs.gov"
+}

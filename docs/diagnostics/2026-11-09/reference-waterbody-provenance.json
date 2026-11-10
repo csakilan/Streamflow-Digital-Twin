@@ -1,0 +1,46 @@
+[
+  {
+    "name": "columbia",
+    "url": "https://3dhp.nationalmap.gov/arcgis/rest/services/usgs_3dhp_all/FeatureServer/60/query?geometry=-121.22%2C45.58%2C-121.16%2C45.64&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&where=areasqkm+%3E+1+AND+featuretypelabel+IN+%28%27River%27%2C%27Lake%27%29&outFields=gnisidlabel%2Cfeaturetypelabel%2Careasqkm%2Cworkunitid%2Cfeaturedate&returnGeometry=true&returnZ=false&outSR=4326&f=json",
+    "retrievedAt": "2026-11-10T01:28:33.037332+00:00",
+    "features": [
+      {
+        "properties": {
+          "gnisidlabel": "Lake Bonneville",
+          "featuretypelabel": "Lake",
+          "areasqkm": 78.71964823,
+          "workunitid": "NHD",
+          "featuredate": 1694649600000
+        },
+        "vertices": 18999
+      }
+    ]
+  },
+  {
+    "name": "potomac",
+    "url": "https://3dhp.nationalmap.gov/arcgis/rest/services/usgs_3dhp_all/FeatureServer/60/query?geometry=-77.16%2C38.92%2C-77.1%2C38.98&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&where=areasqkm+%3E+1+AND+featuretypelabel+IN+%28%27River%27%2C%27Lake%27%29&outFields=gnisidlabel%2Cfeaturetypelabel%2Careasqkm%2Cworkunitid%2Cfeaturedate&returnGeometry=true&returnZ=false&outSR=4326&f=json",
+    "retrievedAt": "2026-11-10T01:28:33.902567+00:00",
+    "features": [
+      {
+        "properties": {
+          "gnisidlabel": null,
+          "featuretypelabel": "River",
+          "areasqkm": 36.00724924,
+          "workunitid": "NHD",
+          "featuredate": 1694649600000
+        },
+        "vertices": 75229
+      },
+      {
+        "properties": {
+          "gnisidlabel": null,
+          "featuretypelabel": "River",
+          "areasqkm": 122.4905428,
+          "workunitid": "NHD",
+          "featuredate": 1694649600000
+        },
+        "vertices": 73930
+      }
+    ]
+  }
+]

@@ -1,0 +1,35 @@
+# Local operating system and editor files
+.DS_Store
+._*
+.idea/
+.vscode/
+
+# Python/Node environments and generated caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+node_modules/
+*.log
+
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+.aws/
+
+# Build packages and isolated working copies
+dist/
+.worktrees/
+worktrees/
+
+# Raw research web responses may contain expiring signed download URLs.
+# Keep the research notes and structured verification evidence instead.
+docs/research/**/*.html

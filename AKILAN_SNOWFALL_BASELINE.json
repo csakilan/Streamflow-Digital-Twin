@@ -1,0 +1,16 @@
+[
+  {
+    "site": "01646500",
+    "file": "stations/USGS-01646500-3d.html",
+    "source": "https://d36737oy6jvpd8.cloudfront.net/stations/USGS-01646500-3d.html",
+    "sha256": "63c9649200f263e36bcef03fbe85f327d85edf761838c8e37134248ca5a566b0",
+    "bytes": 4477190
+  },
+  {
+    "site": "14105700",
+    "file": "stations/USGS-14105700-3d.html",
+    "source": "https://d36737oy6jvpd8.cloudfront.net/stations/USGS-14105700-3d.html",
+    "sha256": "faa0369c4dd93c0bc84ed7aa29f8194ee85d48bcf8ba86565ab7669ef6505f12",
+    "bytes": 5315045
+  }
+]

@@ -1,0 +1,81 @@
+{
+  "prepared_by": "Akilan Chithra Sathish",
+  "date": "2026-10-28",
+  "release": "74a5ee91efce",
+  "scope": [
+    "01646500",
+    "14105700"
+  ],
+  "baseline_archive": "hydrotwin-site dev snapshot used by the full local app",
+  "baseline": [
+    {
+      "site": "01646500",
+      "path": "stations/USGS-01646500.html",
+      "original_sha256": "0cbc00dbb382ec71f8f6a309d79bb6f29c742a14428f7f9c14c0f494a8bc2907",
+      "original_bytes": 4033375
+    },
+    {
+      "site": "14105700",
+      "path": "stations/USGS-14105700.html",
+      "original_sha256": "357ea2c9e5c9aaf6f721378ac5702f0f180441d47140b137cc4c3aa07ca04f18",
+      "original_bytes": 4873983
+    }
+  ],
+  "files": [
+    {
+      "path": "assets/spatial-data/VRButton.js",
+      "bytes": 4559,
+      "sha256": "8ed40aedce76a40992a28980af9adf98543ce4233ea5649781245929a8fa052d"
+    },
+    {
+      "path": "assets/spatial-data/analytics.mjs",
+      "bytes": 2794,
+      "sha256": "15d60ca6717bcd5437c956f1698740d120ef281de5689921258cbff6658afcce"
+    },
+    {
+      "path": "assets/spatial-data/app.mjs",
+      "bytes": 16937,
+      "sha256": "a48990dd4df27fbbece4868d175484cf5d6d006f9d5dae4d87ec5661e41d705b"
+    },
+    {
+      "path": "assets/spatial-data/panels.mjs",
+      "bytes": 10440,
+      "sha256": "694e0fd51ff736deb2787b4b1c8fe7a46463fd02156f6f8df959256c7ea91e63"
+    },
+    {
+      "path": "assets/spatial-data/state.mjs",
+      "bytes": 1849,
+      "sha256": "d5ba2b6e6c397a174ea73c4f6378bc800713e768878670aa2009dc3fbb6bc014"
+    },
+    {
+      "path": "assets/spatial-data/style.css",
+      "bytes": 4637,
+      "sha256": "8a6001bdb52d8e5e3ca46002f32bb110025a128d8bfa11dd75c4d624cdb4e5ed"
+    },
+    {
+      "path": "data-space/01646500.html",
+      "bytes": 3281,
+      "sha256": "7e5ce3b0cd698fc47bc5224d0a6aaecc2e717e22ab5facd3aabd461cd1ef62dc"
+    },
+    {
+      "path": "data-space/14105700.html",
+      "bytes": 3281,
+      "sha256": "9039bd8645fe8e6734f985c687c4d738b7e87b1c7527f73db9bdfb9310a74865"
+    },
+    {
+      "path": "stations/USGS-01646500.html",
+      "bytes": 4033835,
+      "sha256": "cd3c1577cbc380db5f0440f611e3e7176da2665e26c4898f361f346870bd967f"
+    },
+    {
+      "path": "stations/USGS-14105700.html",
+      "bytes": 4874443,
+      "sha256": "02c67bf50ae0074636000c683088a061e6f820e0ad6986baa9c63cb7e4f22447"
+    },
+    {
+      "path": "AKILAN_SPATIAL_DATA_README.md",
+      "bytes": 7470,
+      "sha256": "dcd3e3746f0ec864ff37df594f67894602b07d3b0acfe904531458d114f29a2d"
+    }
+  ]
+}
