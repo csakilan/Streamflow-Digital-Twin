@@ -1,0 +1,226 @@
+{
+  "14105700": {
+    "snapshot": {
+      "site": "14105700",
+      "mode": "mapped",
+      "ready": true,
+      "referenceDate": "2023-09-14",
+      "ground": {
+        "vertices": 20837,
+        "triangles": 39087,
+        "invalidVertices": 0,
+        "simplificationToleranceM": 0.5,
+        "sourceAreaM2": 1454352.723,
+        "simplificationDifferenceM2": 707.506,
+        "areaM2": 1454434.979,
+        "preQuantizationCoverageErrorM2": 0,
+        "coordinateRoundingM": 0.001,
+        "polygons": 1,
+        "islands": 0
+      },
+      "table": {
+        "vertices": 4994,
+        "triangles": 6200,
+        "invalidVertices": 0,
+        "simplificationToleranceM": 2,
+        "sourceAreaM2": 19966076.912,
+        "simplificationDifferenceM2": 37872.349,
+        "areaM2": 19968972.861,
+        "preQuantizationCoverageErrorM2": 0,
+        "coordinateRoundingM": 0.001,
+        "polygons": 1,
+        "islands": 50
+      },
+      "error": null,
+      "readiness": {
+        "ground": true,
+        "table": true
+      },
+      "terrain": {
+        "ground": {
+          "loaded": true,
+          "failedTiles": 0,
+          "invalidPixels": 0
+        },
+        "table": {
+          "loaded": true,
+          "failedTiles": 0,
+          "invalidPixels": 0
+        }
+      },
+      "shorelineVisible": true,
+      "date": "2024-01-13",
+      "flowCfs": 131000,
+      "forecast": false,
+      "lead": null,
+      "estimatedHeightFt": 75.52138813261851,
+      "measured": null
+    },
+    "assetBytes": 1917704,
+    "errors": [],
+    "failed": [
+      {
+        "url": "http://127.0.0.1:8783/data/pulls/manifest.json?htpf=1794291671544&htv=40020991319-8fc49f32fd300de4bab354ddf7d3641012bc893d",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:8783/data/pulls/manifest.json?htpf=1794291732388&htv=40020991319-8fc49f32fd300de4bab354ddf7d3641012bc893d",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:8783/data/pulls/manifest.json?htpf=1794291762887&htv=40020991319-8fc49f32fd300de4bab354ddf7d3641012bc893d",
+        "status": 404
+      }
+    ],
+    "checks": "Full app; 96 measured readings; mapped/original/imagery; banks; real date/model/lead/forecast actions; table/relief rebuild; unchanged mapped footprint across dates",
+    "capture": "1600x1000 Chrome software WebGL; desktop appearance only, no headset/performance claim"
+  },
+  "01646500": {
+    "snapshot": {
+      "site": "01646500",
+      "mode": "mapped",
+      "ready": true,
+      "referenceDate": "2023-09-14",
+      "ground": {
+        "vertices": 21413,
+        "triangles": 35854,
+        "invalidVertices": 0,
+        "simplificationToleranceM": 0.5,
+        "sourceAreaM2": 1417594.049,
+        "simplificationDifferenceM2": 1952.697,
+        "areaM2": 1417689.001,
+        "preQuantizationCoverageErrorM2": 0,
+        "coordinateRoundingM": 0.001,
+        "polygons": 2,
+        "islands": 16
+      },
+      "table": {
+        "vertices": 26128,
+        "triangles": 28513,
+        "invalidVertices": 0,
+        "simplificationToleranceM": 2,
+        "sourceAreaM2": 40880553.44,
+        "simplificationDifferenceM2": 228890.818,
+        "areaM2": 40889393.867,
+        "preQuantizationCoverageErrorM2": 0,
+        "coordinateRoundingM": 0.001,
+        "polygons": 2,
+        "islands": 270
+      },
+      "error": null,
+      "readiness": {
+        "ground": true,
+        "table": true
+      },
+      "terrain": {
+        "ground": {
+          "loaded": true,
+          "failedTiles": 0,
+          "invalidPixels": 0
+        },
+        "table": {
+          "loaded": true,
+          "failedTiles": 0,
+          "invalidPixels": 0
+        }
+      },
+      "shorelineVisible": true,
+      "date": "2024-01-13",
+      "flowCfs": 40100,
+      "forecast": false,
+      "lead": null,
+      "estimatedHeightFt": 6.3403443849827745,
+      "measured": null
+    },
+    "assetBytes": 3555764,
+    "errors": [],
+    "failed": [
+      {
+        "url": "http://127.0.0.1:8783/data/pulls/manifest.json?htpf=1794291606926&htv=40020991319-8fc49f32fd300de4bab354ddf7d3641012bc893d",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:8783/favicon.ico",
+        "status": 404
+      }
+    ],
+    "checks": "Full app; 96 measured readings; mapped/original/imagery; banks; real date/model/lead/forecast actions; table/relief rebuild; unchanged mapped footprint across dates",
+    "capture": "1600x1000 Chrome software WebGL; desktop appearance only, no headset/performance claim"
+  },
+  "failureChecks": {
+    "terrain": {
+      "site": "01646500",
+      "mode": "mapped",
+      "ready": false,
+      "referenceDate": "2023-09-14",
+      "ground": null,
+      "table": null,
+      "error": null,
+      "readiness": {
+        "ground": false,
+        "table": false
+      },
+      "terrain": {
+        "ground": {
+          "loaded": true,
+          "failedTiles": 16,
+          "invalidPixels": 1048576
+        },
+        "table": {
+          "loaded": true,
+          "failedTiles": 25,
+          "invalidPixels": 1638400
+        }
+      },
+      "shorelineVisible": false,
+      "date": "2025-05-12",
+      "flowCfs": 11200,
+      "forecast": false,
+      "lead": null,
+      "estimatedHeightFt": 4.120228263746171,
+      "measured": null
+    },
+    "checks": "Early relief and failed elevation tiles never create mapped water",
+    "missingReference": {
+      "site": "14105700",
+      "mode": "mapped",
+      "ready": false,
+      "referenceDate": null,
+      "ground": null,
+      "table": null,
+      "error": "Failed to fetch",
+      "readiness": {
+        "ground": false,
+        "table": true
+      },
+      "terrain": {
+        "ground": {
+          "loaded": false,
+          "failedTiles": 0,
+          "invalidPixels": 0
+        },
+        "table": {
+          "loaded": true,
+          "failedTiles": 0,
+          "invalidPixels": 0
+        }
+      },
+      "shorelineVisible": false,
+      "date": "2025-05-10",
+      "flowCfs": 232000,
+      "forecast": false,
+      "lead": null,
+      "estimatedHeightFt": 77.38055415885101,
+      "measured": {
+        "date": "2025-05-10",
+        "meanFt": 77.08145833333336,
+        "minFt": 76.65,
+        "maxFt": 77.5,
+        "samples": 96,
+        "provisional": false,
+        "first": "2025-05-10T07:00:00.000Z",
+        "last": "2025-05-11T06:45:00.000Z"
+      }
+    }
+  }
+}

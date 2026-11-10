@@ -16,7 +16,7 @@ try{
  ws.onmessage=e=>{const m=JSON.parse(e.data);if(m.method==='Runtime.exceptionThrown')errors.push(m.params.exceptionDetails.exception?.description??m.params.exceptionDetails.text);if(m.method==='Network.responseReceived'&&m.params.response.status>=400)failed.push({url:m.params.response.url,status:m.params.response.status});const p=pending.get(m.id);if(p){pending.delete(m.id);m.error?p.reject(Error(m.error.message)):p.resolve(m.result);}};
  await call('Page.enable');await call('Runtime.enable');await call('Network.enable');await call('Emulation.setDeviceMetricsOverride',{width:1600,height:1000,deviceScaleFactor:1,mobile:false});
  for(const [site,name,focus] of [['01646500','potomac',[106.799751,247.963609]],['14105700','columbia',[212.749719,-226.368948]]].filter(s=>!process.argv[2]||s[0]===process.argv[2])){
-  errors=[];failed=[];await call('Page.navigate',{url:`http://127.0.0.1:8783/stations/USGS-${site}-3d.html?day=2025-05-10&akSnow=off&water=mapped&waterVersion=1`});
+  errors=[];failed=[];await call('Page.navigate',{url:`http://127.0.0.1:8783/stations/USGS-${site}-3d.html?day=2025-05-10&akSnow=off&water=mapped&waterVersion=2`});
   let state;for(let i=0;i<240;i++){
    await pause(700);state=await js(`({site:window.HT3D?.site,ready:window.__riverWater?.snapshot(),buildings:window.HT3?.BLD.n,status:document.getElementById('status')?.textContent})`);
    if(i%15===0)console.log(name+' '+JSON.stringify(state));
@@ -37,16 +37,35 @@ try{
   await mode('imagery');assert.equal(await js('__riverWater.layers.ground.mesh.visible'),false);assert.equal(await js('HT3.gWater.mesh.visible'),false);
   await caption('Aerial imagery only · same camera');await shot(`${name}-06-overhead-imagery.png`);
   await mode('mapped');await js("document.getElementById('rw-shore').click()");assert.equal(await js('__riverWater.layers.ground.line.visible'),true);await caption('Mapped banks and islands · same camera');await shot(`${name}-07-overhead-banks.png`);
+  await mode('imagery');assert.equal(await js('__riverWater.layers.ground.line.visible'),false,'Imagery only hides previously enabled banks');await mode('mapped');
   const before=await js('Array.from(__riverWater.layers.ground.mesh.geometry.attributes.position.array.slice(0,90))');
   await js("HT3.setDay(Math.round((Date.parse('2024-01-13T00:00:00Z')-Date.parse(HT3D.start+'T00:00:00Z'))/864e5));HT3.act('lead');HT3.act('model')");await pause(200);
   assert.deepEqual(await js('Array.from(__riverWater.layers.ground.mesh.geometry.attributes.position.array.slice(0,90))'),before,'date changes do not invent historical shoreline');
   assert.equal(await js('__riverWater.snapshot().date'),'2024-01-13');assert.equal(await js('HT3.gWater.lines.fc.visible'),false);
-  await js("HT3.act('fc')");await pause(350);assert.equal(await js('HT3.gWater.mesh.visible'),false);assert.equal(await js('HT3.gWater.lines.obs.visible'),false);await js("HT3.act('fc')");
+  await js("HT3.act('fc');HT3.FC.t=1.4;HT3.act('lead')");
+  const discrete=await js('({actual:__riverWater.snapshot().flowCfs,expected:HT3D.pred[HT3.S2.model][0][HT3.FC.i0],lead:__riverWater.snapshot().lead})');assert.equal(discrete.lead,1);assert.equal(discrete.actual,discrete.expected,'Forecast readout uses discrete issued value, not interpolated flow');
+  await pause(350);assert.equal(await js('HT3.gWater.mesh.visible'),false);assert.equal(await js('HT3.gWater.lines.obs.visible'),false);await js("HT3.act('fc')");
   await js("document.getElementById('bTable').click()");await pause(200);assert.equal(await js('HT3.S2.mode'),'table');assert.equal(await js('__riverWater.layers.table.mesh.visible'),true);assert.equal(await js('HT3.tWater.mesh.visible'),false);await caption('Mapped reference river · tabletop');await shot(`${name}-08-table-mapped.png`);
   const geoBefore=await js('__riverWater.layers.table.mesh.geometry.uuid');await js("HT3.act('relief')");assert.notEqual(await js('__riverWater.layers.table.mesh.geometry.uuid'),geoBefore,'relief rebuilds mapped heights');
   await js("HT3.act('drone')");
-  assert.deepEqual(errors,[],'no browser exceptions');report[site]={snapshot:await js('__riverWater.snapshot()'),errors,failed,checks:'Full app; 96 measured readings; mapped/original/imagery; banks; real date/model/lead/forecast actions; table/relief rebuild; unchanged mapped footprint across dates',capture:'1600x1000 Chrome software WebGL; desktop appearance only, no headset/performance claim'};
+  assert.deepEqual(errors,[],'no browser exceptions');report[site]={snapshot:await js('__riverWater.snapshot()'),assetBytes:await js("fetch('../assets/river-water/data/"+site+".json?v=2').then(r=>r.text()).then(t=>new TextEncoder().encode(t).length)"),errors,failed,checks:'Full app; 96 measured readings; mapped/original/imagery; banks; real date/model/lead/forecast actions; table/relief rebuild; unchanged mapped footprint across dates',capture:'1600x1000 Chrome software WebGL; desktop appearance only, no headset/performance claim'};
   writeFileSync(new URL('browser-evidence.json',output),JSON.stringify(report,null,2));console.log('PASS '+name);
  }
+ // Deliberately fail terrain: relief before loading must not create flat water;
+ // decoded missing tiles must not become apparently valid mapped elevations.
+ await call('Network.setBlockedURLs',{urls:['*elevation-tiles-prod*']});
+ await call('Page.navigate',{url:'http://127.0.0.1:8783/stations/USGS-01646500-3d.html?akSnow=off&water=mapped&waterVersion=2'});
+ let available=false;for(let k=0;k<100;k++){await pause(250);if(await js('!!window.HT3&&!!window.__riverWater')){available=true;break;}}assert.ok(available);
+ await js("HT3.act('relief')");assert.equal(await js('__riverWater.snapshot().readiness.table'),false);
+ for(let k=0;k<160;k++){if(await js('!!__riverWater.snapshot().terrain?.ground.loaded'))break;await pause(250);}
+ const unavailable=await js('__riverWater.snapshot()');assert.equal(unavailable.terrain.ground.loaded,true);assert.ok(unavailable.terrain.ground.failedTiles>0);assert.equal(unavailable.ready,false);assert.equal(unavailable.readiness.ground,false);
+ assert.equal(await js('!!__riverWater.layers.ground?.mesh.visible'),false);assert.match(await js("document.getElementById('river-water-summary').textContent"),/unavailable/);
+ report.failureChecks={terrain:unavailable,checks:'Early relief and failed elevation tiles never create mapped water'};
+ await call('Network.setBlockedURLs',{urls:['*assets/river-water/data/14105700.json*']});
+ await call('Page.navigate',{url:'http://127.0.0.1:8783/stations/USGS-14105700-3d.html?akSnow=off&water=mapped&waterVersion=2'});
+ let missing;for(let k=0;k<100;k++){await pause(250);missing=await js('window.__riverWater?.snapshot()');if(missing?.error)break;}
+ assert.ok(missing?.error,'missing reference is explicit');assert.equal(missing.ready,false);assert.equal(await js('window.HT3.gWater.mesh.visible'),false,'missing reference never falls back silently to old water');
+ report.failureChecks.missingReference=missing;
+ writeFileSync(new URL('browser-evidence.json',output),JSON.stringify(report,null,2));console.log('PASS unavailable terrain/reference and early-relief checks');
 }catch(e){console.error(e);console.error({errors,failed});process.exitCode=1;}
 finally{ws?.close();const stopped=child.exitCode!==null?Promise.resolve():new Promise(resolve=>child.once('exit',resolve));child.kill('SIGTERM');await Promise.race([stopped,pause(4000)]);rmSync(profile,{recursive:true,force:true,maxRetries:8,retryDelay:200});}

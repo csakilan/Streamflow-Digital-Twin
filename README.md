@@ -13,6 +13,8 @@ The full 14-station application, baked forecasts, model sidecars, and original d
 
 These additions include snowfall driven by the selected date's historical snowfall estimate, a spatial 3D data workspace, a rotatable 3D chart with a selectable environmental axis, seasonal context, and forecast accuracy by lead. The accuracy table uses a window ending on the forecast issue date; changing the selected lead does not move that window.
 
+The water experiment adds mapped reference river surfaces, retained islands, shoreline comparisons, and separate measured/estimated gauge-height readouts for these two stations. See [the water-layer guide](AKILAN_RIVER_WATER_README.md).
+
 ## Run locally
 
 From this repository's root, using Python 3:
@@ -42,11 +44,11 @@ External imagery, terrain, browser libraries, and current weather services requi
 - [Water/building diagnosis](docs/diagnostics/2026-11-09/diagnosis.md)
 - [Water-layer research](docs/research/2026-11-09-water-layer/research.md)
 
-The existing water rendering remains an approximate visualization. The research documents distinguish mapped shorelines, estimated water heights, and calibrated flood modelling. Saving this baseline does not implement the researched replacement water layer or train new forecasting models.
+The existing water rendering remains an approximate visualization. The research documents distinguish mapped shorelines, estimated water heights, and calibrated flood modelling. The experiment branch implements the mapped reference layer described above; calibrated dynamic flood extents and new forecasting models remain future work.
 
 ## Version history and deployment
 
-`main` holds the saved full-app baseline. `experiment/river-water-layer` is the separate branch for the upcoming water-layer experiment. The `baseline/pre-water-layer` tag marks the starting point.
+`main` holds the saved full-app baseline. `experiment/river-water-layer` contains the mapped water-layer experiment. The `baseline/pre-water-layer` tag marks the starting point.
 
 Inherited GitHub workflows are preserved as inactive reference files in [docs/upstream/workflows](docs/upstream/workflows). Some target Saurabh's AWS resources or scheduled pipelines. This repository does not automatically deploy to those environments. No deployment credentials are included.
 
@@ -58,6 +60,7 @@ Install pytest in your preferred Python environment, then run:
 
 ```sh
 python3 -m pytest tests/ -q
+node --test tests/river_water.mjs
 node --test tests/snow_policy.mjs
 node tests/spatial_state.mjs
 node tests/spatial_analytics.mjs

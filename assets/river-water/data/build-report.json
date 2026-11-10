@@ -1,6 +1,6 @@
 {
   "01646500": {
-    "bytes": 2361511,
+    "bytes": 3555764,
     "inner": {
       "simplificationToleranceM": 0.5,
       "sourceAreaM2": 1417594.049,
@@ -12,6 +12,18 @@
       "islands": 16,
       "vertices": 21413,
       "triangles": 35854
+    },
+    "innerQuest": {
+      "simplificationToleranceM": 0.5,
+      "sourceAreaM2": 1417594.049,
+      "simplificationDifferenceM2": 1952.697,
+      "areaM2": 1417689.001,
+      "preQuantizationCoverageErrorM2": 0.0,
+      "coordinateRoundingM": 0.001,
+      "polygons": 2,
+      "islands": 16,
+      "vertices": 13905,
+      "triangles": 22028
     },
     "table": {
       "simplificationToleranceM": 2.0,
@@ -27,7 +39,7 @@
     }
   },
   "14105700": {
-    "bytes": 1237258,
+    "bytes": 1917704,
     "inner": {
       "simplificationToleranceM": 0.5,
       "sourceAreaM2": 1454352.723,
@@ -39,6 +51,18 @@
       "islands": 0,
       "vertices": 20837,
       "triangles": 39087
+    },
+    "innerQuest": {
+      "simplificationToleranceM": 0.5,
+      "sourceAreaM2": 1454352.723,
+      "simplificationDifferenceM2": 707.506,
+      "areaM2": 1454434.979,
+      "preQuantizationCoverageErrorM2": 0.0,
+      "coordinateRoundingM": 0.001,
+      "polygons": 1,
+      "islands": 0,
+      "vertices": 12276,
+      "triangles": 22526
     },
     "table": {
       "simplificationToleranceM": 2.0,

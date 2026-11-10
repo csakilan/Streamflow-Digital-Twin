@@ -13,3 +13,16 @@ function inRing(ring,x,z){let inside=false;for(let i=0,j=ring.length-1;i<ring.le
 }return inside;}
 export function containsWater(polygons,[x,z]){return polygons.some(rings=>inRing(rings[0],x,z)&&!rings.slice(1).some(r=>inRing(r,x,z)));}
 export function waterVisibility(mode,ready){return {mapped:mode==='mapped'&&ready,legacy:mode==='original'};}
+// Keep selected-date data separate from the visual interpolation/live beacon.
+export function selectRiverReading({day,issue,progress,forecast,flowAt,forecastAt}){
+ const lead=forecast?Math.max(0,Math.min(7,Math.round(progress))):null;
+ const index=forecast?issue+lead:day,isForecast=forecast&&lead>0;
+ const q=isForecast?forecastAt(lead):flowAt(index);
+ return {index,lead,forecast:isForecast,flow:Number.isFinite(q)&&q>=0?q:null};
+}
+export function terrainReady(s){return !!s?.loaded&&s.failedTiles===0&&s.invalidPixels===0;}
+export function waterCaption(mode,forecast,lead){
+ if(mode==='mapped')return 'Mapped reference shoreline stays fixed · gauge heights are rating estimates';
+ if(mode==='imagery')return 'Basemap only · gauge heights are rating estimates';
+ return forecast?'Original estimated water surface · white dots: rating-derived comparison':`Original estimated waterline · coloured dots: earlier forecast, +${lead} d`;
+}

@@ -1,5 +1,5 @@
-import {sampleGridHeight,waterVisibility} from './geometry.mjs?v=1';
-import {summarizeStage,stageUrl} from './stage.mjs?v=1';
+import {sampleGridHeight,waterVisibility} from './geometry.mjs?v=2';
+import {summarizeStage,stageUrl} from './stage.mjs?v=2';
 
 /** Reference geography adapter. Deliberately independent of the legacy QDEM/flood fill. */
 export function createRiverWater(o){
@@ -39,7 +39,8 @@ export function createRiverWater(o){
  }
  function build(kind){
   if(!data||!ready[kind])return;
-  const d=data[kind==='ground'?'inner':'table'],grid=kind==='ground'?o.groundGrid():o.tableGrid(),count=d.vertices.length/2;
+  const grid=kind==='ground'?o.groundGrid():o.tableGrid();
+  const d=data[kind==='ground'?(grid.n===289?'innerQuest':'inner'):'table'],count=d.vertices.length/2;
   if(!grid?.positions)return;
   const position=new Float32Array(count*3),uv=new Float32Array(count*2),fade=new Float32Array(count),valid=new Uint8Array(count);
   let invalid=0;
@@ -63,27 +64,28 @@ export function createRiverWater(o){
    const y=sampleGridHeight(grid.positions,grid.n,d.bounds,Math.max(x0,Math.min(x1,x)),Math.max(z0,Math.min(z1,z)));
    if(y==null)return null;const p=kind==='ground'?[x,z]:o.projectTable(x,z);return [p[0],y+(kind==='ground'?.4:.00015),p[1]];
   };
-  for(const polygon of d.polygons)for(const ring of polygon)for(let i=1;i<ring.length;i++){
+  for(const ring of d.banks)for(let i=1;i<ring.length;i++){
    const a=point(ring[i-1]),b=point(ring[i]);if(a&&b)bank.push(...a,...b);
   }
   const lineGeo=new THREE.BufferGeometry();lineGeo.setAttribute('position',new THREE.Float32BufferAttribute(bank,3));
   const line=new THREE.LineSegments(lineGeo,new THREE.LineBasicMaterial({color:'#a7ede0',transparent:true,opacity:.82,depthTest:true}));line.name='Mapped banks and islands';line.renderOrder=3;group.add(line);
   (kind==='ground'?o.groundRoot:o.tableRoot).add(group);layers[kind]={group,mesh,line};
   info[kind]={vertices:count,triangles:indices.length/3,invalidVertices:invalid,...d.validation};
-  info.ready=!!layers.ground;applyVisibility();paint();
+  info.ready=ready.ground&&!!layers.ground;applyVisibility();paint();
  }
  function applyVisibility(){
   const visible=waterVisibility(mode,!!data);
-  for(const layer of Object.values(layers)){layer.mesh.visible=visible.mapped;layer.line.visible=shore&&mode!=='original';}
+  for(const [kind,layer] of Object.entries(layers)){layer.mesh.visible=visible.mapped&&ready[kind];layer.line.visible=shore&&visible.mapped&&ready[kind];}
   // Called AFTER legacy updateLevel: its forecast routines can turn dots back on.
   for(const object of o.legacyObjects())if(!visible.legacy)object.visible=false;
   if(visible.legacy){for(const object of o.legacySurfaces())object.visible=true;}
  }
  function paint(){
-  el('river-water-summary').textContent=error&&mode==='mapped'?'Water: unavailable':`Water: ${mode==='mapped'?'mapped':mode==='original'?'original estimate':'imagery'}`;
+  const kind=selection?.view==='table'?'table':'ground',state=o.terrainStatus?.()[kind],terrainFailed=state?.loaded&&!ready[kind];
+  el('river-water-summary').textContent=error&&mode==='mapped'?'Water: unavailable':terrainFailed&&mode==='mapped'?'Water: terrain unavailable':`Water: ${mode==='mapped'?'mapped':mode==='original'?'original estimate':'imagery'}`;
   control.querySelectorAll('[data-water]').forEach(b=>{b.classList.toggle('selected',b.dataset.water===mode);b.setAttribute('aria-pressed',String(b.dataset.water===mode));});
-  el('rw-source').textContent=error?'Mapped river unavailable; imagery remains visible.':data?`USGS reference · ${data.referenceDate} · ${data.inner.validation.islands} mapped islands in detailed reach`:'Loading mapped reference…';
-  el('rw-meaning').textContent=mode==='mapped'?'Reference river shape. Changing the date updates data, not this mapped shoreline.':mode==='original'?'Original terrain/flow estimate, including approximate flood edges. This is the comparison baseline.':'Original aerial imagery; capture date may differ from the selected river date.';
+  el('rw-source').textContent=error?'Mapped river unavailable; imagery remains visible.':data?`USGS reference · ${data.referenceDate} · ${data.inner.validation.islands} mapped islands · main river features only`:'Loading mapped reference…';
+  el('rw-meaning').textContent=mode==='mapped'&&!ready[selection?.view==='table'?'table':'ground']?'Mapped water is hidden while elevation tiles are incomplete or unavailable.':mode==='mapped'?'Reference river shape; other waterbodies remain in the imagery. Changing the date updates data, not this mapped shoreline.':mode==='original'?'Original terrain/flow estimate, including approximate flood edges. This is the comparison baseline.':'Original basemap only; imagery capture date may differ from the selected river date.';
   if(!selection)return;
   el('rw-date').textContent=`${selection.forecast?'Forecast target':'Selected day'} · ${selection.date}`;
   el('rw-flow').textContent=`${round(selection.flow,0)} cfs${selection.forecast?' · '+selection.model:''}`;
@@ -103,14 +105,14 @@ export function createRiverWater(o){
  function setMode(next){
   if(!['mapped','original','imagery'].includes(next))throw RangeError('Unknown water mode');mode=next;info.mode=mode;o.onMode?.();applyVisibility();paint();
  }
- function rebuild(kind){if(kind)ready[kind]=true;else{ready.ground=o.groundReady();ready.table=o.tableReady();}if(kind)build(kind);else{build('ground');build('table');}}
+ function rebuild(kind){ready.ground=o.groundReady();ready.table=o.tableReady();if(kind)build(kind);else{build('ground');build('table');}info.ready=ready.ground&&!!layers.ground;applyVisibility();paint();}
  const api={setMode,cycle(){setMode(mode==='mapped'?'original':mode==='original'?'imagery':'mapped');},rebuild,
   update(dt,s){
    selection=s;applyVisibility();for(const layer of Object.values(layers)){layer.mesh.material.normalMap.offset.x-=dt*.005;layer.mesh.material.normalMap.offset.y+=dt*.0017;}
    const key=JSON.stringify(s);if(key!==lastSelection){lastSelection=key;paint();}
-  },snapshot(){return {...info,mode,shorelineVisible:shore,date:selection?.date,estimatedHeightFt:selection?.estimatedHeight,measured:days[selection?.date]??null};},get layers(){return layers;}};
- fetch(new URL(`./data/${site}-stage.json`,import.meta.url)).then(r=>{if(!r.ok)throw Error();return r.json();}).then(d=>{Object.assign(days,d.days);paint();}).catch(()=>{});
- fetch(new URL(`./data/${site}.json`,import.meta.url)).then(r=>{if(!r.ok)throw Error('Reference file '+r.status);return r.json();}).then(d=>{
+  },snapshot(){return {...info,readiness:{...ready},terrain:o.terrainStatus?.(),mode,shorelineVisible:shore,date:selection?.date,flowCfs:selection?.flow,forecast:selection?.forecast,lead:selection?.lead,estimatedHeightFt:selection?.estimatedHeight,measured:days[selection?.date]??null};},get layers(){return layers;}};
+ fetch(new URL(`./data/${site}-stage.json?v=2`,import.meta.url).href).then(r=>{if(!r.ok)throw Error();return r.json();}).then(d=>{Object.assign(days,d.days);paint();}).catch(()=>{});
+ fetch(new URL(`./data/${site}.json?v=2`,import.meta.url).href).then(r=>{if(!r.ok)throw Error('Reference file '+r.status);return r.json();}).then(d=>{
   if(d.site!==site||d.version!==1)throw Error('Reference data mismatch');data=d;info.referenceDate=d.referenceDate;rebuild();paint();
  }).catch(e=>{error=e.message;info.error=error;applyVisibility();paint();});
  paint();return api;
