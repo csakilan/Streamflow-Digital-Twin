@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "node build.mjs",
-    "test": "node --test readings.test.mjs"
+    "test": "node --test readings.test.mjs data-space/integration.test.mjs"
   },
   "dependencies": {
     "three": "0.185.0",

@@ -9,10 +9,10 @@ out = root / 'dist' / 'HydroTwin-River-Twin.zip'
 out.parent.mkdir(exist_ok=True)
 runtime = ['index.html', 'style.css', 'README.md', 'app.mjs', 'state.mjs',
            'connection.mjs', 'lifetime.mjs', 'world.mjs', 'geodesy.mjs',
-           'view-quality.mjs', 'navigation.mjs', 'billboard.mjs', 'viewer-credits.mjs', 'panel.mjs', 'credits.mjs', 'readings.mjs', 'banks.mjs']
+           'view-quality.mjs', 'view-state.mjs', 'navigation.mjs', 'billboard.mjs', 'viewer-credits.mjs', 'panel.mjs', 'credits.mjs', 'readings.mjs', 'banks.mjs']
 files = [app / name for name in runtime]
-for folder in ['chart', 'data', 'vendor', 'test-fixtures']:
-    files.extend(p for p in (app / folder).rglob('*') if p.is_file())
+for folder in ['chart', 'data', 'vendor', 'test-fixtures', 'data-space']:
+    files.extend(p for p in (app / folder).rglob('*') if p.is_file() and not p.name.endswith('.test.mjs'))
 files.extend(root / name for name in ['serve_local.py', '.env.example'])
 with ZipFile(out, 'w', ZIP_DEFLATED) as archive:
     for path in sorted(files):

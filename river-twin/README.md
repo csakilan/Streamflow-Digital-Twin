@@ -16,6 +16,12 @@ From the project root, run `python3 serve_local.py`, then open http://127.0.0.1:
 - 3D graph: X is target date, Y is rating-estimated river gauge height in feet, and Z is the selected issue-date environmental variable. Orbit with the mouse; select a curve point to inspect that issue date. Association is not causation.
 - Drag the data panel header, minimize it to a flow summary, or use Reset panel. In WebXR, use a controller ray to press controls and grip to move the panel. Scene cycles between the landscape and graph; Graph Z variable cycles variables. The right stick turns the miniature/graph. Physical headset performance has not been verified.
 
+## Full Data Space
+
+Use **Data Space** in the landscape's bottom toolbar, or its button on the floating panel. This restores the previous three-area workspace with all nine panel types: station overview, river history, seven-day forecast comparison, environmental driver history, model comparison, factor relationships, selectable-axis 3D graph, seasonal context and accuracy by lead.
+
+Choose a left, center or right area, then open a chart. Panels can be dragged by the title, enlarged, minimized and closed; graphs rotate independently. The full chart menu is also visible in the desktop dock. Date, model, lead and selected environmental variable are shared when moving between the landscape and Data Space. **River landscape** takes you back. Both stations and the correlation matrices are bundled locally; no original-site files are required. The two views share the standalone app’s date range, which reserves seven recorded target days for each issue date. In VR, the world-space River View button returns to the landscape; moving between pages ends the current immersive session, so press Enter VR again on the destination page.
+
 ## Riverbank overlay
 
 Cyan marks independently sourced USGS 3D Hydrography Program waterbody boundaries from the cached 2023-09-14 reference. The source query, checksum and provenance are in each `data/*-banks.json`. Its lines include island banks and exclude artificial closing edges at the cropped study boundary. Coverage is limited to about 4 km around each gauge.

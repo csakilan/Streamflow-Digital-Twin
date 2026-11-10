@@ -10,8 +10,8 @@ import {createGraph} from './chart/graph.mjs';
 import {graphVariables} from './chart/graph-data.mjs';
 import {dateAt,indexAt} from './chart/data.mjs';
 import {readings} from './readings.mjs';
-import {stationQuery} from './navigation.mjs';
 import {placeViewerCredits} from './viewer-credits.mjs';
+import {selectionQuery,readSelectionQuery} from './view-state.mjs';
 
 const $=selector=>document.querySelector(selector);
 const params=new URLSearchParams(location.search),site=params.get('station')==='14105700'?'14105700':'01646500';
@@ -22,7 +22,7 @@ $('#bank-date').textContent=bankData.referenceDate;
 for(const [key,definition] of Object.entries(graphVariables)){const option=document.createElement('option');option.value=key;option.textContent=definition.title+' ('+definition.unit+')';$('#z-variable').append(option);}
 
 const selection=createSelection(dataset),canvas=$('#world');
-if(params.has('day')){const i=indexAt(dataset,params.get('day'));if(Number.isInteger(i)&&i>=0&&i<=dataset.n-8)selection.change({issueIndex:i});}
+const {variable:requestedVariable,...requestedSelection}=readSelectionQuery(dataset,location.search);selection.change(requestedSelection);
 $('#issue-date').min=dataset.start;$('#issue-date').max=dateAt(dataset,dataset.n-8);
 for(const [i,name] of dataset.models.entries()){const o=document.createElement('option');o.value=i;o.textContent=name;$('#model-select').append(o);}
 
@@ -61,6 +61,7 @@ function act(action){
   if(action==='next')selection.change({issueIndex:Math.min(dataset.n-8,old.issueIndex+1)});
   if(action==='lead')selection.change({lead:old.lead%7+1});
   if(action==='model')selection.change({modelIndex:(old.modelIndex+1)%dataset.models.length});
+  if(action==='data')location.href=$('#data-space-link').href;
   if(action==='banks')toggleBanks();
   if(action==='view')setView(renderer.xr.isPresenting?(view==='graph'?'tabletop':'graph'):['aerial','close','tabletop','graph'][(['aerial','close','tabletop','graph'].indexOf(view)+1)%4]);
   if(action==='z'){const keys=Object.keys(graphVariables);setVariable(keys[(keys.indexOf(graph.getVariable())+1)%keys.length]);}
@@ -69,17 +70,18 @@ function act(action){
 
 function refreshData(){
  panel.draw();graph.update(selection.get());
+ $('#data-space-link').href='./data-space/?'+selectionQuery(location.search,site,dataset,{...selection.get(),variable:graph.getVariable()});
  $('#issue-date').value=selection.date();$('#model-select').value=selection.get().modelIndex;$('#lead-select').value=selection.get().lead;
  const c=selection.comparison();$('#data-summary').textContent=`Target ${c.targetDate} · observed ${Number.isFinite(c.observedCfs)?c.observedCfs.toLocaleString():'unavailable'} cfs · forecast ${Number.isFinite(c.predictedCfs)?c.predictedCfs.toLocaleString():'unavailable'} cfs`;
 }
-function setVariable(value){graph.setVariable(value);$('#z-variable').value=value;graph.update(selection.get());$('#z-note').textContent=graphVariables[value].title+' on issue dates · association, not causation';}
+function setVariable(value){graph.setVariable(value);$('#data-space-link').href='./data-space/?'+selectionQuery(location.search,site,dataset,{...selection.get(),variable:value});$('#z-variable').value=value;graph.update(selection.get());$('#z-note').textContent=graphVariables[value].title+' on issue dates · association, not causation';}
 function toggleBanks(){bankOverlay.visible=!bankOverlay.visible;$('#banks-toggle').setAttribute('aria-pressed',bankOverlay.visible);}
 $('#banks-toggle').addEventListener('click',toggleBanks);
 $('#z-variable').addEventListener('change',()=>setVariable($('#z-variable').value));
 $('#issue-date').addEventListener('change',()=>{try{selection.change({issueIndex:indexAt(dataset,$('#issue-date').value)});}catch{}refreshData();});
 $('#model-select').addEventListener('change',()=>{selection.change({modelIndex:Number($('#model-select').value)});refreshData();});
 $('#lead-select').addEventListener('change',()=>{selection.change({lead:Number($('#lead-select').value)});refreshData();});
-$('#station').addEventListener('change',()=>{location.href='./?'+stationQuery(location.search,$('#station').value,selection.date());});
+$('#station').addEventListener('change',()=>{location.href='./?'+selectionQuery(location.search,$('#station').value,dataset,{...selection.get(),variable:graph.getVariable()});});
 function resetPanel(){
   scene.attach(panel.group);
   if(renderer.xr.isPresenting){panel.group.scale.setScalar(1);panel.group.position.set(1,1.55,-1.8);panel.group.rotation.set(0,-.18,0);}
@@ -114,17 +116,22 @@ function setView(next){
 }
 for(const button of document.querySelectorAll('[data-view]'))button.addEventListener('click',()=>setView(button.dataset.view));
 $('#reset-panel').addEventListener('click',resetPanel);
+function preserveManualAccess(){
+ savedAccessAllowed=false;
+ const url=new URL(location.href);url.searchParams.set('manualAuth','1');history.replaceState(null,'',url);
+ $('#data-space-link').href='./data-space/?'+selectionQuery(location.search,site,dataset,{...selection.get(),variable:graph.getVariable()});
+}
 $('#setup-toggle').addEventListener('click',()=>{const closed=$('#setup').hidden=!$('#setup').hidden;$('#setup-toggle').setAttribute('aria-expanded',String(!closed));});
-$('#provider').addEventListener('change',()=>{savedAccessAllowed=false;provider=$('#provider').value;for(const selector of ['#asset','#asset-label','#asset-hint'])$(selector).hidden=provider!=='ion';});
-$('#credential').addEventListener('input',()=>{savedAccessAllowed=false;});
+$('#provider').addEventListener('change',()=>{preserveManualAccess();provider=$('#provider').value;for(const selector of ['#asset','#asset-label','#asset-hint'])$(selector).hidden=provider!=='ion';});
+$('#credential').addEventListener('input',()=>{preserveManualAccess();});
 $('#connect-form').addEventListener('submit',event=>{
-  event.preventDefault();savedAccessAllowed=false;if(connection.snapshot().active)return;
+  event.preventDefault();preserveManualAccess();if(connection.snapshot().active)return;
   assetId=$('#asset').value.trim();
   if(provider==='ion'&&!/^\d+$/.test(assetId)){ $('#status-detail').textContent='Use the numeric asset ID shown in your ion account.';return;}
   try{connection.connect(provider,$('#credential').value.trim());$('#credential').value='';}
   catch{ $('#status-detail').textContent='Enter your access token in the password field.';}
 });
-$('#disconnect').addEventListener('click',()=>{savedAccessAllowed=false;connection.disconnect();});
+$('#disconnect').addEventListener('click',()=>{preserveManualAccess();connection.disconnect();});
 
 const pointerRay=new THREE.Raycaster(),pointer=new THREE.Vector2(),plane=new THREE.Plane(),offset=new THREE.Vector3(),point=new THREE.Vector3();
 function mouseRay(event){pointer.set(event.clientX/innerWidth*2-1,1-event.clientY/innerHeight*2);pointerRay.setFromCamera(pointer,camera);return pointerRay;}
@@ -201,7 +208,7 @@ renderer.setAnimationLoop((time)=>{
   }
   renderer.render(scene,camera);
 });
-refreshData();setView('aerial');
+if(requestedVariable)setVariable(requestedVariable);refreshData();setView('aerial');
 document.body.dataset.status='idle';$('#status').textContent='Landscape not connected';$('#status-detail').textContent='Connect imagery to see the real river. The floating panel already uses your packaged station data.';
 
 // Explicitly local, synthetic geometry for testing the renderer without service access.

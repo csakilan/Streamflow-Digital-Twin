@@ -1,6 +1,6 @@
 # Streamflow Digital Twin
 
-Akilan Chithra Sathish's UTD RIDE research workspace for HydroTwin river visualization. This branch adds an independent Three.js/WebXR river app for Potomac and Columbia, with Google captured 3D imagery, clear readings and forecast controls, a selectable-axis graph, and independently mapped USGS bank outlines. The earlier full application is preserved. See [the standalone app guide](river-twin/README.md).
+Akilan Chithra Sathish's UTD RIDE research workspace for HydroTwin river visualization. This branch adds an independent Three.js/WebXR river app for Potomac and Columbia, with Google captured 3D imagery, clear readings and forecast controls, a selectable-axis graph, and independently mapped USGS bank outlines. The full nine-panel Data Space is included under the standalone app’s Data Space button, with its three floating areas and shared selection. The earlier full application is preserved. See [the standalone app guide](river-twin/README.md).
 
 ## Source and scope
 

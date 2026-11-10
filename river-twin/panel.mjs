@@ -62,7 +62,7 @@ export function createPanel(dataset,selection,onAction,stageData){
    text('MAE: average mistake size; lower is better.',32,800,22);text('Bias: + overpredicts / − underpredicts. Pairs: comparisons.',32,835,21);text('Up to 90 target days · retrospective, not held-out ranking.',32,868,21);
   }
   button('previous','← Issue day',24,916,212);button('next','Issue day →',247,916,212);button('lead',`Lead +${v.lead}d`,470,916,178);button('model',c.modelName,659,916,277);
-  button('view','Scene ↻',24,994,260);button('banks','Bank outline ↔',298,994,300);button('z','Graph Z variable ↻',612,994,324);
+  button('view','Scene ↻',24,994,168);button('banks','Bank outline',204,994,210);button('z','Graph Z ↻',426,994,226);button('data','Data Space',664,994,272);
   texture.needsUpdate=true;
  }
  function history(c,x,y,w,h){const start=Math.max(0,c.issueIndex-21),end=Math.min(dataset.n-1,c.issueIndex+7),values=dataset.flow.slice(start,end+1).filter(Number.isFinite),max=Math.max(1,...values,c.predictedCfs??0);ctx.strokeStyle='#73cce5';ctx.lineWidth=4;ctx.beginPath();let down=false;for(let i=start;i<=end;i++){const f=dataset.flow[i];if(!Number.isFinite(f)){down=false;continue;}const px=x+(i-start)/(end-start)*w,py=y+h-f/max*h;if(down)ctx.lineTo(px,py);else ctx.moveTo(px,py);down=true;}ctx.stroke();if(Number.isFinite(c.predictedCfs)){ctx.fillStyle='#ffbc7c';ctx.beginPath();ctx.arc(x+(c.targetIndex-start)/(end-start)*w,y+h-c.predictedCfs/max*h,7,0,Math.PI*2);ctx.fill();}text('Daily observed flow + selected forecast dot',x,y-15,20);}
