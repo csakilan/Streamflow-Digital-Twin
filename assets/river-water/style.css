@@ -1,0 +1,18 @@
+#river-water-control{position:relative;color:#e6edf5;font:13px/1.45 Arial,sans-serif;text-align:left}
+#river-water-control summary{list-style:none;padding:8px 12px;border-radius:10px;background:rgba(12,18,28,.9);font-weight:600;cursor:pointer}
+#river-water-control summary::-webkit-details-marker{display:none}
+#river-water-control summary::after{content:' ▾';color:#9dd9cf}
+#river-water-control[open] summary{background:#234b49}
+#river-water-control .rw-body{position:absolute;right:0;top:43px;width:min(320px,82vw);max-height:65vh;overflow:auto;padding:16px;border-radius:12px;border:1px solid #456561;background:#101f2bf5;box-shadow:0 8px 28px #0007;z-index:65}
+#river-water-control strong{display:block;font-size:15px;margin-bottom:5px}
+#river-water-control .rw-modes{display:flex;gap:5px;flex-wrap:wrap;margin:10px 0}
+#links #river-water-control button{font-size:12px;padding:8px 9px;border:1px solid #455a68;border-radius:7px;background:#1d303f}
+#links #river-water-control button.selected{background:#2a6259;border-color:#8bd5c2}
+#river-water-control .rw-check{display:flex;align-items:center;gap:7px;cursor:pointer}
+#river-water-control p{color:#bed0dc;margin:11px 0;font-size:12px}
+#river-water-control .rw-metric{border-top:1px solid #3e515e;padding:10px 0;display:grid;gap:3px}
+#river-water-control .rw-metric span{font-size:12px;color:#bbced8}
+#river-water-control .rw-metric strong{font-size:16px;color:#bbede1;margin:0}
+#river-water-control .rw-note{font-size:11px;color:#aebfc9}
+#links #river-water-control a{padding:0;background:none;font-size:12px;color:#9dd9cf}
+#river-water-control button:disabled{opacity:.5;cursor:wait}

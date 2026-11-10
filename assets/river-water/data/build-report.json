@@ -1,0 +1,56 @@
+{
+  "01646500": {
+    "bytes": 2361511,
+    "inner": {
+      "simplificationToleranceM": 0.5,
+      "sourceAreaM2": 1417594.049,
+      "simplificationDifferenceM2": 1952.697,
+      "areaM2": 1417689.001,
+      "preQuantizationCoverageErrorM2": 0.0,
+      "coordinateRoundingM": 0.001,
+      "polygons": 2,
+      "islands": 16,
+      "vertices": 21413,
+      "triangles": 35854
+    },
+    "table": {
+      "simplificationToleranceM": 2.0,
+      "sourceAreaM2": 40880553.44,
+      "simplificationDifferenceM2": 228890.818,
+      "areaM2": 40889393.867,
+      "preQuantizationCoverageErrorM2": 0.0,
+      "coordinateRoundingM": 0.001,
+      "polygons": 2,
+      "islands": 270,
+      "vertices": 26128,
+      "triangles": 28513
+    }
+  },
+  "14105700": {
+    "bytes": 1237258,
+    "inner": {
+      "simplificationToleranceM": 0.5,
+      "sourceAreaM2": 1454352.723,
+      "simplificationDifferenceM2": 707.506,
+      "areaM2": 1454434.979,
+      "preQuantizationCoverageErrorM2": 0.0,
+      "coordinateRoundingM": 0.001,
+      "polygons": 1,
+      "islands": 0,
+      "vertices": 20837,
+      "triangles": 39087
+    },
+    "table": {
+      "simplificationToleranceM": 2.0,
+      "sourceAreaM2": 19966076.912,
+      "simplificationDifferenceM2": 37872.349,
+      "areaM2": 19968972.861,
+      "preQuantizationCoverageErrorM2": 0.0,
+      "coordinateRoundingM": 0.001,
+      "polygons": 1,
+      "islands": 50,
+      "vertices": 4994,
+      "triangles": 6200
+    }
+  }
+}

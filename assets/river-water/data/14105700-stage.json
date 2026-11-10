@@ -1,0 +1,28 @@
+{
+  "site": "14105700",
+  "source": "USGS NWIS instantaneous gauge height, parameter 00065",
+  "description": "Arithmetic summaries of available subdaily samples; not an official daily-mean product. Gauge-relative feet, not terrain/sea-level elevation.",
+  "sourceFile": "docs/research/2026-11-09-water-layer/height-instantaneous.json",
+  "days": {
+    "2025-05-10": {
+      "date": "2025-05-10",
+      "meanFt": 77.08145833333336,
+      "minFt": 76.65,
+      "maxFt": 77.5,
+      "samples": 96,
+      "provisional": false,
+      "first": "2025-05-10T07:00:00.000Z",
+      "last": "2025-05-11T06:45:00.000Z"
+    },
+    "2025-05-11": {
+      "date": "2025-05-11",
+      "meanFt": 77.51677083333334,
+      "minFt": 77.02,
+      "maxFt": 78.19,
+      "samples": 96,
+      "provisional": false,
+      "first": "2025-05-11T07:00:00.000Z",
+      "last": "2025-05-12T06:45:00.000Z"
+    }
+  }
+}
