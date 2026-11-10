@@ -1,0 +1,135 @@
+{
+  "date": "2026-11-10",
+  "scope": "Controlled quality settings inside the public NASA-AMMOS reference demo at Potomac. No credential was extracted or used by the local app.",
+  "samples": [
+    {
+      "name": "01-current-aerial",
+      "profile": "current",
+      "pose": "aerial",
+      "errorTarget": 16,
+      "cacheMB": 161,
+      "cacheLimitMB": 160,
+      "cacheFull": true,
+      "refused": 164,
+      "queued": 0,
+      "downloading": 0,
+      "parsing": 0,
+      "failed": 0,
+      "visible": 111,
+      "loaded": 407,
+      "triangles": 166770,
+      "materialTypes": [
+        "MeshBasicMaterial"
+      ],
+      "textureCount": 135,
+      "maxTextureWidth": 512,
+      "anisotropy": [
+        1
+      ],
+      "maxVisibleError": 29.25871297720897,
+      "registeredResolution": {
+        "x": 1440,
+        "y": 900
+      },
+      "credits": "38\u00b0 57' 15\" N 77\u00b0 7' 59\" W\nGoogle; Vexcel Imaging US, Inc."
+    },
+    {
+      "name": "02-current-close",
+      "profile": "current",
+      "pose": "close",
+      "errorTarget": 16,
+      "cacheMB": 160,
+      "cacheLimitMB": 160,
+      "cacheFull": true,
+      "refused": 384,
+      "queued": 0,
+      "downloading": 0,
+      "parsing": 0,
+      "failed": 0,
+      "visible": 160,
+      "loaded": 477,
+      "triangles": 143474,
+      "materialTypes": [
+        "MeshBasicMaterial"
+      ],
+      "textureCount": 175,
+      "maxTextureWidth": 512,
+      "anisotropy": [
+        1
+      ],
+      "maxVisibleError": 105.73593379370352,
+      "registeredResolution": {
+        "x": 1440,
+        "y": 900
+      },
+      "credits": "38\u00b0 57' 6\" N 77\u00b0 7' 49\" W\nGoogle; Vexcel Imaging US, Inc."
+    },
+    {
+      "name": "03-more-cache",
+      "profile": "room",
+      "pose": "close",
+      "errorTarget": 16,
+      "cacheMB": 325,
+      "cacheLimitMB": 512,
+      "cacheFull": false,
+      "refused": 0,
+      "queued": 1,
+      "downloading": 0,
+      "parsing": 111,
+      "failed": 0,
+      "visible": 296,
+      "loaded": 782,
+      "triangles": 460657,
+      "materialTypes": [
+        "MeshBasicMaterial"
+      ],
+      "textureCount": 334,
+      "maxTextureWidth": 512,
+      "anisotropy": [
+        1
+      ],
+      "maxVisibleError": 21.264257851784517,
+      "registeredResolution": {
+        "x": 1440,
+        "y": 900
+      },
+      "credits": "38\u00b0 57' 6\" N 77\u00b0 7' 49\" W\nGoogle; Vexcel Imaging US, Inc."
+    },
+    {
+      "name": "04-finer-detail",
+      "profile": "detail",
+      "pose": "close",
+      "errorTarget": 4,
+      "cacheMB": 387,
+      "cacheLimitMB": 512,
+      "cacheFull": true,
+      "refused": 4685,
+      "queued": 2,
+      "downloading": 0,
+      "parsing": 598,
+      "failed": 0,
+      "visible": 405,
+      "loaded": 1000,
+      "triangles": 622181,
+      "materialTypes": [
+        "MeshBasicMaterial"
+      ],
+      "textureCount": 461,
+      "maxTextureWidth": 512,
+      "anisotropy": [
+        1
+      ],
+      "maxVisibleError": 20.352064036912065,
+      "registeredResolution": {
+        "x": 1440,
+        "y": 900
+      },
+      "credits": "38\u00b0 57' 6\" N 77\u00b0 7' 49\" W\nGoogle; Vexcel Imaging US, Inc."
+    }
+  ],
+  "instrumented": {
+    "streaming": 1,
+    "navigation": 1
+  },
+  "result": "MEASUREMENTS_CAPTURED"
+}
