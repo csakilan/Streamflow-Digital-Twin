@@ -46,7 +46,7 @@ The provider's combined textured surface replaces the old imagery-plus-guessed-b
 
 Changing the forecast date changes the hydrology panel, not the capture date of the photographic terrain. We have not aligned the gauge datum to provider terrain elevations or implemented a hydraulic inundation model. No visual water-level or flood boundary claim is made here. This deliberately avoids drawing apparently precise water heights on an unverified datum.
 
-The tile cache is an in-memory LRU with a 160 MiB target ceiling and a 600-item ceiling. It is an estimate, not a guaranteed total GPU/process memory bound: visible tiles, decoding and driver allocations can exceed it. Provider-required sessions and renewals are handled by the provider plugins. Viewer starts are not an exact count of billable root requests. No imagery tile downloads, offline packages, persistent caches or Google credentials are included. Provider cache rules and attribution still apply; see [Google's policies](https://developers.google.com/maps/documentation/tile/policies).
+The tile cache is an in-memory LRU with separate budgets: **desktop 512 MiB / 1,600 items; immersive XR 160 MiB / 600 items**. The scene switches budgets on the same renderer and provider session. Entering XR releases an oversized desktop cache through the renderer's disposal callbacks, then refines the scene again within the smaller budget. A cache already within XR limits is retained. The footer shows the active budget and indicates when memory blocks detail refinement. These are tile-cache limits, not guaranteed total GPU/process memory bounds: individual decoded tiles, decoding and driver allocations can exceed them. Provider-required sessions and renewals are handled by the provider plugins. Viewer starts are not an exact count of billable root requests. No imagery tile downloads, offline packages, persistent caches or Google credentials are included. Provider cache rules and attribution still apply; see [Google's policies](https://developers.google.com/maps/documentation/tile/policies).
 
 ## Verification without an account
 
@@ -64,7 +64,7 @@ The browser check requires the server on 8783 and Chrome at the standard macOS l
 
 Current pinned runtime: Three.js **0.185.0**, 3d-tiles-renderer **0.5.4**, IWER **2.1.0** for optional emulation. Runtime files and licenses are committed under `vendor/`; `node_modules/` is ignored. Third-party tile-loader console calls are omitted from the bundle because upstream errors can include signed request URLs. Error events still drive the safe access-status UI.
 
-Provider-dependent acceptance remains open: authenticate with the user's own token, inspect actual Potomac aerial and close coverage, check Google/Ion credits from real visible tiles in both desktop and XR, and measure performance in the target browser/headset. The public hosted renderer demo establishes promising imagery coverage, not completion of those app-specific checks.
+Successful local-app Google imagery streaming has been observed in the user's supplied screenshot. The larger desktop budget was motivated by a controlled reference-viewer reproduction of cache saturation; see `docs/diagnostics/2026-11-10-imagery-quality/`. Visual acceptance of the updated local-app budget, real provider credits in XR, and target-headset performance remain open. After updating source, refresh and re-enter the token locally because credentials are intentionally kept only in tab memory.
 
 ## References
 

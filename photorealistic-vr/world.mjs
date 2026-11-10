@@ -3,6 +3,9 @@ import {TilesRenderer,GoogleCloudAuthPlugin,CesiumIonAuthPlugin,GLTFExtensionsPl
 import {localFrame} from './geodesy.mjs';
 import {createLifetime} from './lifetime.mjs';
 
+const MIB=1024*1024;
+const BUDGETS={desktop:{minMB:256,maxMB:512,minTiles:450,maxTiles:1600},xr:{minMB:80,maxMB:160,minTiles:150,maxTiles:600}};
+
 /** Provider credentials stay inside this resource; no diagnostic snapshot includes it. */
 export function createImagery(type,credential,{ready,error},geoRoot,station,assetId){
   const tiles=new TilesRenderer(type==='sample'?'./test-fixtures/tileset.json':undefined);
@@ -19,8 +22,21 @@ export function createImagery(type,credential,{ready,error},geoRoot,station,asse
     tiles.group.matrix.set(...localFrame(station.latitude,station.longitude).matrixRows);
     tiles.group.matrixAutoUpdate=false;geoRoot.add(tiles.group);
     tiles.errorTarget=16;
-    tiles.lruCache.minSize=150;tiles.lruCache.maxSize=600;
-    tiles.lruCache.minBytesSize=80*1024*1024;tiles.lruCache.maxBytesSize=160*1024*1024;
+    let budgetMode=null;
+    function setBudget(mode){
+      if(mode===budgetMode)return;
+      budgetMode=mode;const budget=BUDGETS[mode];
+      tiles.lruCache.minSize=budget.minTiles;tiles.lruCache.maxSize=budget.maxTiles;
+      tiles.lruCache.minBytesSize=budget.minMB*MIB;tiles.lruCache.maxBytesSize=budget.maxMB*MIB;
+      if(mode==='xr'&&(tiles.lruCache.cachedBytes>budget.maxMB*MIB||tiles.lruCache.itemList.length>budget.maxTiles)){
+        // LRU eviction protects visible content, so lowering limits alone cannot
+        // reclaim a large desktop scene. Release leaf content before parent
+        // metadata, then refine under the XR budget using the same root/auth.
+        const resident=tiles.lruCache.itemList.slice().sort((a,b)=>(b.internal?.depth??0)-(a.internal?.depth??0));
+        for(const tile of resident)tiles.lruCache.remove(tile);
+      }
+    }
+    setBudget('desktop');
     let seen=false,disposed=false,models=0,cameras=[],creditsDirty=true,creditsText='';
     tiles.addEventListener('load-model',()=>{models++;if(!seen&&!disposed){seen=true;ready();}});
     tiles.addEventListener('load-error',event=>{if(!disposed)error(event.error);});
@@ -30,6 +46,8 @@ export function createImagery(type,credential,{ready,error},geoRoot,station,asse
       tiles,
       update(camera,renderer){
         if(disposed)return;
+        // Reuse the same authenticated tileset while switching session budgets.
+        setBudget(camera.isArrayCamera?'xr':'desktop');
         if(cameras[0]!==camera){for(const previous of cameras)tiles.deleteCamera(previous);tiles.setCamera(camera);cameras=[camera];}
         if(camera.isArrayCamera&&camera.cameras[0]){const v=camera.cameras[0].viewport;tiles.setResolution(camera,v.z,v.w);}
         else tiles.setResolutionFromRenderer(camera,renderer);
@@ -41,7 +59,7 @@ export function createImagery(type,credential,{ready,error},geoRoot,station,asse
         const values=tiles.getAttributions().filter(item=>item.type!=='image').map(item=>cleanText(item.value)).filter(Boolean);
         creditsText=['Basemap: Google Maps',...[...new Set(values)].sort(),...(type==='ion'?['3D tiles access: Cesium ion']:[]),'Hydrology: USGS / supplied HydroTwin forecasts'].join(' · ');return creditsText;
       },
-      snapshot(){return {loadedModels:models,visible:tiles.visibleTiles.size,estimatedMB:Math.round(tiles.lruCache.cachedBytes/1024/1024),cameraCount:tiles.cameras.length,stereo:cameras[0]?.isArrayCamera===true};},
+      snapshot(){return {loadedModels:models,visible:tiles.visibleTiles.size,estimatedMB:Math.round(tiles.lruCache.cachedBytes/MIB),budgetMode,budgetMB:BUDGETS[budgetMode].maxMB,refused:tiles.stats.refused,queued:tiles.stats.queued,downloading:tiles.stats.downloading,parsing:tiles.stats.parsing,cameraCount:tiles.cameras.length,stereo:cameras[0]?.isArrayCamera===true};},
       dispose(){if(disposed)return;disposed=true;lifetime.dispose();geoRoot.remove(tiles.group);tiles.dispose();tiles.rootURL=null;draco.dispose();}
     };
   }catch(failure){lifetime.dispose();geoRoot.remove(tiles.group);tiles.dispose();draco.dispose();throw failure;}

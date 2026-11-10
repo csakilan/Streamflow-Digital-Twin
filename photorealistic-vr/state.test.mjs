@@ -41,3 +41,29 @@ test('disconnect cancels pending provider initialization and prevents a late Goo
   }
  }finally{globalThis.fetch=originalFetch;globalThis.requestAnimationFrame=originalRAF;globalThis.cancelAnimationFrame=originalCancel;}
 });
+test('desktop has room to refine, and XR entry/exit changes the budget on the same tileset',async()=>{
+ const {createImagery}=await import('./world.mjs'),{Group,PerspectiveCamera,ArrayCamera,Vector4}=await import('three');
+ const resource=createImagery('google','not-a-real-test-key',{ready(){},error(){}},new Group(),{latitude:38.94977778,longitude:-77.12763889},'2275207');
+ try{
+  const tiles=resource.tiles;tiles.update=()=>{}; // No provider requests: exercise the actual frame/budget adapter.
+  const desktop=new PerspectiveCamera(),eye=new PerspectiveCamera();eye.viewport=new Vector4(0,0,900,1000);
+  const xr=new ArrayCamera([eye]),renderer={getSize:target=>target.set(1500,1000)};
+  resource.update(desktop,renderer);
+  assert.equal(tiles.lruCache.maxBytesSize,512*1024*1024,'desktop budget must allow the higher-detail scene');
+  assert.equal(tiles.lruCache.maxSize,1600);assert.equal(resource.snapshot().budgetMode,'desktop');
+  const auth=tiles.getPluginByName('GOOGLE_CLOUD_AUTH_PLUGIN');let evictions=0;
+  const desktopContent={internal:{depth:2}};tiles.lruCache.add(desktopContent,()=>evictions++);
+  tiles.lruCache.setMemoryUsage(desktopContent,300*1024*1024);tiles.lruCache.setLoaded(desktopContent,true);
+  resource.update(xr,renderer);
+  assert.equal(tiles.lruCache.maxBytesSize,160*1024*1024,'XR keeps its conservative budget');
+  assert.equal(tiles.lruCache.maxSize,600);assert.equal(resource.snapshot().budgetMode,'xr');assert.equal(tiles.cameras.length,1);
+  assert.equal(evictions,1,'used desktop content above the XR budget must actually be released');
+  assert.ok(tiles.lruCache.cachedBytes<=160*1024*1024);assert.equal(tiles.getPluginByName('GOOGLE_CLOUD_AUTH_PLUGIN'),auth,'provider session survives cache cleanup');
+  resource.update(desktop,renderer);
+  assert.equal(resource.tiles,tiles,'no reconnect or replacement when leaving XR');assert.equal(tiles.lruCache.maxBytesSize,512*1024*1024);
+  const smallContent={internal:{depth:1}};tiles.lruCache.add(smallContent,()=>evictions++);tiles.lruCache.setMemoryUsage(smallContent,100*1024*1024);tiles.lruCache.setLoaded(smallContent,true);
+  resource.update(xr,renderer);assert.equal(evictions,1,'content already within the XR budget can stay cached');tiles.lruCache.remove(smallContent);
+  resource.update(desktop,renderer);
+  tiles.stats.refused=12;assert.equal(resource.snapshot().refused,12,'stalled refinement is observable');
+ }finally{resource.dispose();}
+});

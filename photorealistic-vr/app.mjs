@@ -147,7 +147,7 @@ renderer.setAnimationLoop((time)=>{
     $('#attribution').textContent=text;$('#google-logo').hidden=!text.startsWith('Basemap: Google Maps');credits.update(text);
   }
   if(frames%30===0){
-    const stats=resource?.snapshot();$('#stream-stats').textContent=stats?`${stats.visible} visible tiles · ~${stats.estimatedMB} MB cache`:'';
+    const stats=resource?.snapshot();$('#stream-stats').textContent=stats?`${stats.budgetMode==='xr'?'VR':'Desktop'} · ${stats.visible} visible tiles · ~${stats.estimatedMB}/${stats.budgetMB} MB cache${stats.refused>0?' · Detail limited by memory':''}`:'';
   }
   renderer.render(scene,camera);
 });
