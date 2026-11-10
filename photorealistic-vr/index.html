@@ -16,11 +16,11 @@
     <p>The VR viewer is ready. Google’s textured terrain and buildings need your own service access. Until connected, the grid is an empty workspace.</p>
     <form id="connect-form">
       <label for="provider">Access service</label><select id="provider"><option value="ion">Cesium ion · Google Photorealistic 3D Tiles</option><option value="google">Google Maps Platform · Map Tiles API</option></select>
-      <label for="credential">Access token / API key</label><input id="credential" type="password" autocomplete="off" spellcheck="false" placeholder="Enter only here, not in chat" required minlength="10">
+      <label for="credential">Access token / API key</label><input id="credential" type="password" autocomplete="off" spellcheck="false" placeholder="Enter a token to use different access" required minlength="10">
       <label for="asset" id="asset-label">Cesium ion asset ID</label><input id="asset" value="2275207" inputmode="numeric" pattern="[0-9]+" aria-describedby="asset-hint"><small id="asset-hint">Default Google Photorealistic 3D Tiles asset; use the ID shown in your ion account.</small>
       <div class="row"><button class="primary" id="connect" type="submit">Connect imagery</button><button id="disconnect" type="button" disabled>Disconnect</button></div>
     </form>
-    <p class="privacy">Your credential stays in this tab’s memory. It is sent to the chosen imagery service. It is never saved by this app.</p>
+    <p class="privacy">Saved local access reconnects automatically on this computer. Tokens entered here stay in the current tab and are sent to the chosen imagery service.</p>
     <details><summary>No account yet? Setup steps</summary><ol><li>Create a <a href="https://ion.cesium.com/" target="_blank" rel="noopener noreferrer">Cesium ion account</a>. Check that the Community plan suits your individual noncommercial research.</li><li>Enable Google Photorealistic 3D Tiles in your assets.</li><li>Create a token with read access to that asset; restrict website origins to your local demo when supported.</li><li>Enter the token above, confirm the asset ID, and connect.</li></ol><p>Alternative: enable the Map Tiles API in Google Cloud with billing, then use a restricted Maps API key.</p><p><a href="./README.md" target="_blank">Full setup, sources and limitations ↗</a></p></details>
   </aside>
   <section id="status-box" class="card" aria-live="polite"><span class="status-dot"></span><strong id="status">Starting viewer…</strong><p id="status-detail">No imagery requests until you connect.</p><span id="engine-tag" hidden>ENGINE TEST · NOT RIVER IMAGERY</span></section>

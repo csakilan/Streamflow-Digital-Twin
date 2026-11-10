@@ -1,0 +1,317 @@
+{
+  "date": "2026-11-10",
+  "scope": "Synthetic local tiles and desktop WebXR emulation. No real imagery credentials or headset used.",
+  "default": {
+    "frames": 18,
+    "view": "aerial",
+    "selection": {
+      "issueIndex": 8621,
+      "modelIndex": 0,
+      "lead": 1
+    },
+    "comparison": {
+      "issueIndex": 8621,
+      "targetIndex": 8622,
+      "issueDate": "2025-05-09",
+      "targetDate": "2025-05-10",
+      "lead": 1,
+      "modelName": "Transformer",
+      "predictedCfs": 13558,
+      "observedCfs": 12100,
+      "signedErrorCfs": 1458,
+      "absoluteErrorCfs": 1458,
+      "predictedStageFt": 4.358632385188623,
+      "observedEstimatedStageFt": 4.213534348061846,
+      "measuredStage": null,
+      "heightMode": "relative-only"
+    },
+    "connection": {
+      "status": "idle",
+      "message": "3D imagery is not connected.",
+      "provider": null,
+      "starts": 0,
+      "active": false
+    },
+    "tiles": null,
+    "xr": false,
+    "range": {
+      "far": 5750,
+      "fogNear": 4750,
+      "focusDistance": 1530.3921066184314,
+      "scale": 1
+    },
+    "renderSize": [
+      2250,
+      1500
+    ],
+    "panel": {
+      "minimized": false,
+      "position": [
+        698.8114616665612,
+        292.17342241674413,
+        122.37933385155145
+      ],
+      "dragging": false
+    },
+    "creditsVisible": false,
+    "credits": "Landscape not connected · Hydrology: USGS / supplied HydroTwin forecasts"
+  },
+  "authFailure": {
+    "status": "error",
+    "message": "Imagery access was denied. Check the token, asset access and allowed website origins.",
+    "provider": "google",
+    "starts": 1,
+    "active": true
+  },
+  "manualOverridePreserved": true,
+  "viewRanges": {
+    "close": {
+      "far": 4500,
+      "fogNear": 3500,
+      "focusDistance": 329.5451410656816,
+      "scale": 1
+    },
+    "tabletop": {
+      "far": 8,
+      "fogNear": 7,
+      "focusDistance": 3.8603756293915237,
+      "scale": 0.001
+    },
+    "aerial": {
+      "far": 5750,
+      "fogNear": 4750,
+      "focusDistance": 1530.3921066184314,
+      "scale": 1
+    }
+  },
+  "desktop": {
+    "frames": 42,
+    "view": "aerial",
+    "selection": {
+      "issueIndex": 8622,
+      "modelIndex": 1,
+      "lead": 2
+    },
+    "comparison": {
+      "issueIndex": 8622,
+      "targetIndex": 8624,
+      "issueDate": "2025-05-10",
+      "targetDate": "2025-05-12",
+      "lead": 2,
+      "modelName": "GP Matérn",
+      "predictedCfs": 10287,
+      "observedCfs": 11200,
+      "signedErrorCfs": -913,
+      "absoluteErrorCfs": 913,
+      "predictedStageFt": 4.022247073292184,
+      "observedEstimatedStageFt": 4.120228263746171,
+      "measuredStage": null,
+      "heightMode": "relative-only"
+    },
+    "connection": {
+      "status": "ready",
+      "message": "3D tiles are streaming. Coverage quality still needs visual inspection.",
+      "provider": "sample",
+      "starts": 1,
+      "active": true
+    },
+    "tiles": {
+      "loadedModels": 1,
+      "visible": 1,
+      "estimatedMB": 0,
+      "budgetMode": "desktop",
+      "budgetMB": 512,
+      "refused": 0,
+      "queued": 0,
+      "downloading": 0,
+      "parsing": 0,
+      "resolution": [
+        2250,
+        1500
+      ],
+      "cameraCount": 1,
+      "stereo": false
+    },
+    "xr": false,
+    "range": {
+      "far": 5750,
+      "fogNear": 4750,
+      "focusDistance": 1530.3921066184314,
+      "scale": 1
+    },
+    "renderSize": [
+      2250,
+      1500
+    ],
+    "panel": {
+      "minimized": false,
+      "position": [
+        698.8114616665612,
+        292.17342241674413,
+        122.37933385155145
+      ],
+      "dragging": false
+    },
+    "creditsVisible": false,
+    "credits": "ENGINE TEST GEOMETRY · NOT RIVER IMAGERY · Hydrology: USGS / supplied HydroTwin forecasts"
+  },
+  "xr": {
+    "frames": 117,
+    "view": "tabletop",
+    "selection": {
+      "issueIndex": 8621,
+      "modelIndex": 0,
+      "lead": 2
+    },
+    "comparison": {
+      "issueIndex": 8621,
+      "targetIndex": 8623,
+      "issueDate": "2025-05-09",
+      "targetDate": "2025-05-11",
+      "lead": 2,
+      "modelName": "Transformer",
+      "predictedCfs": 14011,
+      "observedCfs": 12200,
+      "signedErrorCfs": 1811,
+      "absoluteErrorCfs": 1811,
+      "predictedStageFt": 4.40234209920072,
+      "observedEstimatedStageFt": 4.223716178122655,
+      "measuredStage": null,
+      "heightMode": "relative-only"
+    },
+    "connection": {
+      "status": "ready",
+      "message": "3D tiles are streaming. Coverage quality still needs visual inspection.",
+      "provider": "sample",
+      "starts": 1,
+      "active": true
+    },
+    "tiles": {
+      "loadedModels": 2,
+      "visible": 1,
+      "estimatedMB": 0,
+      "budgetMode": "xr",
+      "budgetMB": 160,
+      "refused": 0,
+      "queued": 0,
+      "downloading": 0,
+      "parsing": 0,
+      "resolution": [
+        1500,
+        1000
+      ],
+      "cameraCount": 1,
+      "stereo": true
+    },
+    "xr": true,
+    "range": {
+      "far": 6,
+      "fogNear": 5,
+      "focusDistance": 1.8076617607481196,
+      "scale": 0.001
+    },
+    "renderSize": [
+      1500,
+      1000
+    ],
+    "panel": {
+      "minimized": false,
+      "position": [
+        1.199999988079071,
+        1.5499999999999998,
+        -1.8
+      ],
+      "dragging": false
+    },
+    "creditsVisible": true,
+    "credits": "ENGINE TEST GEOMETRY · NOT RIVER IMAGERY · Hydrology: USGS / supplied HydroTwin forecasts"
+  },
+  "xrBudgetTransition": {
+    "rootPreserved": true,
+    "fixtureRootRequests": 1,
+    "initialAccountedDesktopMB": 300,
+    "actualGlTFReloaded": true
+  },
+  "afterXR": {
+    "frames": 143,
+    "view": "aerial",
+    "selection": {
+      "issueIndex": 8621,
+      "modelIndex": 0,
+      "lead": 2
+    },
+    "comparison": {
+      "issueIndex": 8621,
+      "targetIndex": 8623,
+      "issueDate": "2025-05-09",
+      "targetDate": "2025-05-11",
+      "lead": 2,
+      "modelName": "Transformer",
+      "predictedCfs": 14011,
+      "observedCfs": 12200,
+      "signedErrorCfs": 1811,
+      "absoluteErrorCfs": 1811,
+      "predictedStageFt": 4.40234209920072,
+      "observedEstimatedStageFt": 4.223716178122655,
+      "measuredStage": null,
+      "heightMode": "relative-only"
+    },
+    "connection": {
+      "status": "ready",
+      "message": "3D tiles are streaming. Coverage quality still needs visual inspection.",
+      "provider": "sample",
+      "starts": 1,
+      "active": true
+    },
+    "tiles": {
+      "loadedModels": 2,
+      "visible": 1,
+      "estimatedMB": 0,
+      "budgetMode": "desktop",
+      "budgetMB": 512,
+      "refused": 0,
+      "queued": 0,
+      "downloading": 0,
+      "parsing": 0,
+      "resolution": [
+        2250,
+        1500
+      ],
+      "cameraCount": 1,
+      "stereo": false
+    },
+    "xr": false,
+    "range": {
+      "far": 5750,
+      "fogNear": 4750,
+      "focusDistance": 1530.3921066184314,
+      "scale": 1
+    },
+    "renderSize": [
+      2250,
+      1500
+    ],
+    "panel": {
+      "minimized": false,
+      "position": [
+        1042.4091574504532,
+        300.3776619894701,
+        -147.90135227831433
+      ],
+      "dragging": false
+    },
+    "creditsVisible": false,
+    "credits": "ENGINE TEST GEOMETRY · NOT RIVER IMAGERY · Hydrology: USGS / supplied HydroTwin forecasts"
+  },
+  "result": "PASS",
+  "checks": [
+    "No-key startup makes zero provider connections",
+    "Intercepted 403 is actionable; credential input clears and snapshots are clean",
+    "Actual 3D Tiles GLTF loads in ECEF/local frame",
+    "Mouse buttons, minimize and drag",
+    "View/data changes retain one tileset",
+    "WebXR stereo camera, controller ray action and grip dragging",
+    "XR exit restores desktop camera"
+  ],
+  "exceptions": []
+}

@@ -5,7 +5,7 @@ import {setTimeout as pause} from 'node:timers/promises';import assert from 'nod
 const output=new URL(process.env.RIDE_VR_CHECK_OUTPUT??'../docs/diagnostics/2026-11-10-photorealistic-vr/',import.meta.url);mkdirSync(output,{recursive:true});
 const profile=mkdtempSync(join(tmpdir(),'ride-vr-trial-')),port=9362;
 const child=spawn('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',['--headless=new','--no-first-run','--no-default-browser-check','--enable-unsafe-swiftshader','--use-gl=angle','--use-angle=swiftshader',`--remote-debugging-port=${port}`,`--user-data-dir=${profile}`,'about:blank'],{stdio:'ignore'});
-let ws,id=0,fixtureRootRequests=0;const pending=new Map(),exceptions=[],report={date:'2026-11-10',scope:'Synthetic local tiles and desktop WebXR emulation. No real imagery credentials or headset used.'};
+let ws,id=0,fixtureRootRequests=0,heldConfigRequest=null;const pending=new Map(),exceptions=[],report={date:'2026-11-10',scope:'Synthetic local tiles and desktop WebXR emulation. No real imagery credentials or headset used.'};
 function call(method,params={}){const n=++id;return new Promise((resolve,reject)=>{pending.set(n,{resolve,reject});ws.send(JSON.stringify({id:n,method,params}));});}
 async function js(expression){const r=await call('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true,userGesture:true});if(r.exceptionDetails)throw Error(r.exceptionDetails.exception?.description??r.exceptionDetails.text);return r.result?.value;}
 async function until(expression,message){for(let k=0;k<100;k++){if(await js(expression))return;await pause(100);}throw Error(message);}
@@ -17,20 +17,28 @@ try{
  ws=new WebSocket(tab.webSocketDebuggerUrl);await new Promise((r,j)=>{ws.onopen=r;ws.onerror=j;});ws.onmessage=e=>{
    const m=JSON.parse(e.data);if(m.method==='Runtime.exceptionThrown')exceptions.push(m.params.exceptionDetails.text);
    if(m.method==='Network.requestWillBeSent'&&m.params.request.url.startsWith('http://127.0.0.1:8783/photorealistic-vr/test-fixtures/tileset.json'))fixtureRootRequests++;
-   if(m.method==='Fetch.requestPaused')call('Fetch.fulfillRequest',{requestId:m.params.requestId,responseCode:403,responseHeaders:[{name:'Content-Type',value:'application/json'},{name:'Access-Control-Allow-Origin',value:'*'}],body:Buffer.from('{"error":{"code":403,"message":"Test denied"}}').toString('base64')}).catch(()=>{});
+   if(m.method==='Fetch.requestPaused'){
+    if(m.params.request.url.startsWith('http://127.0.0.1:8783/_local/imagery-config'))heldConfigRequest=m.params.requestId;
+    else call('Fetch.fulfillRequest',{requestId:m.params.requestId,responseCode:403,responseHeaders:[{name:'Content-Type',value:'application/json'},{name:'Access-Control-Allow-Origin',value:'*'}],body:Buffer.from('{"error":{"code":403,"message":"Test denied"}}').toString('base64')}).catch(()=>{});
+   }
    const p=pending.get(m.id);if(p){pending.delete(m.id);m.error?p.reject(Error(m.error.message)):p.resolve(m.result);}
  };
  await call('Page.enable');await call('Runtime.enable');await call('Network.enable');await call('Emulation.setDeviceMetricsOverride',{width:1500,height:1000,deviceScaleFactor:2,mobile:false});
- await call('Page.navigate',{url:'http://127.0.0.1:8783/photorealistic-vr/'});
+ await call('Page.navigate',{url:'http://127.0.0.1:8783/photorealistic-vr/?manualAuth=1'});
  await until('!!window.__riverTrial','viewer starts');assert.equal(await js('__riverTrial.snapshot().connection.starts'),0);
  await shot('01-token-entry.png');report.default=await js('__riverTrial.snapshot()');
  // Intercept, rather than send, the fake credential to exercise the real error UI.
- await call('Fetch.enable',{patterns:[{urlPattern:'https://tile.googleapis.com/*'}]});
+ await call('Fetch.enable',{patterns:[{urlPattern:'https://tile.googleapis.com/*'},{urlPattern:'https://api.cesium.com/*'},{urlPattern:'http://127.0.0.1:8783/_local/imagery-config*'}]});
+ await call('Page.navigate',{url:'http://127.0.0.1:8783/photorealistic-vr/'});
+ for(let i=0;i<100&&!heldConfigRequest;i++)await pause(100);assert.ok(heldConfigRequest,'local configuration request is held without reading the real .env');
  await js("document.querySelector('#provider').value='google';document.querySelector('#provider').dispatchEvent(new Event('change'));document.querySelector('#credential').value='not-a-real-credential';document.querySelector('#connect-form').requestSubmit()");
  await until("__riverTrial.snapshot().connection.status==='error'",'denied imagery request reaches safe error UI');
  assert.equal(await js("document.querySelector('#credential').value"),'');assert.equal(await js("JSON.stringify(__riverTrial.snapshot()).includes('not-a-real-credential')"),false);
  assert.match(await js("document.querySelector('#status-detail').textContent"),/denied|access/i);report.authFailure=await js('__riverTrial.snapshot().connection');
  await js("document.querySelector('#disconnect').click()");assert.equal(await js('__riverTrial.snapshot().connection.active'),false);
+ const fakeConfig={available:true,provider:'ion',credential:'not-a-real-saved-token',assetId:'2275207'};
+ await call('Fetch.fulfillRequest',{requestId:heldConfigRequest,responseCode:200,responseHeaders:[{name:'Content-Type',value:'application/json'}],body:Buffer.from(JSON.stringify(fakeConfig)).toString('base64')});await pause(400);
+ assert.equal(await js('__riverTrial.snapshot().connection.starts'),1,'late saved configuration cannot override manual disconnect');assert.equal(await js('__riverTrial.snapshot().connection.active'),false);report.manualOverridePreserved=true;
  await call('Fetch.disable');
  await call('Page.navigate',{url:'http://127.0.0.1:8783/photorealistic-vr/?engineTest=1'});
  await until("window.__riverTrial?.snapshot().connection.status==='ready'",'local tiles load');

@@ -27,6 +27,7 @@ const cap=new THREE.Mesh(new THREE.SphereGeometry(9,14,10),new THREE.MeshBasicMa
 const credits=createCredits();scene.add(credits.mesh);credits.mesh.visible=false;
 const panel=createPanel(dataset,selection,act);scene.add(panel.group);
 let view='aerial',lastDesktopView='aerial',drag=null,frames=0,provider='ion',assetId='2275207',controllers=[];
+let savedAccessAllowed=true;
 const connection=createConnection((type,credential,callbacks)=>createImagery(type,credential,callbacks,geoRoot,dataset.station,assetId),state=>{
   document.body.dataset.status=state.status;
   $('#status').textContent={idle:'Landscape not connected',loading:'Connecting imagery…',ready:state.provider==='sample'?'Engine test is running':'3D imagery is streaming',error:'Imagery needs attention'}[state.status];
@@ -74,15 +75,16 @@ function setView(next){
 for(const button of document.querySelectorAll('[data-view]'))button.addEventListener('click',()=>setView(button.dataset.view));
 $('#reset-panel').addEventListener('click',resetPanel);
 $('#setup-toggle').addEventListener('click',()=>{const closed=$('#setup').hidden=!$('#setup').hidden;$('#setup-toggle').setAttribute('aria-expanded',String(!closed));});
-$('#provider').addEventListener('change',()=>{provider=$('#provider').value;for(const selector of ['#asset','#asset-label','#asset-hint'])$(selector).hidden=provider!=='ion';});
+$('#provider').addEventListener('change',()=>{savedAccessAllowed=false;provider=$('#provider').value;for(const selector of ['#asset','#asset-label','#asset-hint'])$(selector).hidden=provider!=='ion';});
+$('#credential').addEventListener('input',()=>{savedAccessAllowed=false;});
 $('#connect-form').addEventListener('submit',event=>{
-  event.preventDefault();if(connection.snapshot().active)return;
+  event.preventDefault();savedAccessAllowed=false;if(connection.snapshot().active)return;
   assetId=$('#asset').value.trim();
   if(provider==='ion'&&!/^\d+$/.test(assetId)){ $('#status-detail').textContent='Use the numeric asset ID shown in your ion account.';return;}
   try{connection.connect(provider,$('#credential').value.trim());$('#credential').value='';}
   catch{ $('#status-detail').textContent='Enter your access token in the password field.';}
 });
-$('#disconnect').addEventListener('click',()=>connection.disconnect());
+$('#disconnect').addEventListener('click',()=>{savedAccessAllowed=false;connection.disconnect();});
 
 const pointerRay=new THREE.Raycaster(),pointer=new THREE.Vector2(),plane=new THREE.Plane(),offset=new THREE.Vector3(),point=new THREE.Vector3();
 function mouseRay(event){pointer.set(event.clientX/innerWidth*2-1,1-event.clientY/innerHeight*2);pointerRay.setFromCamera(pointer,camera);return pointerRay;}
@@ -165,3 +167,20 @@ const engineTest=new URLSearchParams(location.search).get('engineTest')==='1'&&[
 if(engineTest){$('#engine-tag').hidden=false;$('#setup').hidden=true;$('#setup-toggle').setAttribute('aria-expanded','false');connection.connect('sample','');}
 // Safe observation-only diagnostics; no credential, provider object or raw request URL.
 window.__riverTrial={snapshot:()=>({frames,view,selection:selection.get(),comparison:selection.comparison(),connection:connection.snapshot(),tiles:connection.resource?.snapshot()??null,xr:renderer.xr.isPresenting,range:{far:camera.far,fogNear:scene.fog.near,focusDistance,scale:geoRoot.scale.x},renderSize:[canvas.width,canvas.height],panel:{minimized:panel.minimized,position:panel.group.getWorldPosition(new THREE.Vector3()).toArray(),dragging:!!drag},creditsVisible:credits.mesh.visible,credits:$('#attribution').textContent}),targets:()=>panel.targets(camera)};
+
+// The local server reads the user's gitignored .env. Static deployments retain
+// manual entry; engine tests and explicit manual mode never request saved access.
+if(!engineTest&&!new URLSearchParams(location.search).has('manualAuth')&&['localhost','127.0.0.1'].includes(location.hostname)){
+  let config;
+  try{
+    const response=await fetch('/_local/imagery-config',{cache:'no-store',mode:'same-origin',credentials:'omit',headers:{'X-HydroTwin-Local':'1'}});
+    if(response.ok){
+      config=await response.json();
+      if(savedAccessAllowed&&config.available&&config.provider==='ion'&&typeof config.credential==='string'&&/^\d+$/.test(config.assetId)&&!connection.snapshot().active&&connection.snapshot().starts===0){
+        provider='ion';assetId=config.assetId;$('#asset').value=assetId;
+        if(connection.connect('ion',config.credential)){$('#setup').hidden=true;$('#setup-toggle').setAttribute('aria-expanded','false');}
+      }
+    }
+  }catch{/* A plain static server has no local-config endpoint; keep manual entry. */}
+  finally{if(config)config.credential='';}
+}

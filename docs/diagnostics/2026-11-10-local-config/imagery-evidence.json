@@ -1,0 +1,90 @@
+{
+  "scope": "Authenticated local Potomac viewer; temporary Chrome with HTTP cache disabled; no real headset. Credentials and raw network URLs are never recorded.",
+  "date": "2026-11-10",
+  "views": {
+    "aerial": {
+      "condition": "connection-ready-only",
+      "snapshot": {
+        "frames": 13,
+        "view": "aerial",
+        "selection": {
+          "issueIndex": 8621,
+          "modelIndex": 0,
+          "lead": 1
+        },
+        "comparison": {
+          "issueIndex": 8621,
+          "targetIndex": 8622,
+          "issueDate": "2025-05-09",
+          "targetDate": "2025-05-10",
+          "lead": 1,
+          "modelName": "Transformer",
+          "predictedCfs": 13558,
+          "observedCfs": 12100,
+          "signedErrorCfs": 1458,
+          "absoluteErrorCfs": 1458,
+          "predictedStageFt": 4.358632385188623,
+          "observedEstimatedStageFt": 4.213534348061846,
+          "measuredStage": null,
+          "heightMode": "relative-only"
+        },
+        "connection": {
+          "status": "ready",
+          "message": "3D tiles are streaming. Coverage quality still needs visual inspection.",
+          "provider": "ion",
+          "starts": 1,
+          "active": true
+        },
+        "tiles": {
+          "loadedModels": 11,
+          "visible": 1,
+          "estimatedMB": 3,
+          "budgetMode": "desktop",
+          "budgetMB": 512,
+          "refused": 0,
+          "queued": 0,
+          "downloading": 2,
+          "parsing": 18,
+          "resolution": [
+            2160,
+            1500
+          ],
+          "cameraCount": 1,
+          "stereo": false
+        },
+        "xr": false,
+        "range": {
+          "far": 5750,
+          "fogNear": 4750,
+          "focusDistance": 1530.3921066184314,
+          "scale": 1
+        },
+        "renderSize": [
+          2160,
+          1500
+        ],
+        "panel": {
+          "minimized": false,
+          "position": [
+            675.3607910540927,
+            292.17342241674413,
+            140.5003065975501
+          ],
+          "dragging": false
+        },
+        "creditsVisible": false,
+        "credits": "Basemap: Google Maps · Google; Data SIO, NOAA, U.S. Navy, NGA, GEBCO; IBCAO · 3D tiles access: Cesium ion · Hydrology: USGS / supplied HydroTwin forecasts"
+      }
+    }
+  },
+  "network": {
+    "ionEndpoints": 1,
+    "googleRoots": 1,
+    "failedStatuses": {
+      "local:404": 1
+    }
+  },
+  "result": "PASS",
+  "accessSource": "local configuration",
+  "quick": true
+}

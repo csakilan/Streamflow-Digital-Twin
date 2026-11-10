@@ -6,9 +6,15 @@ An isolated experiment in the full HydroTwin repository. It keeps **Three.js + W
 
 With the existing server running, open <http://127.0.0.1:8783/photorealistic-vr/>.
 
-Alternatively, run `python3 -m http.server 8783 --bind 127.0.0.1` from the repository root. The page and dependencies are ordinary static files. No Node server, account or imagery request is required to open the setup screen and station-data panel.
+Run `python3 serve_local.py --port 8783` from the repository root. This loopback-only server serves the app, blocks hidden files and directory listings, and provides the saved local imagery configuration to the viewer. Use this server when a real `.env` is present; a generic static server does not provide these protections. The page and dependencies remain ordinary static files, and no Node server is required.
 
-**No imagery credential is included.** The grid before connection is an empty workspace, not a low-resolution representation of the Potomac.
+**No imagery credential is committed or distributed.** On this computer, an explicitly authorized token is saved in the Git-ignored root `.env`; the local viewer reconnects automatically after refresh. The grid before connection is an empty workspace, not a low-resolution representation of the Potomac.
+
+## Saved local access
+
+The root `.env.example` lists the two configuration keys: `CESIUM_ION_TOKEN` and `CESIUM_ION_ASSET_ID`. The real `.env` is ignored by Git and uses owner-only file permissions on this computer. The local server exposes only these imagery settings through a no-store endpoint restricted to its loopback host and same-origin viewer request. Direct requests for `.env`, other hidden files, and aliases pointing to hidden/outside files are blocked. Do not include the real `.env` in ZIPs or deployments.
+
+Refresh the viewer to use saved access. **Disconnect** stops the active connection; refresh loads the saved access again. `?manualAuth=1` disables automatic configuration for that page so a different token can be entered manually. Engine-test scenes skip saved credentials. Static deployments retain manual token entry and do not request local configuration.
 
 ## Connect imagery locally
 
@@ -24,7 +30,7 @@ Alternatively, run `python3 -m http.server 8783 --bind 127.0.0.1` from the repos
 
 Enable the **Map Tiles API** in your own Google Cloud project with billing and an appropriately restricted browser API key. Select Google Maps Platform in this trial, enter the key locally and connect. Follow [Google's 3D Tiles instructions](https://developers.google.com/maps/documentation/tile/3d-tiles).
 
-Do not paste tokens into chat or commit them. This app keeps the credential only in the current tab's memory and sends it to the selected provider for authentication. The input clears on connection. Reloading or disconnecting removes the app's active reference; it is not an instant revocation of a provider credential. As with any browser integration, browser developer tools and the provider's network requests can expose the credential to the person using that browser. Use restricted, revocable credentials on trusted devices.
+The browser uses its active credential in tab memory and sends it to the selected imagery provider. Manual input clears on connection. Saved local access persists in the explicitly authorized `.env`; it is not embedded in JavaScript or committed to Git. As with any browser integration, the person using the browser can inspect the active credential through developer tools. Disconnecting is not provider-side token revocation.
 
 No account has been created, billing enabled or imagery service deployed by this change.
 
@@ -68,9 +74,9 @@ The browser check requires the server on 8783 and Chrome at the standard macOS l
 
 Current pinned runtime: Three.js **0.185.0**, 3d-tiles-renderer **0.5.4**, IWER **2.1.0** for optional emulation. Runtime files and licenses are committed under `vendor/`; `node_modules/` is ignored. Third-party tile-loader console calls are omitted from the bundle because upstream errors can include signed request URLs. Error events still drive the safe access-status UI.
 
-Authenticated local-app aerial, close and tabletop imagery has been checked in an isolated desktop browser, with provider credits visible and a single root/access initialization per run. Evidence is under `docs/diagnostics/2026-11-10-view-detail/`; the credential was supplied through echo-disabled stdin, retained only in temporary process/tab memory, and omitted from files and reports. The optimized aerial/tabletop captures had no pending requests or refused tiles at their sampled checkpoints. The close capture still reached the 512 MiB cap and had some desired detail refused; this is recorded explicitly, so this check does not claim complete close-view refinement or camera-quality source imagery. Real provider credits in XR and target-headset performance remain unverified. After updating source, refresh and re-enter the token locally because credentials are intentionally kept only in tab memory.
+Authenticated local-app aerial, close and tabletop imagery has been checked in an isolated desktop browser, with provider credits visible and a single root/access initialization per run. Evidence is under `docs/diagnostics/2026-11-10-view-detail/`; those checks used echo-disabled stdin and omitted credentials from reports. The optimized aerial/tabletop captures had no pending requests or refused tiles at their sampled checkpoints. The close capture still reached the 512 MiB cap and had some desired detail refused; this is recorded explicitly, so this check does not claim complete close-view refinement or camera-quality source imagery. Real provider credits in XR and target-headset performance remain unverified. A later connection-only check verified automatic access from the user-authorized `.env`; see `docs/diagnostics/2026-11-10-local-config/`.
 
-For an optional authenticated desktop check, run `node imagery-check.mjs` from this directory in a terminal with input echo disabled and enter a restricted ion token through stdin. Never pass a credential as a command argument or environment variable. It uses a temporary browser with HTTP caching disabled, saves only attributed screenshots/safe diagnostics, and removes the profile afterward. This check requests real provider imagery and uses the account's normal service quota.
+For an optional authenticated desktop check using saved access, run `node imagery-check.mjs --local-config`; add `--quick` for a connection-only check. The local server must be running. Manual checks can still use `node imagery-check.mjs` with echo-disabled stdin. It uses a temporary browser with HTTP caching disabled, saves only attributed screenshots/safe diagnostics, and removes the profile afterward. Never pass the token as a command argument. These checks request real provider imagery and use the account's normal service quota.
 
 ## References
 
