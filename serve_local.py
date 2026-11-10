@@ -67,6 +67,12 @@ class LocalHandler(SimpleHTTPRequestHandler):
         except (OSError, ValueError):
             self.send_error(404)
             return None
+        if urlsplit(self.path).path == "/" and (root / "river-twin" / "index.html").is_file():
+            query = urlsplit(self.path).query
+            self.send_response(302)
+            self.send_header("Location", "/river-twin/" + ("?" + query if query else ""))
+            self.end_headers()
+            return None
         return super().send_head()
 
     def list_directory(self, _path):
@@ -80,5 +86,5 @@ if __name__ == "__main__":
     args = parser.parse_args()
     handler = partial(LocalHandler, directory=str(Path(__file__).resolve().parent))
     with ThreadingHTTPServer(("127.0.0.1", args.port), handler) as server:
-        print(f"HydroTwin local viewer: http://127.0.0.1:{args.port}/photorealistic-vr/", flush=True)
+        print(f"HydroTwin local viewer: http://127.0.0.1:{args.port}/", flush=True)
         server.serve_forever()

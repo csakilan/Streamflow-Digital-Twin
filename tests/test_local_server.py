@@ -35,6 +35,11 @@ class LocalServerTests(unittest.TestCase):
             try:
                 with get("/") as response:
                     self.assertEqual(response.read(), b"local app")
+                (root / "river-twin").mkdir()
+                (root / "river-twin" / "index.html").write_text("standalone river app")
+                with get("/?station=14105700") as response:
+                    self.assertEqual(response.read(), b"standalone river app")
+                    self.assertIn("/river-twin/?station=14105700", response.url)
                 for path in ["/.env", "/%2eenv", "/alias.txt", "/.git/config", "/html-alias/", "/htm-alias/"]:
                     denied(path)
                 denied("/_local/imagery-config")

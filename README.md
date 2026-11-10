@@ -1,6 +1,6 @@
 # Streamflow Digital Twin
 
-Akilan Chithra Sathish's UTD RIDE research workspace for HydroTwin river visualization. This repository saves the current full application and provides a baseline for improving the realism of the river water layer.
+Akilan Chithra Sathish's UTD RIDE research workspace for HydroTwin river visualization. This branch adds an independent Three.js/WebXR river app for Potomac and Columbia, with Google captured 3D imagery, clear readings and forecast controls, a selectable-axis graph, and independently mapped USGS bank outlines. The earlier full application is preserved. See [the standalone app guide](river-twin/README.md).
 
 ## Source and scope
 
@@ -20,13 +20,14 @@ The water experiment adds mapped reference river surfaces, retained islands, sho
 From this repository's root, using Python 3:
 
 ```sh
-python3 -m http.server 8783 --bind 127.0.0.1
+python3 serve_local.py
 ```
 
-Open `http://127.0.0.1:8783/` for the complete application. Useful pages:
+Open `http://127.0.0.1:8783/` for the new standalone river app. The local server uses your gitignored `.env` for imagery access. A ready-to-run standalone ZIP can be built with `python3 river-twin/package-standalone.py`; it excludes saved access and the old site. The previous application remains available at its original page paths:
 
 | View | Path |
 | --- | --- |
+| Standalone app | `/river-twin/` |
 | Potomac river scene | `/stations/USGS-01646500-3d.html` |
 | Columbia river scene | `/stations/USGS-14105700-3d.html` |
 | Potomac spatial data | `/data-space/01646500.html` |
@@ -48,7 +49,7 @@ The existing water rendering remains an approximate visualization. The research 
 
 ## Version history and deployment
 
-`main` holds the saved full-app baseline. `experiment/river-water-layer` contains the mapped water-layer experiment. The `baseline/pre-water-layer` tag marks the starting point.
+`feature/standalone-river-twin` holds the new independent river app; it makes no AWS deployment. `main` holds the saved full-app baseline. `experiment/river-water-layer` contains the mapped water-layer experiment. The `baseline/pre-water-layer` tag marks the starting point.
 
 Inherited GitHub workflows are preserved as inactive reference files in [docs/upstream/workflows](docs/upstream/workflows). Some target Saurabh's AWS resources or scheduled pipelines. This repository does not automatically deploy to those environments. No deployment credentials are included.
 

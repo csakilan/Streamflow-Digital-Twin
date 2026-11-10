@@ -1,0 +1,654 @@
+{
+  "scope": "Authenticated local Potomac viewer; temporary Chrome with HTTP cache disabled; no real headset. Credentials and raw network URLs are never recorded.",
+  "date": "2026-11-10",
+  "views": {
+    "aerial": {
+      "condition": "no-pending-requests",
+      "snapshot": {
+        "frames": 129,
+        "view": "aerial",
+        "selection": {
+          "issueIndex": 8621,
+          "modelIndex": 0,
+          "lead": 1
+        },
+        "comparison": {
+          "issueIndex": 8621,
+          "targetIndex": 8622,
+          "issueDate": "2025-05-09",
+          "targetDate": "2025-05-10",
+          "lead": 1,
+          "modelName": "Transformer",
+          "predictedCfs": 215338,
+          "observedCfs": 232000,
+          "signedErrorCfs": -16662,
+          "absoluteErrorCfs": 16662,
+          "predictedStageFt": 77.03047123533695,
+          "observedEstimatedStageFt": 77.38055415885101,
+          "measuredStage": null,
+          "heightMode": "relative-only"
+        },
+        "connection": {
+          "status": "ready",
+          "message": "Captured 3D landscape. The selected river readings are historical.",
+          "provider": "ion",
+          "starts": 1,
+          "active": true
+        },
+        "tiles": {
+          "loadedModels": 389,
+          "visible": 186,
+          "estimatedMB": 99,
+          "budgetMode": "desktop",
+          "budgetMB": 512,
+          "refused": 0,
+          "queued": 0,
+          "downloading": 0,
+          "parsing": 0,
+          "resolution": [
+            2160,
+            1500
+          ],
+          "cameraCount": 1,
+          "stereo": false
+        },
+        "site": "14105700",
+        "banks": {
+          "visible": true,
+          "paths": 24,
+          "referenceDate": "2023-09-14",
+          "attachedMaterials": 389
+        },
+        "graph": {
+          "visible": false,
+          "variable": "rain7",
+          "points": 90
+        },
+        "readings": {
+          "comparison": {
+            "issueIndex": 8621,
+            "targetIndex": 8622,
+            "issueDate": "2025-05-09",
+            "targetDate": "2025-05-10",
+            "lead": 1,
+            "modelName": "Transformer",
+            "predictedCfs": 215338,
+            "observedCfs": 232000,
+            "signedErrorCfs": -16662,
+            "absoluteErrorCfs": 16662,
+            "predictedStageFt": 77.03047123533695,
+            "observedEstimatedStageFt": 77.38055415885101,
+            "measuredStage": null,
+            "heightMode": "relative-only"
+          },
+          "stage": {
+            "date": "2025-05-10",
+            "meanFt": 77.08145833333336,
+            "minFt": 76.65,
+            "maxFt": 77.5,
+            "samples": 96,
+            "provisional": false,
+            "first": "2025-05-10T07:00:00.000Z",
+            "last": "2025-05-11T06:45:00.000Z"
+          },
+          "input": {
+            "date": "2025-05-09",
+            "temperature": 17.8,
+            "rain3": {
+              "value": 0,
+              "count": 3
+            },
+            "rain7": {
+              "value": 0,
+              "count": 7
+            },
+            "soil2": 32.3,
+            "soil8": 36.5,
+            "soil20": null,
+            "soilTemperature": 32,
+            "soilStation": "679:WA:SNTL",
+            "snowAvailable": true,
+            "snowStations": [
+              "401:OR:SNTL",
+              "599:WA:SNTL",
+              "502:WA:SNTL"
+            ],
+            "snow1": 0,
+            "snow2": 0,
+            "snow3": 10.2
+          },
+          "forecast": [
+            {
+              "issueIndex": 8621,
+              "targetIndex": 8622,
+              "issueDate": "2025-05-09",
+              "targetDate": "2025-05-10",
+              "lead": 1,
+              "modelName": "Transformer",
+              "predictedCfs": 215338,
+              "observedCfs": 232000,
+              "signedErrorCfs": -16662,
+              "absoluteErrorCfs": 16662,
+              "predictedStageFt": 77.03047123533695,
+              "observedEstimatedStageFt": 77.38055415885101,
+              "measuredStage": null,
+              "heightMode": "relative-only"
+            },
+            {
+              "issueIndex": 8621,
+              "targetIndex": 8623,
+              "issueDate": "2025-05-09",
+              "targetDate": "2025-05-11",
+              "lead": 2,
+              "modelName": "Transformer",
+              "predictedCfs": 218533,
+              "observedCfs": 242000,
+              "signedErrorCfs": -23467,
+              "absoluteErrorCfs": 23467,
+              "predictedStageFt": 77.09634686656072,
+              "observedEstimatedStageFt": 77.59833228231992,
+              "measuredStage": null,
+              "heightMode": "relative-only"
+            },
+            {
+              "issueIndex": 8621,
+              "targetIndex": 8624,
+              "issueDate": "2025-05-09",
+              "targetDate": "2025-05-12",
+              "lead": 3,
+              "modelName": "Transformer",
+              "predictedCfs": 217985,
+              "observedCfs": 242000,
+              "signedErrorCfs": -24015,
+              "absoluteErrorCfs": 24015,
+              "predictedStageFt": 77.08500539099862,
+              "observedEstimatedStageFt": 77.59833228231992,
+              "measuredStage": null,
+              "heightMode": "relative-only"
+            },
+            {
+              "issueIndex": 8621,
+              "targetIndex": 8625,
+              "issueDate": "2025-05-09",
+              "targetDate": "2025-05-13",
+              "lead": 4,
+              "modelName": "Transformer",
+              "predictedCfs": 223917,
+              "observedCfs": 265000,
+              "signedErrorCfs": -41083,
+              "absoluteErrorCfs": 41083,
+              "predictedStageFt": 77.20870851093046,
+              "observedEstimatedStageFt": 78.12048475817713,
+              "measuredStage": null,
+              "heightMode": "relative-only"
+            },
+            {
+              "issueIndex": 8621,
+              "targetIndex": 8626,
+              "issueDate": "2025-05-09",
+              "targetDate": "2025-05-14",
+              "lead": 5,
+              "modelName": "Transformer",
+              "predictedCfs": 224104,
+              "observedCfs": 248000,
+              "signedErrorCfs": -23896,
+              "absoluteErrorCfs": 23896,
+              "predictedStageFt": 77.21264146613848,
+              "observedEstimatedStageFt": 77.73171207260455,
+              "measuredStage": null,
+              "heightMode": "relative-only"
+            },
+            {
+              "issueIndex": 8621,
+              "targetIndex": 8627,
+              "issueDate": "2025-05-09",
+              "targetDate": "2025-05-15",
+              "lead": 6,
+              "modelName": "Transformer",
+              "predictedCfs": 223138,
+              "observedCfs": 222000,
+              "signedErrorCfs": 1138,
+              "absoluteErrorCfs": 1138,
+              "predictedStageFt": 77.19234656798069,
+              "observedEstimatedStageFt": 77.16850773194342,
+              "measuredStage": null,
+              "heightMode": "relative-only"
+            },
+            {
+              "issueIndex": 8621,
+              "targetIndex": 8628,
+              "issueDate": "2025-05-09",
+              "targetDate": "2025-05-16",
+              "lead": 7,
+              "modelName": "Transformer",
+              "predictedCfs": 224328,
+              "observedCfs": 214000,
+              "signedErrorCfs": 10328,
+              "absoluteErrorCfs": 10328,
+              "predictedStageFt": 77.21735527286188,
+              "observedEstimatedStageFt": 77.0030625016673,
+              "measuredStage": null,
+              "heightMode": "relative-only"
+            }
+          ],
+          "seasonal": {
+            "observedCfs": 232000,
+            "lowerCfs": 220000,
+            "medianCfs": 262000,
+            "upperCfs": 335000,
+            "percentile": 33.46774193548387,
+            "position": "Within typical range",
+            "count": 744,
+            "years": 24,
+            "selectedYear": 2025,
+            "month": 5,
+            "monthLabel": "May"
+          },
+          "accuracy": {
+            "from": 8532,
+            "to": 8621,
+            "rows": [
+              {
+                "lead": 1,
+                "count": 90,
+                "maeCfs": 11933.255555555555,
+                "biasCfs": -4148.233333333334
+              },
+              {
+                "lead": 2,
+                "count": 90,
+                "maeCfs": 15263.522222222222,
+                "biasCfs": -3322.8555555555554
+              },
+              {
+                "lead": 3,
+                "count": 90,
+                "maeCfs": 16879.588888888888,
+                "biasCfs": -3242.5666666666666
+              },
+              {
+                "lead": 4,
+                "count": 90,
+                "maeCfs": 18742.32222222222,
+                "biasCfs": -1479.4333333333334
+              },
+              {
+                "lead": 5,
+                "count": 90,
+                "maeCfs": 21254.28888888889,
+                "biasCfs": -1290.9555555555555
+              },
+              {
+                "lead": 6,
+                "count": 90,
+                "maeCfs": 25088.922222222223,
+                "biasCfs": -290.94444444444446
+              },
+              {
+                "lead": 7,
+                "count": 90,
+                "maeCfs": 26739.87777777778,
+                "biasCfs": -496.7888888888889
+              }
+            ],
+            "days": 90,
+            "modelIndex": 0
+          },
+          "accuracyDate": {}
+        },
+        "xr": false,
+        "range": {
+          "far": 5750,
+          "fogNear": 4750,
+          "focusDistance": 1530.3921066184314,
+          "scale": 1
+        },
+        "renderSize": [
+          2160,
+          1500
+        ],
+        "panel": {
+          "tab": "river",
+          "minimized": false,
+          "position": [
+            683.1776812582489,
+            292.17342241674413,
+            134.45998234888395
+          ],
+          "dragging": false
+        },
+        "creditsVisible": false,
+        "credits": "Basemap: Google Maps · Google · 3D tiles access: Cesium ion · Hydrology: USGS / supplied HydroTwin forecasts"
+      }
+    },
+    "close": {
+      "condition": "no-pending-requests",
+      "snapshot": {
+        "frames": 238,
+        "view": "close",
+        "selection": {
+          "issueIndex": 8621,
+          "modelIndex": 0,
+          "lead": 1
+        },
+        "comparison": {
+          "issueIndex": 8621,
+          "targetIndex": 8622,
+          "issueDate": "2025-05-09",
+          "targetDate": "2025-05-10",
+          "lead": 1,
+          "modelName": "Transformer",
+          "predictedCfs": 215338,
+          "observedCfs": 232000,
+          "signedErrorCfs": -16662,
+          "absoluteErrorCfs": 16662,
+          "predictedStageFt": 77.03047123533695,
+          "observedEstimatedStageFt": 77.38055415885101,
+          "measuredStage": null,
+          "heightMode": "relative-only"
+        },
+        "connection": {
+          "status": "ready",
+          "message": "Captured 3D landscape. The selected river readings are historical.",
+          "provider": "ion",
+          "starts": 1,
+          "active": true
+        },
+        "tiles": {
+          "loadedModels": 663,
+          "visible": 246,
+          "estimatedMB": 128,
+          "budgetMode": "desktop",
+          "budgetMB": 512,
+          "refused": 0,
+          "queued": 0,
+          "downloading": 0,
+          "parsing": 0,
+          "resolution": [
+            2160,
+            1500
+          ],
+          "cameraCount": 1,
+          "stereo": false
+        },
+        "site": "14105700",
+        "banks": {
+          "visible": true,
+          "paths": 24,
+          "referenceDate": "2023-09-14",
+          "attachedMaterials": 663
+        },
+        "graph": {
+          "visible": false,
+          "variable": "rain7",
+          "points": 90
+        },
+        "readings": {
+          "comparison": {
+            "issueIndex": 8621,
+            "targetIndex": 8622,
+            "issueDate": "2025-05-09",
+            "targetDate": "2025-05-10",
+            "lead": 1,
+            "modelName": "Transformer",
+            "predictedCfs": 215338,
+            "observedCfs": 232000,
+            "signedErrorCfs": -16662,
+            "absoluteErrorCfs": 16662,
+            "predictedStageFt": 77.03047123533695,
+            "observedEstimatedStageFt": 77.38055415885101,
+            "measuredStage": null,
+            "heightMode": "relative-only"
+          },
+          "stage": {
+            "date": "2025-05-10",
+            "meanFt": 77.08145833333336,
+            "minFt": 76.65,
+            "maxFt": 77.5,
+            "samples": 96,
+            "provisional": false,
+            "first": "2025-05-10T07:00:00.000Z",
+            "last": "2025-05-11T06:45:00.000Z"
+          },
+          "input": {
+            "date": "2025-05-09",
+            "temperature": 17.8,
+            "rain3": {
+              "value": 0,
+              "count": 3
+            },
+            "rain7": {
+              "value": 0,
+              "count": 7
+            },
+            "soil2": 32.3,
+            "soil8": 36.5,
+            "soil20": null,
+            "soilTemperature": 32,
+            "soilStation": "679:WA:SNTL",
+            "snowAvailable": true,
+            "snowStations": [
+              "401:OR:SNTL",
+              "599:WA:SNTL",
+              "502:WA:SNTL"
+            ],
+            "snow1": 0,
+            "snow2": 0,
+            "snow3": 10.2
+          },
+          "forecast": [
+            {
+              "issueIndex": 8621,
+              "targetIndex": 8622,
+              "issueDate": "2025-05-09",
+              "targetDate": "2025-05-10",
+              "lead": 1,
+              "modelName": "Transformer",
+              "predictedCfs": 215338,
+              "observedCfs": 232000,
+              "signedErrorCfs": -16662,
+              "absoluteErrorCfs": 16662,
+              "predictedStageFt": 77.03047123533695,
+              "observedEstimatedStageFt": 77.38055415885101,
+              "measuredStage": null,
+              "heightMode": "relative-only"
+            },
+            {
+              "issueIndex": 8621,
+              "targetIndex": 8623,
+              "issueDate": "2025-05-09",
+              "targetDate": "2025-05-11",
+              "lead": 2,
+              "modelName": "Transformer",
+              "predictedCfs": 218533,
+              "observedCfs": 242000,
+              "signedErrorCfs": -23467,
+              "absoluteErrorCfs": 23467,
+              "predictedStageFt": 77.09634686656072,
+              "observedEstimatedStageFt": 77.59833228231992,
+              "measuredStage": null,
+              "heightMode": "relative-only"
+            },
+            {
+              "issueIndex": 8621,
+              "targetIndex": 8624,
+              "issueDate": "2025-05-09",
+              "targetDate": "2025-05-12",
+              "lead": 3,
+              "modelName": "Transformer",
+              "predictedCfs": 217985,
+              "observedCfs": 242000,
+              "signedErrorCfs": -24015,
+              "absoluteErrorCfs": 24015,
+              "predictedStageFt": 77.08500539099862,
+              "observedEstimatedStageFt": 77.59833228231992,
+              "measuredStage": null,
+              "heightMode": "relative-only"
+            },
+            {
+              "issueIndex": 8621,
+              "targetIndex": 8625,
+              "issueDate": "2025-05-09",
+              "targetDate": "2025-05-13",
+              "lead": 4,
+              "modelName": "Transformer",
+              "predictedCfs": 223917,
+              "observedCfs": 265000,
+              "signedErrorCfs": -41083,
+              "absoluteErrorCfs": 41083,
+              "predictedStageFt": 77.20870851093046,
+              "observedEstimatedStageFt": 78.12048475817713,
+              "measuredStage": null,
+              "heightMode": "relative-only"
+            },
+            {
+              "issueIndex": 8621,
+              "targetIndex": 8626,
+              "issueDate": "2025-05-09",
+              "targetDate": "2025-05-14",
+              "lead": 5,
+              "modelName": "Transformer",
+              "predictedCfs": 224104,
+              "observedCfs": 248000,
+              "signedErrorCfs": -23896,
+              "absoluteErrorCfs": 23896,
+              "predictedStageFt": 77.21264146613848,
+              "observedEstimatedStageFt": 77.73171207260455,
+              "measuredStage": null,
+              "heightMode": "relative-only"
+            },
+            {
+              "issueIndex": 8621,
+              "targetIndex": 8627,
+              "issueDate": "2025-05-09",
+              "targetDate": "2025-05-15",
+              "lead": 6,
+              "modelName": "Transformer",
+              "predictedCfs": 223138,
+              "observedCfs": 222000,
+              "signedErrorCfs": 1138,
+              "absoluteErrorCfs": 1138,
+              "predictedStageFt": 77.19234656798069,
+              "observedEstimatedStageFt": 77.16850773194342,
+              "measuredStage": null,
+              "heightMode": "relative-only"
+            },
+            {
+              "issueIndex": 8621,
+              "targetIndex": 8628,
+              "issueDate": "2025-05-09",
+              "targetDate": "2025-05-16",
+              "lead": 7,
+              "modelName": "Transformer",
+              "predictedCfs": 224328,
+              "observedCfs": 214000,
+              "signedErrorCfs": 10328,
+              "absoluteErrorCfs": 10328,
+              "predictedStageFt": 77.21735527286188,
+              "observedEstimatedStageFt": 77.0030625016673,
+              "measuredStage": null,
+              "heightMode": "relative-only"
+            }
+          ],
+          "seasonal": {
+            "observedCfs": 232000,
+            "lowerCfs": 220000,
+            "medianCfs": 262000,
+            "upperCfs": 335000,
+            "percentile": 33.46774193548387,
+            "position": "Within typical range",
+            "count": 744,
+            "years": 24,
+            "selectedYear": 2025,
+            "month": 5,
+            "monthLabel": "May"
+          },
+          "accuracy": {
+            "from": 8532,
+            "to": 8621,
+            "rows": [
+              {
+                "lead": 1,
+                "count": 90,
+                "maeCfs": 11933.255555555555,
+                "biasCfs": -4148.233333333334
+              },
+              {
+                "lead": 2,
+                "count": 90,
+                "maeCfs": 15263.522222222222,
+                "biasCfs": -3322.8555555555554
+              },
+              {
+                "lead": 3,
+                "count": 90,
+                "maeCfs": 16879.588888888888,
+                "biasCfs": -3242.5666666666666
+              },
+              {
+                "lead": 4,
+                "count": 90,
+                "maeCfs": 18742.32222222222,
+                "biasCfs": -1479.4333333333334
+              },
+              {
+                "lead": 5,
+                "count": 90,
+                "maeCfs": 21254.28888888889,
+                "biasCfs": -1290.9555555555555
+              },
+              {
+                "lead": 6,
+                "count": 90,
+                "maeCfs": 25088.922222222223,
+                "biasCfs": -290.94444444444446
+              },
+              {
+                "lead": 7,
+                "count": 90,
+                "maeCfs": 26739.87777777778,
+                "biasCfs": -496.7888888888889
+              }
+            ],
+            "days": 90,
+            "modelIndex": 0
+          },
+          "accuracyDate": {}
+        },
+        "xr": false,
+        "range": {
+          "far": 4500,
+          "fogNear": 3500,
+          "focusDistance": 329.5451410656816,
+          "scale": 1
+        },
+        "renderSize": [
+          2160,
+          1500
+        ],
+        "panel": {
+          "tab": "river",
+          "minimized": false,
+          "position": [
+            146.82300694702388,
+            83.8052199541761,
+            44.19044086171755
+          ],
+          "dragging": false
+        },
+        "creditsVisible": false,
+        "credits": "Basemap: Google Maps · Google · 3D tiles access: Cesium ion · Hydrology: USGS / supplied HydroTwin forecasts"
+      }
+    }
+  },
+  "network": {
+    "ionEndpoints": 1,
+    "googleRoots": 1,
+    "failedStatuses": {
+      "local:404": 1
+    }
+  },
+  "result": "PASS",
+  "accessSource": "local configuration",
+  "quick": false
+}
